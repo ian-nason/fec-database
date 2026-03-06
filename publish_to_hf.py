@@ -18,19 +18,18 @@ from huggingface_hub import HfApi, create_repo
 def generate_dataset_card(db_path: str) -> str:
     """Generate a HF-compatible README with YAML frontmatter."""
     con = duckdb.connect(db_path, read_only=True)
-    metadata = con.sql(
+    rows = con.sql(
         "SELECT table_name, description, row_count, column_count, cycles_covered "
         "FROM _metadata ORDER BY row_count DESC"
-    ).fetchdf()
+    ).fetchall()
     con.close()
 
     table_rows = "\n".join(
-        f"| `{r['table_name']}` | {r['description']} | {r['row_count']:,} "
-        f"| {r['column_count']} | {r['cycles_covered']} |"
-        for _, r in metadata.iterrows()
+        f"| `{r[0]}` | {r[1]} | {r[2]:,} | {r[3]} | {r[4]} |"
+        for r in rows
     )
-    total_rows = int(metadata["row_count"].sum())
-    n_tables = len(metadata)
+    total_rows = sum(r[2] for r in rows)
+    n_tables = len(rows)
 
     return f"""---
 license: mit
