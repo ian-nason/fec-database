@@ -17,6 +17,8 @@ Usage:
 
 import argparse
 import io
+import re
+import shutil
 import sys
 import time
 import zipfile
@@ -71,11 +73,12 @@ TABLE_DESCRIPTIONS = {
     "communication_costs": "Internal communications supporting/opposing candidates",
 }
 
-# Columns that contain dates in MMDDYYYY format
+# Columns that contain dates (MMDDYYYY in bulk files, MM/DD/YYYY in
+# standalone CSVs — cast_columns tries both formats)
 DATE_COLUMNS = {
-    "transaction_dt", "receipt_dt", "cand_election_yr",
+    "transaction_dt", "receipt_dt",
     "disb_dt", "receipt_date", "dissemination_dt",
-    "communication_dt",
+    "communication_dt", "exp_date", "receipt_dat",
 }
 
 # Columns that should be numeric
@@ -87,6 +90,7 @@ AMOUNT_COLUMNS = {
     "indiv_contrib", "other_pol_cmte_contrib", "pol_pty_contrib",
     "cvg_end_dt", "indiv_refund", "cmte_refund",
     "ttl_indiv_contrib", "net_contrib", "net_op_exp",
+    "exp_amo", "agg_amo",
 }
 
 YEAR_COLUMNS = {"cand_election_yr"}
@@ -103,27 +107,35 @@ def download_file(url: str, dest: Path, desc: str = "") -> bool:
         return True
 
     dest.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        r = requests.get(url, stream=True, timeout=60)
-        if r.status_code == 404:
-            return False
-        r.raise_for_status()
+    for attempt in range(3):
+        try:
+            r = requests.get(url, stream=True, timeout=60)
+            if r.status_code == 404:
+                return False
+            r.raise_for_status()
 
-        total = int(r.headers.get("content-length", 0))
-        with open(dest, "wb") as f:
-            with tqdm(
-                total=total, unit="B", unit_scale=True,
-                desc=f"    {desc or dest.name}", leave=False,
-            ) as pbar:
-                for chunk in r.iter_content(chunk_size=1024 * 256):
-                    f.write(chunk)
-                    pbar.update(len(chunk))
-        return True
-    except Exception as e:
-        print(f"    WARNING: Failed to download {url}: {e}")
-        if dest.exists():
-            dest.unlink()
-        return False
+            total = int(r.headers.get("content-length", 0))
+            received = 0
+            with open(dest, "wb") as f:
+                with tqdm(
+                    total=total, unit="B", unit_scale=True,
+                    desc=f"    {desc or dest.name}", leave=False,
+                ) as pbar:
+                    for chunk in r.iter_content(chunk_size=1024 * 256):
+                        f.write(chunk)
+                        received += len(chunk)
+                        pbar.update(len(chunk))
+            # A dropped connection can end iter_content without raising;
+            # an incomplete zip then fails extraction (or worse, a truncated
+            # .txt silently loads partial rows). Verify length and retry.
+            if total and received != total:
+                raise IOError(f"truncated download: {received}/{total} bytes")
+            return True
+        except Exception as e:
+            print(f"    WARNING: download attempt {attempt + 1}/3 for {url}: {e}")
+            if dest.exists():
+                dest.unlink()
+    return False
 
 
 def download_headers(data_dir: Path) -> dict[str, list[str]]:
@@ -167,8 +179,11 @@ def extract_zip(zip_path: Path, data_file: str, dest_dir: Path) -> Path | None:
 
             if match:
                 dest = dest_dir / data_file
+                # Stream the decompression: src.read() would hold the whole
+                # member (10GB+ for indiv files) in RAM and can take down
+                # the machine before the OOM killer reacts.
                 with zf.open(match) as src, open(dest, "wb") as dst:
-                    dst.write(src.read())
+                    shutil.copyfileobj(src, dst, 1024 * 1024 * 16)
                 return dest
     except Exception as e:
         print(f"    WARNING: Could not extract {zip_path.name}: {e}")
@@ -221,19 +236,28 @@ def load_bulk_table(
             WHERE 1=0
         """)
 
-    # Insert data
-    con.execute(f"""
-        INSERT INTO {table_name}
-        SELECT *, {cycle}::INTEGER AS cycle
-        FROM read_csv('{data_file}',
-            delim='|',
-            header=false,
-            columns={col_spec},
-            ignore_errors=true,
-            null_padding=true,
-            strict_mode=false
-        )
-    """)
+    # Insert data. The parallel scanner rejects null_padding when the file
+    # contains quoted newlines (e.g. indiv 2016/2018), so fall back to the
+    # single-threaded reader on failure.
+    def insert_sql(extra_opts: str) -> str:
+        return f"""
+            INSERT INTO {table_name}
+            SELECT *, {cycle}::INTEGER AS cycle
+            FROM read_csv('{data_file}',
+                delim='|',
+                header=false,
+                columns={col_spec},
+                ignore_errors=true,
+                null_padding=true,
+                strict_mode=false{extra_opts}
+            )
+        """
+
+    try:
+        con.execute(insert_sql(""))
+    except duckdb.Error:
+        con.execute(f"DELETE FROM {table_name} WHERE cycle = {cycle}")
+        con.execute(insert_sql(", parallel=false"))
 
     count = con.execute(
         f"SELECT COUNT(*) FROM {table_name} WHERE cycle = {cycle}"
@@ -334,9 +358,10 @@ def cast_columns(con: duckdb.DuckDBPyConnection, table_name: str):
     casts = []
     for col_lower, col_actual in cols.items():
         if col_lower in DATE_COLUMNS or col_lower.endswith("_dt"):
-            # FEC dates: MMDDYYYY -> DATE
+            # FEC dates: MMDDYYYY in bulk files, MM/DD/YYYY in standalone CSVs
             casts.append(
-                f'TRY_STRPTIME("{col_actual}", \'%m%d%Y\')::DATE AS "{col_actual}"'
+                f'COALESCE(TRY_STRPTIME("{col_actual}", \'%m%d%Y\'), '
+                f'TRY_STRPTIME("{col_actual}", \'%m/%d/%Y\'))::DATE AS "{col_actual}"'
             )
         elif col_lower in AMOUNT_COLUMNS or col_lower.endswith("_amt"):
             casts.append(f'TRY_CAST("{col_actual}" AS DOUBLE) AS "{col_actual}"')
@@ -808,6 +833,17 @@ def main():
         if total_rows > 0:
             built.add(table_name)
             print(f"    -> {table_name}: {total_rows:,} rows")
+
+            # null_padding + ignore_errors on ragged CSVs can invent
+            # anonymous columnNNN columns holding spillover junk; drop them
+            cols = [r[0] for r in con.execute(
+                f"SELECT column_name FROM information_schema.columns WHERE table_name = '{table_name}'"
+            ).fetchall()]
+            junk = [c for c in cols if re.fullmatch(r"column\d+", c)]
+            for c in junk:
+                con.execute(f'ALTER TABLE {table_name} DROP COLUMN "{c}"')
+            if junk:
+                print(f"    -> dropped {len(junk)} junk column(s) from {table_name}")
 
     # ------------------------------------------------------------------
     # Step 4: Type casting
