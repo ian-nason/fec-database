@@ -52,28 +52,28 @@ Rows: 5,261,682
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| CMTE_ID | VARCHAR | 0.0% | C00694323 | Committee ID, joins to committees table and contribution tables |
+| CMTE_ID | VARCHAR | 0.0% | C00422774 | Committee ID, joins to committees table and contribution tables |
 | AMNDT_IND | VARCHAR | 0.0% | N | Amendment indicator (N=new, A=amendment, T=termination) |
 | RPT_TP | VARCHAR | 0.0% | M5 | Report type code |
-| TRANSACTION_PGI | VARCHAR | 1.9% | P |  |
-| IMAGE_NUM | VARCHAR | 0.0% | 26930439860 |  |
+| TRANSACTION_PGI | VARCHAR | 1.9% | G2020 |  |
+| IMAGE_NUM | VARCHAR | 0.0% | 25990878410 |  |
 | TRANSACTION_TP | VARCHAR | 0.0% | 24K |  |
-| ENTITY_TP | VARCHAR | 2.4% | CAN | Entity type (IND=individual, COM=committee, etc.) |
-| NAME | VARCHAR | 1.3% | ELISE FOR CONGRESS |  |
-| CITY | VARCHAR | 1.4% | MINDEN |  |
+| ENTITY_TP | VARCHAR | 2.4% | CCM | Entity type (IND=individual, COM=committee, etc.) |
+| NAME | VARCHAR | 1.3% | PETE KING FOR CONGRESS COMMITTEE |  |
+| CITY | VARCHAR | 1.4% | CONCORD |  |
 | STATE | VARCHAR | 1.4% | IA |  |
 | ZIP_CODE | VARCHAR | 1.4% | 12801 |  |
-| EMPLOYER | VARCHAR | 100.0% | N/A |  |
+| EMPLOYER | VARCHAR | 100.0% | JIM BUNNING FOR SENATE |  |
 | OCCUPATION | VARCHAR | 100.0% | SENATOR |  |
 | TRANSACTION_DT | DATE | 0.5% | 2005-04-25 |  |
-| TRANSACTION_AMT | DOUBLE | 0.0% | 5000.0 |  |
-| OTHER_ID | VARCHAR | 0.0% | C00721670 |  |
-| CAND_ID | VARCHAR | 0.2% | H8IL18043 | Candidate ID, joins across candidates and contribution tables |
-| TRAN_ID | VARCHAR | 0.7% | D6226 | Transaction identifier within a committee |
+| TRANSACTION_AMT | DOUBLE | 0.0% | 1000.0 |  |
+| OTHER_ID | VARCHAR | 0.0% | C00238378 |  |
+| CAND_ID | VARCHAR | 0.2% | H0IA02040 | Candidate ID, joins across candidates and contribution tables |
+| TRAN_ID | VARCHAR | 0.7% | SB23.9921 | Transaction identifier within a committee |
 | FILE_NUM | VARCHAR | 0.6% | 1494216 |  |
 | MEMO_CD | VARCHAR | 98.3% | X |  |
 | MEMO_TEXT | VARCHAR | 89.3% | VOID - CONOR LAMB FOR CONGRESS |  |
-| SUB_ID | VARCHAR | 0.0% | 4101920061070525498 | Unique submission/transaction ID |
+| SUB_ID | VARCHAR | 0.0% | 4051720051057476207 | Unique submission/transaction ID |
 | cycle | INTEGER | 0.0% | 2006 | Election cycle (even year), present in all FEC tables |
 
 ## committee_to_committee
@@ -87,24 +87,24 @@ Rows: 46,486,423
 | CMTE_ID | VARCHAR | 0.0% | C00035600 | Committee ID, joins to committees table and contribution tables |
 | AMNDT_IND | VARCHAR | 0.0% | A | Amendment indicator (N=new, A=amendment, T=termination) |
 | RPT_TP | VARCHAR | 0.0% | M10 | Report type code |
-| TRANSACTION_PGI | VARCHAR | 1.8% | G |  |
-| IMAGE_NUM | VARCHAR | 0.0% | 25990017791 |  |
+| TRANSACTION_PGI | VARCHAR | 1.8% | P2012 |  |
+| IMAGE_NUM | VARCHAR | 0.0% | 13962188750 |  |
 | TRANSACTION_TP | VARCHAR | 0.0% | 15J |  |
 | ENTITY_TP | VARCHAR | 0.5% | IND | Entity type (IND=individual, COM=committee, etc.) |
-| NAME | VARCHAR | 0.2% | OTTER FOR IDAHO |  |
+| NAME | VARCHAR | 0.2% | ENGEL, MARCY |  |
 | CITY | VARCHAR | 0.2% | OGDEN |  |
 | STATE | VARCHAR | 0.2% | NY |  |
-| ZIP_CODE | VARCHAR | 0.2% | 91105 |  |
-| EMPLOYER | VARCHAR | 20.1% | INTERNATIONAL BROTHERHOOD OF ELECTR |  |
+| ZIP_CODE | VARCHAR | 0.2% | 10583 |  |
+| EMPLOYER | VARCHAR | 20.1% | INDIAN TRIBE |  |
 | OCCUPATION | VARCHAR | 20.0% | RETIRED |  |
 | TRANSACTION_DT | DATE | 0.1% | 2012-03-06 |  |
 | TRANSACTION_AMT | DOUBLE | 0.0% | 25.0 |  |
 | OTHER_ID | VARCHAR | 80.2% | C00431445 |  |
-| TRAN_ID | VARCHAR | 0.2% | C8603996 | Transaction identifier within a committee |
+| TRAN_ID | VARCHAR | 0.2% | C7790569 | Transaction identifier within a committee |
 | FILE_NUM | VARCHAR | 0.2% | 1440221 |  |
 | MEMO_CD | VARCHAR | 19.6% | X |  |
 | MEMO_TEXT | VARCHAR | 51.0% | TRANSFER FROM TRUMP MAKE AMERICA GREAT AGAIN COMMITTEE |  |
-| SUB_ID | VARCHAR | 0.0% | 4053120131190555748 | Unique submission/transaction ID |
+| SUB_ID | VARCHAR | 0.0% | 4110420091120447618 | Unique submission/transaction ID |
 | cycle | INTEGER | 0.0% | 2008 | Election cycle (even year), present in all FEC tables |
 
 ## committees
@@ -116,13 +116,13 @@ Rows: 184,883
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
 | CMTE_ID | VARCHAR | 0.0% | C00000042 | Committee ID, joins to committees table and contribution tables |
-| CMTE_NM | VARCHAR | 0.0% | ILLINOIS TOOL WORKS INC. FOR BETTER GOVERNMENT COMMITTEE |  |
+| CMTE_NM | VARCHAR | 0.0% | ILLINOIS TOOL WORKS FOR BETTER GOVERNMENT COMMITTEE |  |
 | TRES_NM | VARCHAR | 5.0% | LYNCH, MICHAEL J. MR. |  |
 | CMTE_ST1 | VARCHAR | 0.1% | 3600 W. Lake Avenue |  |
 | CMTE_ST2 | VARCHAR | 77.8% | MD#288 |  |
 | CMTE_CITY | VARCHAR | 0.1% | Glenview |  |
 | CMTE_ST | VARCHAR | 0.1% | IL |  |
-| CMTE_ZIP | VARCHAR | 0.1% | 60025 |  |
+| CMTE_ZIP | VARCHAR | 0.1% | 60026 |  |
 | CMTE_DSGN | VARCHAR | 0.0% | U |  |
 | CMTE_TP | VARCHAR | 0.0% | Q |  |
 | CMTE_PTY_AFFILIATION | VARCHAR | 59.3% | UNK |  |
@@ -130,13 +130,13 @@ Rows: 184,883
 | ORG_TP | VARCHAR | 77.7% | C |  |
 | CONNECTED_ORG_NM | VARCHAR | 51.2% | AMERICAN MEDICAL ASSOCIATION |  |
 | CAND_ID | VARCHAR | 63.0% | H6TX07029 | Candidate ID, joins across candidates and contribution tables |
-| cycle | INTEGER | 0.0% | 2014 | Election cycle (even year), present in all FEC tables |
+| cycle | INTEGER | 0.0% | 2004 | Election cycle (even year), present in all FEC tables |
 
 ## communication_costs
 
 Internal communications supporting/opposing candidates
 
-Rows: 25,591
+Rows: 25,590
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
@@ -148,7 +148,7 @@ Rows: 25,591
 | CAND_STATE | VARCHAR | 0.0% | NY |  |
 | CAND_OFFICE_DISTRICT | VARCHAR | 0.0% | 20 |  |
 | CAND_PTY_AFFILIATION | VARCHAR | 0.0% | REP |  |
-| TRANSACTION_DT | DATE | 100.0% |  |  |
+| TRANSACTION_DT | DATE | 0.5% | 2010-10-29 |  |
 | TRANSACTION_AMT | DOUBLE | 0.0% | 17194.83 |  |
 | TRANSACTION_TP | VARCHAR | 0.0% | 24N |  |
 | COMMUNICATION_TP | VARCHAR | 1.6% | DM |  |
@@ -188,46 +188,46 @@ Rows: 1,577
 | PAYEE_CITY | VARCHAR | 0.0% | ALEXANDRIA |  |
 | PAYEE_STATE | VARCHAR | 0.1% | VA |  |
 | DISBURSEMENT_DESCRIPTION | VARCHAR | 9.2% | MEDIA TV AD PRODUCTION - BUCKET |  |
-| DISBURSEMENT_DATE | VARCHAR | 0.0% | 30-SEP-10 |  |
-| COMMUNICATION_DATE | VARCHAR | 1.4% | 30-SEP-10 |  |
-| PUBLIC_DISBURSEMENT_DATE | VARCHAR | 0.4% | 30-SEP-10 |  |
-| REPORTED_DISBURSEMENT_AMOUNT | VARCHAR | 0.0% | 290395 |  |
+| DISBURSEMENT_DATE | DATE | 1.6% | 2010-09-30 |  |
+| COMMUNICATION_DATE | DATE | 2.7% | 2010-09-30 |  |
+| PUBLIC_DISBURSEMENT_DATE | DATE | 1.6% | 2010-09-30 |  |
+| REPORTED_DISBURSEMENT_AMOUNT | DOUBLE | 0.3% | 290395.0 |  |
 | NUMBER_OF_CANDIDATES | VARCHAR | 0.0% | 1 |  |
-| CALCULATED_CANDIDATE_SHARE | VARCHAR | 0.0% | 290395 |  |
+| CALCULATED_CANDIDATE_SHARE | DOUBLE | 1.3% | 290395.0 |  |
 | cycle | INTEGER | 0.0% | 2010 | Election cycle (even year), present in all FEC tables |
 
 ## independent_expenditures
 
 Independent expenditures for/against candidates
 
-Rows: 671,015
+Rows: 596,985
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| cand_id | VARCHAR | 9.4% | S6OH00254 |  |
-| cand_name | VARCHAR | 0.0% | Strickland, Ted |  |
-| spe_id | VARCHAR | 0.0% | C90011156 |  |
-| spe_nam | VARCHAR | 0.0% | Working America |  |
+| cand_id | VARCHAR | 8.9% | H4CO08034 |  |
+| cand_name | VARCHAR | 0.0% | Evans, Gabe |  |
+| spe_id | VARCHAR | 0.0% | C00018929 |  |
+| spe_nam | VARCHAR | 0.0% | House Majority PAC |  |
 | ele_type | VARCHAR | 0.0% | G |  |
-| can_office_state | VARCHAR | 22.0% | OH |  |
+| can_office_state | VARCHAR | 22.6% | CO |  |
 | can_office_dis | VARCHAR | 0.1% | 00 |  |
-| can_office | VARCHAR | 0.1% | S |  |
-| cand_pty_aff | VARCHAR | 10.5% | DEMOCRATIC PARTY |  |
-| exp_amo | DOUBLE | 0.1% | 34.2 |  |
-| exp_date | DATE | 100.0% |  |  |
-| agg_amo | DOUBLE | 0.3% | 866752.51 |  |
+| can_office | VARCHAR | 0.1% | P |  |
+| cand_pty_aff | VARCHAR | 10.1% | REPUBLICAN PARTY |  |
+| exp_amo | DOUBLE | 0.1% | 1517.47 |  |
+| exp_date | DATE | 11.8% | 2024-09-27 |  |
+| agg_amo | DOUBLE | 0.2% | 9000.0 |  |
 | sup_opp | VARCHAR | 0.1% | S |  |
-| pur | VARCHAR | 0.1% | Salary and Benefits |  |
-| pay | VARCHAR | 0.1% | Morrow, Alaun |  |
-| file_num | VARCHAR | 0.0% | 1124438 |  |
+| pur | VARCHAR | 0.1% | In Kind Staff |  |
+| pay | VARCHAR | 0.1% | TTHM.com |  |
+| file_num | VARCHAR | 0.0% | 1845617 |  |
 | amndt_ind | VARCHAR | 0.0% | N |  |
-| tran_id | VARCHAR | 0.0% | VN7CZA6EKC9 |  |
-| image_num | VARCHAR | 0.0% | 201610279036650475 |  |
-| receipt_dat | DATE | 100.0% |  |  |
-| fec_election_yr | VARCHAR | 0.0% | 2016 |  |
-| prev_file_num | VARCHAR | 87.9% | 1832140 |  |
-| dissem_dt | DATE | 100.0% | 0776-10-20 |  |
-| cycle | INTEGER | 0.0% | 2016 | Election cycle (even year), present in all FEC tables |
+| tran_id | VARCHAR | 0.0% | E2D2833410CAA40CB9A5 |  |
+| image_num | VARCHAR | 0.0% | 202410319719900778 |  |
+| receipt_dat | DATE | 0.2% | 2024-10-31 |  |
+| fec_election_yr | VARCHAR | 0.1% | 2024 |  |
+| prev_file_num | VARCHAR | 88.1% | 1832140 |  |
+| dissem_dt | DATE | 58.0% | 2018-10-24 |  |
+| cycle | INTEGER | 0.0% | 2024 | Election cycle (even year), present in all FEC tables |
 
 ## individual_contributions
 
@@ -237,27 +237,27 @@ Rows: 275,049,839
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| CMTE_ID | VARCHAR | 0.0% | C00401224 | Committee ID, joins to committees table and contribution tables |
+| CMTE_ID | VARCHAR | 0.0% | C00364497 | Committee ID, joins to committees table and contribution tables |
 | AMNDT_IND | VARCHAR | 0.0% | N | Amendment indicator (N=new, A=amendment, T=termination) |
-| RPT_TP | VARCHAR | 0.0% | Q1 | Report type code |
-| TRANSACTION_PGI | VARCHAR | 16.7% | P2012 |  |
-| IMAGE_NUM | VARCHAR | 0.0% | 201609129030778849 |  |
+| RPT_TP | VARCHAR | 0.0% | YE | Report type code |
+| TRANSACTION_PGI | VARCHAR | 16.7% | P |  |
+| IMAGE_NUM | VARCHAR | 0.0% | 27930558902 |  |
 | TRANSACTION_TP | VARCHAR | 0.0% | 15 |  |
 | ENTITY_TP | VARCHAR | 0.2% | IND | Entity type (IND=individual, COM=committee, etc.) |
-| NAME | VARCHAR | 0.0% | FIELDS, CHRIS R DR. |  |
-| CITY | VARCHAR | 0.0% | LEBANON |  |
-| STATE | VARCHAR | 0.1% | TX |  |
-| ZIP_CODE | VARCHAR | 0.1% | 037662639 |  |
-| EMPLOYER | VARCHAR | 4.5% | NONE |  |
-| OCCUPATION | VARCHAR | 4.3% | DOCTOR OF OPTOMETRY |  |
-| TRANSACTION_DT | DATE | 0.0% | 2003-10-03 |  |
-| TRANSACTION_AMT | DOUBLE | 0.0% | 167.0 |  |
+| NAME | VARCHAR | 0.0% | HOTZE, ERNEST |  |
+| CITY | VARCHAR | 0.0% | GRANVILLE |  |
+| STATE | VARCHAR | 0.1% | NY |  |
+| ZIP_CODE | VARCHAR | 0.1% | 43023 |  |
+| EMPLOYER | VARCHAR | 4.5% | VERMEER MANFACTURING |  |
+| OCCUPATION | VARCHAR | 4.3% | CHAIRMAN AND CEO |  |
+| TRANSACTION_DT | DATE | 0.0% | 2012-03-26 |  |
+| TRANSACTION_AMT | DOUBLE | 0.0% | 500.0 |  |
 | OTHER_ID | VARCHAR | 42.2% | C00000422 |  |
-| TRAN_ID | VARCHAR | 0.2% | 39869314 | Transaction identifier within a committee |
+| TRAN_ID | VARCHAR | 0.2% | C3934388 | Transaction identifier within a committee |
 | FILE_NUM | VARCHAR | 0.2% | 778552 |  |
 | MEMO_CD | VARCHAR | 99.4% | X |  |
-| MEMO_TEXT | VARCHAR | 42.1% | * EARMARKED CONTRIBUTION: SEE BELOW |  |
-| SUB_ID | VARCHAR | 0.0% | 4091320161317008123 | Unique submission/transaction ID |
+| MEMO_TEXT | VARCHAR | 42.1% | * IN-KIND: CATERING |  |
+| SUB_ID | VARCHAR | 0.0% | 2022320041035988331 | Unique submission/transaction ID |
 | cycle | INTEGER | 0.0% | 2008 | Election cycle (even year), present in all FEC tables |
 
 ## operating_expenditures
@@ -268,81 +268,83 @@ Rows: 19,413,938
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| CMTE_ID | VARCHAR | 0.0% | C00431171 | Committee ID, joins to committees table and contribution tables |
+| CMTE_ID | VARCHAR | 0.0% | C00378125 | Committee ID, joins to committees table and contribution tables |
 | AMNDT_IND | VARCHAR | 0.0% | A | Amendment indicator (N=new, A=amendment, T=termination) |
 | RPT_YR | VARCHAR | 0.0% | 2003 |  |
-| RPT_TP | VARCHAR | 0.0% | M10 | Report type code |
-| IMAGE_NUM | VARCHAR | 0.0% | 14970072888 |  |
+| RPT_TP | VARCHAR | 0.0% | YE | Report type code |
+| IMAGE_NUM | VARCHAR | 0.0% | 202505159761326822 |  |
 | LINE_NUM | VARCHAR | 0.0% | 23 |  |
 | FORM_TP_CD | VARCHAR | 0.0% | F3P |  |
 | SCHED_TP_CD | VARCHAR | 0.0% | SB |  |
-| NAME | VARCHAR | 0.1% | THE DUKE MANSION |  |
-| CITY | VARCHAR | 0.3% | CHARLOTTE |  |
+| NAME | VARCHAR | 0.1% | RABBIDEAU, ABIGAIL |  |
+| CITY | VARCHAR | 0.3% | ANN ARBOR |  |
 | STATE | VARCHAR | 0.3% | MN |  |
-| ZIP_CODE | VARCHAR | 0.5% | 28207 |  |
+| ZIP_CODE | VARCHAR | 0.5% | 481042642 |  |
 | TRANSACTION_DT | DATE | 0.0% | 2015-07-31 |  |
-| TRANSACTION_AMT | DOUBLE | 0.0% | 440.98 |  |
+| TRANSACTION_AMT | DOUBLE | 0.0% | 850.0 |  |
 | TRANSACTION_PGI | VARCHAR | 48.2% | P |  |
-| PURPOSE | VARCHAR | 0.5% | TRAVEL: LODGING |  |
+| PURPOSE | VARCHAR | 0.5% | CONTRACTOR STIPEND |  |
 | CATEGORY | VARCHAR | 72.8% | 001 |  |
 | CATEGORY_DESC | VARCHAR | 73.9% | Advertising Expenses  |  |
 | MEMO_CD | VARCHAR | 72.9% | X |  |
-| MEMO_TEXT | VARCHAR | 78.8% | MEMO |  |
+| MEMO_TEXT | VARCHAR | 78.8% | * IN-KIND RECEIVED |  |
 | ENTITY_TP | VARCHAR | 7.6% | ORG | Entity type (IND=individual, COM=committee, etc.) |
-| SUB_ID | VARCHAR | 0.0% | 4030820111137036715 | Unique submission/transaction ID |
-| FILE_NUM | VARCHAR | 0.0% | 715409 |  |
+| SUB_ID | VARCHAR | 0.0% | 4051620251202939118 | Unique submission/transaction ID |
+| FILE_NUM | VARCHAR | 0.0% | 109872 |  |
 | TRAN_ID | VARCHAR | 0.0% | D317625 | Transaction identifier within a committee |
-| BACK_REF_TRAN_ID | VARCHAR | 79.3% | D317567 |  |
+| BACK_REF_TRAN_ID | VARCHAR | 79.3% | SB23-3127 |  |
 | cycle | INTEGER | 0.0% | 2004 | Election cycle (even year), present in all FEC tables |
 
 ## v_candidate_totals
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| CAND_ID | VARCHAR | 0.0% | H8VA06138 | Candidate ID, joins across candidates and contribution tables |
-| CAND_NAME | VARCHAR | 0.0% | BUONGIORNO, JEFFREY D |  |
-| party | VARCHAR | 0.0% | REP |  |
-| office | VARCHAR | 0.0% | H |  |
-| state | VARCHAR | 0.0% | OH |  |
-| cycle | INTEGER | 0.0% | 2022 | Election cycle (even year), present in all FEC tables |
-| num_contributions | BIGINT | 0.0% | 488 |  |
-| total_individual | DOUBLE | 0.0% | 5896146.0 |  |
+| cycle | INTEGER | 0.0% | 2024 | Election cycle (even year), present in all FEC tables |
+| CMTE_ID | VARCHAR | 0.0% | C00313247 | Committee ID, joins to committees table and contribution tables |
+| cand_ids | VARCHAR | 0.0% | H0CA15171 |  |
+| candidate_names | VARCHAR | 0.0% | MOORE, DWIGHT CLINT |  |
+| party | VARCHAR | 0.0% | DEM |  |
+| office | VARCHAR | 0.0% | S |  |
+| state | VARCHAR | 0.0% | CA |  |
+| num_contributions | BIGINT | 0.0% | 357 |  |
+| net_individual | DOUBLE | 0.0% | 499825.0 |  |
 
 ## v_daily_donations
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| date | DATE | 0.0% | 2016-07-18 |  |
-| cycle | INTEGER | 0.0% | 2008 | Election cycle (even year), present in all FEC tables |
-| num_donations | BIGINT | 0.0% | 938 |  |
-| total_amount | DOUBLE | 0.0% | 40940469.0 |  |
-| avg_amount | DOUBLE | 0.0% | 197.93787342489028 |  |
-| median_amount | DOUBLE | 0.0% | 79.0 |  |
+| date | DATE | 0.0% | 2018-09-25 |  |
+| cycle | INTEGER | 0.0% | 2016 | Election cycle (even year), present in all FEC tables |
+| num_donations | BIGINT | 0.0% | 45814 |  |
+| total_amount | DOUBLE | 0.0% | 7949396.0 |  |
+| avg_amount | DOUBLE | 0.0% | 1207.9074702886248 |  |
+| median_amount | DOUBLE | 0.0% | 500.0 |  |
 
 ## v_pac_to_candidate
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| pac_name | VARCHAR | 0.0% | PACIFICARE HEALTH SYSTEMS INC. EMPLOYEES' POLITICAL ACTION COMMITTEE |  |
-| connected_org | VARCHAR | 46.2% | SCHIFF LEADS PAC |  |
-| candidate_name | VARCHAR | 0.0% | KLACIK, KIMBERLY |  |
+| pac_name | VARCHAR | 0.0% | KPMG PARTNERS/PRINCIPALS & EMPLOYEES POLITICAL ACTION COMMITTEE |  |
+| connected_org | VARCHAR | 42.0% | NONE |  |
+| candidate_name | VARCHAR | 0.0% | THUNE, JOHN R |  |
 | candidate_party | VARCHAR | 0.0% | REP |  |
 | office | VARCHAR | 0.0% | H |  |
-| state | VARCHAR | 0.0% | MD |  |
-| amount | DOUBLE | 0.0% | 50.0 |  |
-| date | DATE | 0.5% | 2014-06-04 |  |
+| state | VARCHAR | 0.0% | KS |  |
+| transaction_type | VARCHAR | 0.0% | 24K |  |
+| amount | DOUBLE | 0.0% | 1000.0 |  |
+| date | DATE | 0.0% | 2004-10-06 |  |
 | cycle | INTEGER | 0.0% | 2020 | Election cycle (even year), present in all FEC tables |
 
 ## v_top_donors
 
 | Column | Type | Nulls | Example | Join |
 |--------|------|-------|---------|------|
-| NAME | VARCHAR | 0.0% | MILLER, AMANDA A. |  |
-| EMPLOYER | VARCHAR | 11.7% | ALLIED CONSTRUCTION |  |
-| OCCUPATION | VARCHAR | 9.7% | SCIENCE EDUCATOR |  |
-| STATE | VARCHAR | 0.2% | IL |  |
-| num_contributions | BIGINT | 0.0% | 2 |  |
-| total_donated | DOUBLE | 0.0% | 700.0 |  |
-| first_cycle | INTEGER | 0.0% | 2018 |  |
-| last_cycle | INTEGER | 0.0% | 2024 |  |
+| NAME | VARCHAR | 0.0% | STEPHENSON, RICHARD G |  |
+| EMPLOYER | VARCHAR | 12.3% | N/A |  |
+| OCCUPATION | VARCHAR | 10.1% | INVESTMENT ADVISOR |  |
+| STATE | VARCHAR | 0.2% | CA |  |
+| num_contributions | BIGINT | 0.0% | 108 |  |
+| net_donated | DOUBLE | 0.0% | 3000.0 |  |
+| first_cycle | INTEGER | 0.0% | 2016 |  |
+| last_cycle | INTEGER | 0.0% | 2018 |  |
 | num_committees | BIGINT | 0.0% | 1 |  |

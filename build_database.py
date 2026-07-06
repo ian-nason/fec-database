@@ -91,6 +91,7 @@ AMOUNT_COLUMNS = {
     "cvg_end_dt", "indiv_refund", "cmte_refund",
     "ttl_indiv_contrib", "net_contrib", "net_op_exp",
     "exp_amo", "agg_amo",
+    "reported_disbursement_amount", "calculated_candidate_share",
 }
 
 YEAR_COLUMNS = {"cand_election_yr"}
@@ -348,6 +349,33 @@ def load_standalone_csv(
 # ---------------------------------------------------------------------------
 
 
+def dedupe_ie_amendments(con: duckdb.DuckDBPyConnection) -> int:
+    """Keep only the latest version of each independent-expenditure filing.
+
+    Amendments chain via prev_file_num -> file_num within a cycle; a filing
+    whose file_num appears as another filing's prev_file_num has been
+    superseded. Without this, N/A1/A2/... versions all coexist and totals
+    are inflated several-fold (July 2026 audit).
+    """
+    before = con.execute(
+        "SELECT COUNT(*) FROM independent_expenditures"
+    ).fetchone()[0]
+    con.execute("""
+        DELETE FROM independent_expenditures ie
+        WHERE ie.file_num IS NOT NULL AND ie.file_num <> ''
+          AND EXISTS (
+            SELECT 1 FROM independent_expenditures newer
+            WHERE newer.cycle = ie.cycle
+              AND newer.prev_file_num = ie.file_num
+              AND (newer.file_num IS NULL OR newer.file_num <> ie.file_num)
+          )
+    """)
+    after = con.execute(
+        "SELECT COUNT(*) FROM independent_expenditures"
+    ).fetchone()[0]
+    return before - after
+
+
 def cast_columns(con: duckdb.DuckDBPyConnection, table_name: str):
     """Cast date and amount columns to proper types after loading."""
     cols = {
@@ -357,11 +385,22 @@ def cast_columns(con: duckdb.DuckDBPyConnection, table_name: str):
 
     casts = []
     for col_lower, col_actual in cols.items():
-        if col_lower in DATE_COLUMNS or col_lower.endswith("_dt"):
-            # FEC dates: MMDDYYYY in bulk files, MM/DD/YYYY in standalone CSVs
+        if (
+            col_lower in DATE_COLUMNS
+            or col_lower.endswith("_dt")
+            or col_lower.endswith("_date")
+        ):
+            # FEC date formats vary by file family: MMDDYYYY in bulk files,
+            # YYYYMMDD in CommunicationCosts, DD-MON-YY in independent
+            # expenditures / electioneering, MM/DD/YYYY in some older CSVs.
+            # Ambiguity is safe: an 8-digit value valid in one format is
+            # invalid in the other (month > 12 / year sanity).
             casts.append(
                 f'COALESCE(TRY_STRPTIME("{col_actual}", \'%m%d%Y\'), '
-                f'TRY_STRPTIME("{col_actual}", \'%m/%d/%Y\'))::DATE AS "{col_actual}"'
+                f'TRY_STRPTIME("{col_actual}", \'%Y%m%d\'), '
+                f'TRY_STRPTIME("{col_actual}", \'%m/%d/%Y\'), '
+                f'TRY_STRPTIME("{col_actual}", \'%d-%b-%y\'))::DATE '
+                f'AS "{col_actual}"'
             )
         elif col_lower in AMOUNT_COLUMNS or col_lower.endswith("_amt"):
             casts.append(f'TRY_CAST("{col_actual}" AS DOUBLE) AS "{col_actual}"')
@@ -381,41 +420,77 @@ def cast_columns(con: duckdb.DuckDBPyConnection, table_name: str):
 # Views
 # ---------------------------------------------------------------------------
 
+# Money-summing rules baked into every view (July 2026 audit):
+# - Exclude TRANSACTION_TP = '24T' (conduit/earmark rows: ActBlue and WinRed
+#   report each earmarked donation once as 24T and the recipient committee
+#   reports it again as 15E — summing both double counts 14-22% of every
+#   cycle since 2018; MEMO_CD does NOT flag these).
+# - Exclude memo-only rows (MEMO_CD = 'X').
+# - Net out refunds: 20Y/21Y/22Y rows are REFUNDS stored as positive
+#   amounts, so they are subtracted, not filtered by sign.
 VIEWS = {
     "v_candidate_totals": {
         "deps": {"candidates", "individual_contributions"},
         "sql": """
             CREATE OR REPLACE VIEW v_candidate_totals AS
+            -- Receipts aggregated per principal campaign committee (PCC).
+            -- A PCC can be shared by several candidate records (e.g. Biden
+            -- and Harris 2024), so candidate identities are aggregated into
+            -- one row per committee instead of fanned out; summing this view
+            -- never double counts a committee's receipts.
+            WITH per_cmte AS (
+                SELECT
+                    cycle,
+                    CMTE_ID,
+                    COUNT(*) FILTER (
+                        WHERE TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y')
+                    ) AS num_contributions,
+                    SUM(CASE WHEN TRANSACTION_TP IN ('20Y', '21Y', '22Y')
+                             THEN -TRANSACTION_AMT
+                             ELSE TRANSACTION_AMT END) AS net_individual
+                FROM individual_contributions
+                WHERE TRANSACTION_TP <> '24T'
+                  AND (MEMO_CD IS NULL OR MEMO_CD <> 'X')
+                  AND TRANSACTION_AMT IS NOT NULL
+                GROUP BY 1, 2
+            )
             SELECT
-                c.CAND_ID,
-                c.CAND_NAME,
-                c.CAND_PTY_AFFILIATION AS party,
-                c.CAND_OFFICE AS office,
-                c.CAND_OFFICE_ST AS state,
-                ic.cycle,
-                COUNT(DISTINCT ic.SUB_ID) AS num_contributions,
-                SUM(ic.TRANSACTION_AMT) AS total_individual
-            FROM candidates c
-            LEFT JOIN individual_contributions ic
-                ON c.CAND_PCC = ic.CMTE_ID AND c.cycle = ic.cycle
-            WHERE ic.TRANSACTION_AMT > 0
-            GROUP BY c.CAND_ID, c.CAND_NAME, c.CAND_PTY_AFFILIATION,
-                     c.CAND_OFFICE, c.CAND_OFFICE_ST, ic.cycle
+                p.cycle,
+                p.CMTE_ID,
+                STRING_AGG(DISTINCT c.CAND_ID, '; ') AS cand_ids,
+                STRING_AGG(DISTINCT c.CAND_NAME, '; ') AS candidate_names,
+                ANY_VALUE(c.CAND_PTY_AFFILIATION) AS party,
+                ANY_VALUE(c.CAND_OFFICE) AS office,
+                ANY_VALUE(c.CAND_OFFICE_ST) AS state,
+                p.num_contributions,
+                p.net_individual
+            FROM per_cmte p
+            JOIN candidates c
+              ON c.CAND_PCC = p.CMTE_ID AND c.cycle = p.cycle
+            GROUP BY p.cycle, p.CMTE_ID, p.num_contributions, p.net_individual
         """,
     },
     "v_top_donors": {
         "deps": {"individual_contributions"},
         "sql": """
             CREATE OR REPLACE VIEW v_top_donors AS
+            -- Donor identity is by raw (NAME, EMPLOYER, OCCUPATION, STATE)
+            -- string match; the same person appears under spelling variants.
             SELECT
                 NAME, EMPLOYER, OCCUPATION, STATE,
-                COUNT(*) AS num_contributions,
-                SUM(TRANSACTION_AMT) AS total_donated,
+                COUNT(*) FILTER (
+                    WHERE TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y')
+                ) AS num_contributions,
+                SUM(CASE WHEN TRANSACTION_TP IN ('20Y', '21Y', '22Y')
+                         THEN -TRANSACTION_AMT
+                         ELSE TRANSACTION_AMT END) AS net_donated,
                 MIN(cycle) AS first_cycle,
                 MAX(cycle) AS last_cycle,
                 COUNT(DISTINCT CMTE_ID) AS num_committees
             FROM individual_contributions
-            WHERE TRANSACTION_AMT > 0
+            WHERE TRANSACTION_TP <> '24T'
+              AND (MEMO_CD IS NULL OR MEMO_CD <> 'X')
+              AND TRANSACTION_AMT IS NOT NULL
             GROUP BY NAME, EMPLOYER, OCCUPATION, STATE
         """,
     },
@@ -423,6 +498,11 @@ VIEWS = {
         "deps": {"committee_contributions", "committees", "candidates"},
         "sql": """
             CREATE OR REPLACE VIEW v_pac_to_candidate AS
+            -- Direct contributions only: 24K (contribution to candidate
+            -- committee) and 24Z (in-kind). Independent expenditures
+            -- (24A = AGAINST the candidate, 24E = for) are deliberately
+            -- excluded — counting attack ads as "PAC support" was the
+            -- worst defect of the previous version of this view.
             SELECT
                 cm.CMTE_NM AS pac_name,
                 cm.CONNECTED_ORG_NM AS connected_org,
@@ -430,12 +510,15 @@ VIEWS = {
                 cn.CAND_PTY_AFFILIATION AS candidate_party,
                 cn.CAND_OFFICE AS office,
                 cn.CAND_OFFICE_ST AS state,
+                cc.TRANSACTION_TP AS transaction_type,
                 cc.TRANSACTION_AMT AS amount,
                 cc.TRANSACTION_DT AS date,
                 cc.cycle
             FROM committee_contributions cc
             JOIN committees cm ON cc.CMTE_ID = cm.CMTE_ID AND cc.cycle = cm.cycle
             JOIN candidates cn ON cc.CAND_ID = cn.CAND_ID AND cc.cycle = cn.cycle
+            WHERE cc.TRANSACTION_TP IN ('24K', '24Z')
+              AND (cc.MEMO_CD IS NULL OR cc.MEMO_CD <> 'X')
         """,
     },
     "v_daily_donations": {
@@ -450,7 +533,11 @@ VIEWS = {
                 AVG(TRANSACTION_AMT) AS avg_amount,
                 MEDIAN(TRANSACTION_AMT) AS median_amount
             FROM individual_contributions
-            WHERE TRANSACTION_DT IS NOT NULL AND TRANSACTION_AMT > 0
+            WHERE TRANSACTION_DT IS NOT NULL
+              AND TRANSACTION_AMT > 0
+              AND TRANSACTION_TP <> '24T'
+              AND (MEMO_CD IS NULL OR MEMO_CD <> 'X')
+              AND TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y')
             GROUP BY TRANSACTION_DT, cycle
         """,
     },
@@ -844,6 +931,10 @@ def main():
                 con.execute(f'ALTER TABLE {table_name} DROP COLUMN "{c}"')
             if junk:
                 print(f"    -> dropped {len(junk)} junk column(s) from {table_name}")
+
+            if table_name == "independent_expenditures":
+                n_amend = dedupe_ie_amendments(con)
+                print(f"    -> removed {n_amend:,} superseded amendment rows")
 
     # ------------------------------------------------------------------
     # Step 4: Type casting

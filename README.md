@@ -28,16 +28,41 @@ INSTALL httpfs;
 LOAD httpfs;
 ATTACH 'https://huggingface.co/datasets/Nason/fec-database/resolve/main/fec.duckdb' AS fec (READ_ONLY);
 
--- Top presidential candidates by individual donations (2024 cycle)
-SELECT c.CAND_NAME, c.CAND_PTY_AFFILIATION AS party,
-    SUM(i.TRANSACTION_AMT) AS total, COUNT(*) AS donations
-FROM fec.individual_contributions i
-JOIN fec.candidates c ON i.CMTE_ID = c.CAND_PCC AND i.cycle = c.cycle
-WHERE i.cycle = 2024 AND c.CAND_OFFICE = 'P' AND i.TRANSACTION_AMT > 0
-GROUP BY 1, 2 ORDER BY total DESC LIMIT 10;
+-- Top presidential campaign committees by net individual donations (2024)
+SELECT candidate_names, party, net_individual, num_contributions
+FROM fec.v_candidate_totals v
+JOIN fec.candidates c ON v.CMTE_ID = c.CAND_PCC AND v.cycle = c.cycle
+WHERE v.cycle = 2024 AND c.CAND_OFFICE = 'P'
+GROUP BY ALL ORDER BY net_individual DESC LIMIT 10;
 ```
 
 See [`examples/query_examples.sql`](examples/query_examples.sql) for more.
+
+## How to sum money correctly
+
+Naive `SUM(TRANSACTION_AMT)` over `individual_contributions` overstates
+totals substantially. Four rules, all encoded in the pre-built views:
+
+1. **Exclude conduit rows: `TRANSACTION_TP <> '24T'`.** ActBlue and WinRed
+   report each earmarked donation as a 24T row, and the recipient committee
+   reports the same dollars again (typically 15E). Summing both double
+   counts **14-22% of every cycle since 2018** ($4.0B of the $17.9B 2020
+   total). `MEMO_CD` does *not* flag these — the 24T rows have NULL memo.
+2. **Net out refunds.** 20Y/21Y/22Y rows are refunds *stored as positive
+   amounts* (+$1.1B of 22Y alone); `TRANSACTION_AMT > 0` does not exclude
+   them. Subtract them instead.
+3. **Exclude memo-only rows: `MEMO_CD = 'X'`.**
+4. **Treat amounts above ~$5M as suspect.** A few dozen column-shifted rows
+   (junk MEMO_CD values, NULL dates) own the top of any naive top-N query,
+   and prank filings exist upstream (a $10B "COMMITTEE 300" independent
+   expenditure). Candidate self-funding (15C) also sits inside
+   individual_contributions.
+
+Other traps: `candidates` master files churn across FEC snapshots, so
+1-5% of recent-cycle `committee_contributions.CAND_ID` values have no
+same-cycle candidate row (inner joins drop them); a handful of rows carry
+wild dates (years 0677-9206) — clamp to the cycle window before
+bucketing by date.
 
 ## Build from Source
 
@@ -61,12 +86,22 @@ The build downloads FEC bulk zip files and header definitions, loads pipe-delimi
 
 ## Pre-built Views
 
+All views apply the money-summing rules above (24T exclusion, refund
+netting, memo exclusion).
+
 | View | Description |
 |------|-------------|
-| `v_candidate_totals` | Candidate fundraising totals from individual contributions |
-| `v_top_donors` | Aggregated donor activity across all cycles |
-| `v_pac_to_candidate` | PAC-to-candidate contributions with org names |
+| `v_candidate_totals` | Net individual receipts per principal campaign committee; candidates sharing a committee (e.g. Biden/Harris 2024) are aggregated into one row, never fanned out |
+| `v_top_donors` | Net donor activity by raw (name, employer, occupation, state) string — beware spelling variants |
+| `v_pac_to_candidate` | Direct PAC-to-candidate money only (24K contributions + 24Z in-kind). Independent expenditures are excluded: 24A is spending *against* a candidate |
 | `v_daily_donations` | Daily donation volume and amounts |
+
+**Table caveats:** `independent_expenditures` retains only the latest
+amendment of each filing (superseded versions are dropped at build time) but
+still contains upstream prank filings — sanity-check big numbers against
+fec.gov. `electioneering_communications` (1,577 rows) and
+`communication_costs` are thin, and all three standalone tables exist from
+2010 onward only (FEC does not publish per-cycle CSVs before 2010).
 
 ## Key Columns
 
