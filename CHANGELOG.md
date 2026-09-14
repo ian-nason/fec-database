@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-09-14 — Data refresh (FEC bulk files as of 2026-09-14)
+
+- Rebuilt from the FEC bulk downloads for all 12 cycles (2004-2026). Total
+  rows 347,171,337 → 354,943,430: `individual_contributions` 280,827,680,
+  `committee_to_committee` 48,118,471, `operating_expenditures` 19,725,971,
+  `committee_contributions` 5,304,857, `independent_expenditures` 602,587
+  (74,486 superseded amendment versions removed at build time).
+- The July audit's repairs are now regression checks in the build: standalone
+  table dates > 85% non-null, `CALCULATED_CANDIDATE_SHARE` typed DOUBLE, one
+  `v_candidate_totals` row per (cycle, committee), `v_pac_to_candidate`
+  limited to 24K/24Z, conduit (24T) rows excluded from totals, and all 12
+  cycles present (a silently skipped download would otherwise drop a cycle).
+  A failing check aborts the build with a non-zero exit.
+- DuckDB memory capped (default 6 GB, run at 4 GB / 2 threads for this build)
+  with `DATAPOND_MEMORY_LIMIT` / `DATAPOND_THREADS` overrides; `continue_build.py`
+  uses the same settings. File size 37.7 → 35.2 GB (insertion order no longer
+  preserved, which compresses better). `publish_to_hf.py --card-only`.
+- Caveats unchanged: prank filings remain (treat single contributions > $5M
+  as suspect); upstream dates range from year 0677 to 9206; `CAND_ID`
+  resolves for ~95-99% of rows.
+
 ## 2026-07-06 — Full refresh + data-quality audit
 
 Rebuilt from current FEC bulk downloads (cycles 2004-2026) and repaired

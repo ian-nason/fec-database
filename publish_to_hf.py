@@ -129,6 +129,8 @@ def main():
     parser.add_argument("--db", type=Path, default=Path("fec.duckdb"))
     parser.add_argument("--repo", default="Nason/fec-database")
     parser.add_argument("--token", help="HF token (or set HF_TOKEN env var)")
+    parser.add_argument("--card-only", action="store_true",
+                        help="Only (re)upload the dataset card README.md, not the .duckdb file")
     args = parser.parse_args()
 
     if not args.db.exists():
@@ -154,14 +156,17 @@ def main():
         repo_type="dataset",
     )
 
-    size_gb = args.db.stat().st_size / (1024**3)
-    print(f"Uploading {args.db} ({size_gb:.1f} GB)...")
-    api.upload_file(
-        path_or_fileobj=str(args.db),
-        path_in_repo="fec.duckdb",
-        repo_id=args.repo,
-        repo_type="dataset",
-    )
+    if args.card_only:
+        print("--card-only: skipping .duckdb upload")
+    else:
+        size_gb = args.db.stat().st_size / (1024**3)
+        print(f"Uploading {args.db} ({size_gb:.1f} GB)...")
+        api.upload_file(
+            path_or_fileobj=str(args.db),
+            path_in_repo="fec.duckdb",
+            repo_id=args.repo,
+            repo_type="dataset",
+        )
 
     print(f"\nUploaded to https://huggingface.co/datasets/{args.repo}")
     print(

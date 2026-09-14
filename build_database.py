@@ -16,6 +16,7 @@ Usage:
 """
 
 import argparse
+import os
 import io
 import re
 import shutil
@@ -28,6 +29,19 @@ from pathlib import Path
 import duckdb
 import requests
 from tqdm import tqdm
+
+
+def tune_session(con, db_path, memory_limit: str = "6GB", threads: int = 4) -> None:
+    """Bound DuckDB so a build cannot exhaust the (10 GB) WSL VM.
+
+    Override with DATAPOND_MEMORY_LIMIT / DATAPOND_THREADS. Spills go to
+    <db>.tmp next to the output file.
+    """
+    con.execute(f"SET memory_limit = '{os.environ.get('DATAPOND_MEMORY_LIMIT', memory_limit)}'")
+    con.execute(f"SET threads = {int(os.environ.get('DATAPOND_THREADS', threads))}")
+    con.execute(f"SET temp_directory = '{Path(db_path).resolve()}.tmp'")
+    con.execute("SET preserve_insertion_order = false")
+
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -657,6 +671,68 @@ def run_validation(con: duckdb.DuckDBPyConnection, db_path: Path):
     size_mb = db_path.stat().st_size / (1024**2)
     print(f"\n  Database size: {size_mb:,.0f} MB ({size_mb/1024:.1f} GB)")
 
+    # ---- Regression guards from the July 2026 audit (audit/2026-07) ----
+    print("\n  Audit regression checks:")
+    failures = 0
+
+    def check(name, ok, detail=""):
+        nonlocal failures
+        print(f"    [{'PASS' if ok else 'FAIL'}] {name}" + (f"  ({detail})" if detail else ""))
+        if not ok:
+            failures += 1
+
+    def q(sql):
+        return con.execute(sql).fetchone()[0]
+
+    # Every cycle must be present: download_file() failures are skipped with
+    # `continue`, which would silently drop a cycle.
+    try:
+        n = q("SELECT COUNT(DISTINCT cycle) FROM individual_contributions")
+        check("individual_contributions covers 12 cycles (2004-2026)", n == 12, f"{n} cycles")
+    except Exception as e:
+        check("individual_contributions covers 12 cycles (2004-2026)", False, str(e)[:80])
+    # Standalone-table dates were 100% NULL before the audit.
+    for tbl, col in [
+        ("independent_expenditures", "exp_date"),
+        ("communication_costs", "TRANSACTION_DT"),
+        ("electioneering_communications", "COMMUNICATION_DATE"),
+    ]:
+        try:
+            tot = q(f"SELECT COUNT(*) FROM {tbl}")
+            nn = q(f'SELECT COUNT(*) FROM {tbl} WHERE "{col}" IS NOT NULL')
+            share = nn / tot if tot else 0
+            check(f"{tbl}.{col} > 85% non-null", share > 0.85, f"{share:.1%} of {tot:,}")
+        except Exception as e:
+            check(f"{tbl}.{col} > 85% non-null", False, str(e)[:80])
+    try:
+        t = q("""SELECT data_type FROM information_schema.columns
+                 WHERE table_name = 'electioneering_communications'
+                 AND column_name = 'CALCULATED_CANDIDATE_SHARE'""")
+        check("electioneering_communications.CALCULATED_CANDIDATE_SHARE is DOUBLE", t == "DOUBLE", str(t))
+    except Exception as e:
+        check("electioneering_communications.CALCULATED_CANDIDATE_SHARE is DOUBLE", False, str(e)[:80])
+    try:
+        n = q("""SELECT COUNT(*) FROM (SELECT cycle, CMTE_ID FROM v_candidate_totals
+                 GROUP BY 1, 2 HAVING COUNT(*) > 1)""")
+        check("v_candidate_totals has one row per (cycle, committee)", n == 0, f"{n} duplicates")
+    except Exception as e:
+        check("v_candidate_totals has one row per (cycle, committee)", False, str(e)[:80])
+    try:
+        types = {r[0] for r in con.execute(
+            "SELECT DISTINCT transaction_type FROM v_pac_to_candidate").fetchall()}
+        check("v_pac_to_candidate uses only 24K/24Z", types <= {"24K", "24Z"}, ",".join(sorted(map(str, types))))
+    except Exception as e:
+        check("v_pac_to_candidate uses only 24K/24Z", False, str(e)[:80])
+    try:
+        n = q("SELECT COUNT(*) FROM individual_contributions WHERE TRANSACTION_TP = '24T'")
+        check("conduit (24T) rows are excluded from v_candidate_totals",
+              q("SELECT COUNT(*) FROM v_candidate_totals") > 0, f"{n:,} conduit rows in raw table")
+    except Exception as e:
+        check("conduit (24T) rows are excluded from v_candidate_totals", False, str(e)[:80])
+
+    print(f"\n  Audit checks: {failures} failure(s)")
+    return failures
+
 
 # ---------------------------------------------------------------------------
 # Data dictionary
@@ -842,6 +918,7 @@ def main():
     db_path = args.output
     db_path.unlink(missing_ok=True)
     con = duckdb.connect(str(db_path))
+    tune_session(con, db_path, memory_limit="6GB")
     built: set[str] = set()
 
     for table_name, zip_name, data_file, header_file in bulk_tables:
@@ -958,7 +1035,7 @@ def main():
     # ------------------------------------------------------------------
     print(f"\n[6/8] Building metadata")
     build_metadata(con, built)
-    run_validation(con, db_path)
+    failures = run_validation(con, db_path)
 
     # ------------------------------------------------------------------
     # Step 7: Build _columns data dictionary
@@ -979,6 +1056,9 @@ def main():
     elapsed = time.time() - t_start
     print(f"\nDone in {int(elapsed // 60)}m {int(elapsed % 60)}s")
     print(f"Database: {db_path.resolve()}")
+    if failures:
+        print(f"\nBUILD FAILED: {failures} audit check(s) failed -- do not publish this file")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

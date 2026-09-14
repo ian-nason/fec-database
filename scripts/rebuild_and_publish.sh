@@ -7,7 +7,7 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_DIR"
 
-SOURCE_URL="https://www.fec.gov/files/bulk-downloads/2024/indiv24.zip"
+SOURCE_URL="https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip"
 HF_REPO="Nason/fec-database"
 LAST_MOD_FILE="data/.last_modified"
 LOG_DIR="logs"

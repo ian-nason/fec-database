@@ -7,6 +7,7 @@ independently. Pre-seed data/raw/<cycle>/<name>.zip with a manually
 repaired download to bypass the downloader for that file.
 """
 import re
+import os
 import time
 from pathlib import Path
 
@@ -38,9 +39,10 @@ t_start = time.time()
 con = duckdb.connect(str(DB_PATH))
 con.execute("SET preserve_insertion_order = false")
 con.execute(f"SET temp_directory = '{DB_PATH.resolve()}.tmp'")
-# Leave headroom for the OS and the CSV reader on a 15GB WSL VM; DuckDB
+# Leave headroom for the OS and the CSV reader on the 10GB WSL VM; DuckDB
 # spills to the temp directory instead of pressuring the VM.
-con.execute("SET memory_limit = '8GB'")
+con.execute(f"SET memory_limit = '{os.environ.get('DATAPOND_MEMORY_LIMIT', '6GB')}'")
+con.execute(f"SET threads = {int(os.environ.get('DATAPOND_THREADS', 4))}")
 
 
 def table_cycles(table_name: str) -> set[int]:
