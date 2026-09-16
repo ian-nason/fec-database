@@ -32,7 +32,9 @@ def generate_dataset_card(db_path: str) -> str:
     n_tables = len(rows)
 
     return f"""---
-license: mit
+license: other
+license_name: public-domain
+license_link: https://www.fec.gov/data/browse-data/?tab=bulk-data
 task_categories:
   - tabular-classification
   - tabular-regression

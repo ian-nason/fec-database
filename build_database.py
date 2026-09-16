@@ -27,6 +27,7 @@ from datetime import datetime
 from pathlib import Path
 
 import duckdb
+import json
 import requests
 from tqdm import tqdm
 
@@ -116,12 +117,58 @@ YEAR_COLUMNS = {"cand_election_yr"}
 # ---------------------------------------------------------------------------
 
 
+def _remote_identity(url: str) -> dict:
+    """ETag / Last-Modified / Content-Length of ``url`` (HEAD); {} on failure."""
+    try:
+        r = requests.head(url, timeout=60, allow_redirects=True)
+        r.raise_for_status()
+    except requests.RequestException:
+        return {}
+    h = r.headers
+    out = {}
+    if h.get("etag"):
+        out["etag"] = h["etag"].strip('"').replace("W/", "")
+    if h.get("last-modified"):
+        out["last_modified"] = h["last-modified"]
+    if h.get("content-length"):
+        out["size"] = int(h["content-length"])
+    return out
+
+
+def _meta_path(dest: Path) -> Path:
+    return dest.with_name(dest.name + ".meta.json")
+
+
+def cached_is_current(url: str, dest: Path) -> bool:
+    """True when the cached file's recorded identity matches what the server reports now."""
+    if not dest.exists() or dest.stat().st_size == 0:
+        return False
+    try:
+        local = json.loads(_meta_path(dest).read_text())
+    except (OSError, ValueError):
+        return False
+    remote = _remote_identity(url)
+    for key in ("etag", "last_modified", "size"):
+        if local.get(key) and remote.get(key):
+            return local[key] == remote[key]
+    return False
+
+
 def download_file(url: str, dest: Path, desc: str = "") -> bool:
-    """Download a file with progress. Returns True on success."""
+    """Download a file with progress. Returns True on success (or when the cached copy is current).
+
+    Refresh vs resume: an existing file is reused only when its recorded ETag / Last-Modified /
+    size (``<file>.meta.json``) equals what the FEC server reports now, so a rebuild picks up
+    re-issued bulk files; ``DATAPOND_REFRESH=skip`` reuses whatever is on disk (offline).
+    The download goes to ``<file>.part`` and replaces the destination atomically.
+    """
     if dest.exists() and dest.stat().st_size > 0:
-        return True
+        if os.environ.get("DATAPOND_REFRESH") == "skip" or cached_is_current(url, dest):
+            return True
+        print(f"    {desc or dest.name}: cached copy differs from the source or has no record; re-downloading")
 
     dest.parent.mkdir(parents=True, exist_ok=True)
+    part = dest.with_name(dest.name + ".part")
     for attempt in range(3):
         try:
             r = requests.get(url, stream=True, timeout=60)
@@ -130,8 +177,13 @@ def download_file(url: str, dest: Path, desc: str = "") -> bool:
             r.raise_for_status()
 
             total = int(r.headers.get("content-length", 0))
+            identity = {"url": url}
+            if r.headers.get("etag"):
+                identity["etag"] = r.headers["etag"].strip('"').replace("W/", "")
+            if r.headers.get("last-modified"):
+                identity["last_modified"] = r.headers["last-modified"]
             received = 0
-            with open(dest, "wb") as f:
+            with open(part, "wb") as f:
                 with tqdm(
                     total=total, unit="B", unit_scale=True,
                     desc=f"    {desc or dest.name}", leave=False,
@@ -145,11 +197,13 @@ def download_file(url: str, dest: Path, desc: str = "") -> bool:
             # .txt silently loads partial rows). Verify length and retry.
             if total and received != total:
                 raise IOError(f"truncated download: {received}/{total} bytes")
+            identity["size"] = received
+            os.replace(part, dest)
+            _meta_path(dest).write_text(json.dumps(identity, indent=1))
             return True
         except Exception as e:
             print(f"    WARNING: download attempt {attempt + 1}/3 for {url}: {e}")
-            if dest.exists():
-                dest.unlink()
+            part.unlink(missing_ok=True)
     return False
 
 
