@@ -1,4 +1,21 @@
 # FEC Campaign Finance Database
+## Building with bounded resources
+
+Use a fresh output path. The builder refuses to overwrite an existing database, WAL, or build manifest.
+
+```bash
+DATAPOND_MEMORY_LIMIT=512MiB DATAPOND_THREADS=1 DATAPOND_MAX_TEMP_SIZE=1GiB \
+  uv run python build_database.py --output build-candidate/fec.duckdb --data-dir build-candidate/raw
+```
+
+Bulk ZIP members stream into batches of at most 100,000 records or 32 MiB, with a 512 KiB logical-record limit. Dates and amounts are typed during insertion, avoiding a second full-table rewrite. DuckDB's default buffer pool is 512 MiB, one thread, with at most 1 GiB of local spill; total process RAM can exceed the buffer-pool limit, so leave desktop headroom and monitor disk/RAM during a full build. The builder requires DuckDB 1.4.4 or later.
+
+Strict parsing preserves literal quotes that the former automatic CSV dialect could truncate. Recovery of malformed individual-contribution quotes requires every affected physical line to have all 21 fields, a committee ID and the required 19-digit record ID. Ambiguous framing stops the build. Invalid UTF-8 records are excluded only with exact bytes, hashes and physical line numbers saved in an adjacent `.invalid-utf8.jsonl` file; characters are never replaced silently.
+
+Each completed bulk source writes a `.load.json` receipt with its SHA256, CRC, row/line accounting, conversion counts and repairs. A failed source leaves its archive, partial candidate and diagnostic batch intact. The overall `.manifest.json` stays `incomplete` on failure. Inspect those files before any manual recovery; do not publish an incomplete candidate or retry a partial cycle in place. Publication additionally requires a separate full data audit and review of historical differences. A successful builder run alone does not authorize publication.
+
+These are loader safeguards. The currently published dataset version is unchanged until a separately audited refresh is released.
+
 
 A clean, queryable DuckDB database built from [FEC bulk data](https://www.fec.gov/data/browse-data/?tab=bulk-data) covering federal campaign finance filings across multiple election cycles.
 
@@ -121,3 +138,10 @@ fec.gov. `electioneering_communications` (1,577 rows) and
 ## License
 
 Build code: MIT. Underlying data: public domain (U.S. government records).
+
+
+For a new full build, use a fresh `--data-dir` as well as a fresh output path. Existing source receipts, quarantine files, diagnostic batches and partial downloads are refused before source acquisition. Every bulk source gets a streaming parse/CRC preflight before its first INSERT; unresolved multiline framing therefore stops before that cycle has any committed rows. Earlier completed cycles remain in the incomplete candidate for manual investigation; automatic recovery is intentionally unsupported.
+
+The final view validation can require more working memory or spill than loading. Review available RAM/disk and, if needed, set the documented environment limits explicitly before a full production build; the builder never increases them automatically. A resource failure leaves the candidate local and unpublishable. Default limits are conservative, not a guarantee that every complete historical audit fits. The maintenance rebuild uses its own externally guarded audit workflow. Quarantine is capped at 16 MiB per source, with the exact quarantine filename recorded in that source's receipt.
+
+Use a fresh output directory to preserve existing documentation: the existing final export step writes DICTIONARY.md in the output directory. The refusal guarantee above applies to the database, WAL, manifest and source recovery evidence. Quarantine's encoded JSON byte cap is also checked during preflight, before any row is inserted.

@@ -23,7 +23,7 @@ import shutil
 import sys
 import time
 import zipfile
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import duckdb
@@ -32,15 +32,16 @@ import requests
 from tqdm import tqdm
 
 
-def tune_session(con, db_path, memory_limit: str = "6GB", threads: int = 4) -> None:
-    """Bound DuckDB so a build cannot exhaust the (10 GB) WSL VM.
+def tune_session(con, db_path, memory_limit: str = "512MiB", threads: int = 1) -> None:
+    """Use one thread and a modest buffer pool; bound local spill storage.
 
-    Override with DATAPOND_MEMORY_LIMIT / DATAPOND_THREADS. Spills go to
-    <db>.tmp next to the output file.
+    Override with DATAPOND_MEMORY_LIMIT / DATAPOND_THREADS / DATAPOND_MAX_TEMP_SIZE.
+    Spills go to <db>.tmp. Process RAM can exceed DuckDB's buffer-pool limit.
     """
-    con.execute(f"SET memory_limit = '{os.environ.get('DATAPOND_MEMORY_LIMIT', memory_limit)}'")
+    con.execute("SET memory_limit = ?", [os.environ.get('DATAPOND_MEMORY_LIMIT', memory_limit)])
     con.execute(f"SET threads = {int(os.environ.get('DATAPOND_THREADS', threads))}")
-    con.execute(f"SET temp_directory = '{Path(db_path).resolve()}.tmp'")
+    con.execute("SET temp_directory = ?", [str(Path(db_path).resolve())+'.tmp'])
+    con.execute("SET max_temp_directory_size = ?", [os.environ.get("DATAPOND_MAX_TEMP_SIZE", "1GiB")])
     con.execute("SET preserve_insertion_order = false")
 
 
@@ -169,6 +170,7 @@ def download_file(url: str, dest: Path, desc: str = "") -> bool:
 
     dest.parent.mkdir(parents=True, exist_ok=True)
     part = dest.with_name(dest.name + ".part")
+    if part.exists():raise FileExistsError("Existing partial download preserved: "+str(part))
     for attempt in range(3):
         try:
             r = requests.get(url, stream=True, timeout=60)
@@ -204,7 +206,7 @@ def download_file(url: str, dest: Path, desc: str = "") -> bool:
         except Exception as e:
             print(f"    WARNING: download attempt {attempt + 1}/3 for {url}: {e}")
             part.unlink(missing_ok=True)
-    return False
+    raise RuntimeError(f'Download failed after three attempts: {url}')
 
 
 def download_headers(data_dir: Path) -> dict[str, list[str]]:
@@ -273,65 +275,68 @@ def build_column_spec(columns: list[str]) -> str:
     return "{" + ", ".join(parts) + "}"
 
 
-def load_bulk_table(
-    con: duckdb.DuckDBPyConnection,
-    table_name: str,
-    data_file: Path,
-    columns: list[str],
-    cycle: int,
-) -> int:
-    """Load a pipe-delimited FEC bulk file into DuckDB. Returns row count."""
-    col_spec = build_column_spec(columns)
-    col_names = ", ".join(f'"{c.strip()}"' for c in columns)
+def bulk_schema(columns):
+    from fec_bulk import ident
+    if not columns or len(set(c.lower() for c in columns))!=len(columns) or any(not c or c.lower()=='cycle' for c in columns):
+        raise ValueError('Invalid, duplicate or reserved bulk column')
+    def kind(c):
+        c=c.lower()
+        if c in DATE_COLUMNS or c.endswith(('_dt','_date')):return 'DATE'
+        if c in AMOUNT_COLUMNS or c.endswith('_amt'):return 'DOUBLE'
+        if c in YEAR_COLUMNS:return 'INTEGER'
+        return 'VARCHAR'
+    return [[c,kind(c)] for c in columns]+[['cycle','INTEGER']]
 
-    # Check if table exists
-    exists = con.execute(
-        "SELECT COUNT(*) FROM information_schema.tables "
-        f"WHERE table_name = '{table_name}'"
-    ).fetchone()[0] > 0
 
-    if not exists:
-        con.execute(f"""
-            CREATE TABLE {table_name} AS
-            SELECT *, {cycle}::INTEGER AS cycle
-            FROM read_csv('{data_file}',
-                delim='|',
-                header=false,
-                columns={col_spec},
-                ignore_errors=true,
-                null_padding=true,
-                strict_mode=false
-            )
-            WHERE 1=0
-        """)
+def load_bulk_table(con, table_name, data_file, columns, cycle, *, member=None):
+    """Stream an exact ZIP member or text file in typed 32 MiB/100k-row batches.
 
-    # Insert data. The parallel scanner rejects null_padding when the file
-    # contains quoted newlines (e.g. indiv 2016/2018), so fall back to the
-    # single-threaded reader on failure.
-    def insert_sql(extra_opts: str) -> str:
-        return f"""
-            INSERT INTO {table_name}
-            SELECT *, {cycle}::INTEGER AS cycle
-            FROM read_csv('{data_file}',
-                delim='|',
-                header=false,
-                columns={col_spec},
-                ignore_errors=true,
-                null_padding=true,
-                strict_mode=false{extra_opts}
-            )
-        """
-
-    try:
-        con.execute(insert_sql(""))
-    except duckdb.Error:
-        con.execute(f"DELETE FROM {table_name} WHERE cycle = {cycle}")
-        con.execute(insert_sql(", parallel=false"))
-
-    count = con.execute(
-        f"SELECT COUNT(*) FROM {table_name} WHERE cycle = {cycle}"
-    ).fetchone()[0]
-    return count
+    Raises on ambiguity, CRC failure or a repeated/partial cycle. Completed
+    batches and original failed bytes remain available for manual inspection.
+    """
+    import fec_bulk as bulk
+    import contextlib,csv,hashlib
+    data_file=Path(data_file);schema=bulk_schema(columns)
+    if not con.execute('SELECT count(*) FROM information_schema.tables WHERE table_catalog=current_database() AND table_schema=current_schema() AND lower(table_name)=lower(?)',[table_name]).fetchone()[0]:
+        bulk.make_tables(con,{table_name:schema})
+    actual=[[x[0],x[1]] for x in con.execute('DESCRIBE '+bulk.ident(table_name)).fetchall()]
+    if actual!=schema:raise ValueError('Bulk schema changed: '+table_name)
+    receipt=data_file.with_name(data_file.name+'.load.json')
+    quarantine=data_file.with_name(data_file.name+'.invalid-utf8.jsonl')
+    if receipt.exists() or quarantine.exists():raise FileExistsError('Prior source evidence exists; inspect before retrying')
+    chunk=data_file.with_name(data_file.name+'.batch.csv')
+    digest=hashlib.sha256()
+    before=data_file.stat()
+    with data_file.open('rb') as raw:
+        for block in iter(lambda:raw.read(1024**2),b''):digest.update(block)
+    @contextlib.contextmanager
+    def open_source():
+        with contextlib.ExitStack() as stack:
+            details={}
+            if member:
+                archive=stack.enter_context(zipfile.ZipFile(data_file))
+                matches=[x for x in archive.infolist() if x.filename.lower()==member.lower()]
+                if len(matches)!=1:raise ValueError('Exact ZIP root member missing or ambiguous')
+                selected=matches[0];raw=archive.open(selected)
+                details={'member':selected.filename,'crc32':f'{selected.CRC:08x}','uncompressed_bytes':selected.file_size}
+            else:raw=data_file.open('rb')
+            source=stack.enter_context(io.TextIOWrapper(raw,encoding='utf-8-sig',errors='surrogateescape',newline=''))
+            yield source,details
+    with open_source() as (source,_):preflight=bulk.preflight_records(source,columns,table_name,cycle)
+    with open_source() as (source,details):
+        rejected=lambda first,last,value:bulk.quarantine_record(quarantine,table_name,cycle,first,last,value)
+        result=bulk.load_records(con,table_name,cycle,source,columns,schema,chunk,'|',quarantine=rejected)
+        if (result['logical_records_read'],result['blank_lines_ignored'],result['short_records_padded'],result['trailing_empty_padding_records'])!=(preflight['rows'],preflight['blank'],preflight['padded'],preflight['trimmed']):raise ValueError('Preflight/load record counts differ')
+        if result['source_framing']!=preflight['source_framing'] or result['invalid_utf8_quarantined']['records']!=preflight['invalid_utf8']['records']:raise ValueError('Preflight/load framing differs')
+        if member:details['crc_verified']=True
+    result['preflight']=preflight
+    if (quarantine.stat().st_size if quarantine.exists() else 0)!=preflight['quarantine_bytes']:raise ValueError('Preflight/load quarantine bytes differ')
+    result['quarantine_file']=quarantine.name if quarantine.exists() else None
+    after=data_file.stat()
+    if (before.st_ino,before.st_size,before.st_mtime_ns)!=(after.st_ino,after.st_size,after.st_mtime_ns):raise ValueError('Bulk source changed during load')
+    result.update(status='loaded',source_sha256=digest.hexdigest(),source_bytes=before.st_size,table=table_name,cycle=cycle,**details)
+    with receipt.open('x') as output:json.dump(result,output,indent=2);output.flush();os.fsync(output.fileno())
+    return result['logical_records_read']
 
 
 def load_standalone_csv(
@@ -941,6 +946,12 @@ def main():
     parser.add_argument("--end-cycle", type=int, default=DEFAULT_END)
     parser.add_argument("--tables", nargs="+", help="Build only specific tables")
     args = parser.parse_args()
+    if args.output.exists() or Path(str(args.output)+'.wal').exists() or args.output.with_suffix('.manifest.json').exists():
+        parser.error('Output or recovery evidence exists; choose a fresh --output path. Existing output databases are never overwritten.')
+    if args.start_cycle>args.end_cycle or args.start_cycle%2 or args.end_cycle%2:
+        parser.error('Cycles must be even and start must not exceed end.')
+    if args.tables and not set(args.tables).issubset({t[0] for t in BULK_TABLES+STANDALONE_TABLES}):
+        parser.error('Unknown table requested.')
 
     cycles = list(range(args.start_cycle, args.end_cycle + 1, 2))
     t_start = time.time()
@@ -958,6 +969,20 @@ def main():
         bulk_tables = [t for t in BULK_TABLES if t[0] in requested]
         standalone_tables = [t for t in STANDALONE_TABLES if t[0] in requested]
 
+    # Existing receipts and partial diagnostics belong to earlier attempts.
+    for cycle in cycles:
+        names=[f'{prefix}{str(cycle)[-2:]}.zip' for _,prefix,_,_ in bulk_tables]
+        names += [template.format(cycle=cycle) for _,template in standalone_tables]
+        for name in names:
+            for suffix in ['.load.json','.invalid-utf8.jsonl','.batch.csv','.part']:
+                evidence=args.data_dir/str(cycle)/(name+suffix)
+                if evidence.exists():parser.error('Prior source evidence exists; choose a fresh --data-dir: '+str(evidence))
+
+    manifest_path=args.output.with_suffix('.manifest.json')
+    manifest_path.parent.mkdir(parents=True,exist_ok=True)
+    manifest={'status':'incomplete','started_utc':datetime.now(timezone.utc).isoformat(),'sources':[]}
+    with manifest_path.open('x') as output:json.dump(manifest,output,indent=2)
+
     # ------------------------------------------------------------------
     # Step 1: Download headers
     # ------------------------------------------------------------------
@@ -970,15 +995,14 @@ def main():
     # ------------------------------------------------------------------
     print(f"\n[2/8] Downloading and loading bulk tables")
     db_path = args.output
-    db_path.unlink(missing_ok=True)
+    if db_path.exists() or Path(str(db_path)+'.wal').exists():raise FileExistsError("Output appeared during source preparation; preserved unchanged")
     con = duckdb.connect(str(db_path))
-    tune_session(con, db_path, memory_limit="6GB")
+    tune_session(con, db_path)
     built: set[str] = set()
 
     for table_name, zip_name, data_file, header_file in bulk_tables:
         if header_file not in headers:
-            print(f"  Skipping {table_name} (no header file)")
-            continue
+            raise RuntimeError(f'Missing required header: {header_file}')
 
         columns = headers[header_file]
         total_rows = 0
@@ -993,27 +1017,14 @@ def main():
             zip_url = f"{BASE_URL}/{cycle}/{zip_name}{suffix}.zip"
             zip_path = cycle_dir / f"{zip_name}{suffix}.zip"
             if not download_file(zip_url, zip_path, f"{zip_name}.zip {cycle}"):
-                continue
+                raise RuntimeError(f'Required bulk source unavailable: {zip_url}')
 
-            # Extract
-            txt_path = cycle_dir / data_file
-            if not txt_path.exists():
-                txt_path = extract_zip(zip_path, data_file, cycle_dir)
-            if not txt_path or not txt_path.exists():
-                continue
-
-            # Load into DuckDB
-            try:
-                n = load_bulk_table(con, table_name, txt_path, columns, cycle)
-                total_rows += n
-            except Exception as e:
-                print(f"    WARNING: {table_name} cycle {cycle}: {e}")
-            finally:
-                # Delete extracted txt and zip to save disk space
-                if txt_path and txt_path.exists():
-                    txt_path.unlink()
-                if zip_path.exists():
-                    zip_path.unlink()
+            # Stream the exact root member; never materialize the full text file.
+            n = load_bulk_table(con, table_name, zip_path, columns, cycle, member=data_file)
+            total_rows += n
+            manifest['sources'].append({'table':table_name,'cycle':cycle,'rows':n,'receipt':str(zip_path)+'.load.json'})
+            manifest_path.write_text(json.dumps(manifest,indent=2))
+            zip_path.unlink()  # Only after EOF/CRC, row accounting and durable source receipt.
 
         if total_rows > 0:
             built.add(table_name)
@@ -1037,16 +1048,16 @@ def main():
             csv_path = cycle_dir / filename
 
             if not download_file(csv_url, csv_path, f"{filename}"):
-                continue
+                if cycle < 2010:
+                    manifest['sources'].append({'table':table_name,'cycle':cycle,'status':'expected_absent'})
+                    continue
+                raise RuntimeError(f'Required CSV source unavailable: {csv_url}')
 
-            try:
-                n = load_standalone_csv(con, table_name, csv_path, cycle)
-                total_rows += n
-            except Exception as e:
-                print(f"    WARNING: {table_name} cycle {cycle}: {e}")
-            finally:
-                if csv_path.exists():
-                    csv_path.unlink()
+            n = load_standalone_csv(con, table_name, csv_path, cycle)
+            total_rows += n
+            manifest['sources'].append({'table':table_name,'cycle':cycle,'rows':n})
+            manifest_path.write_text(json.dumps(manifest,indent=2))
+            csv_path.unlink()
 
         if total_rows > 0:
             built.add(table_name)
@@ -1072,11 +1083,9 @@ def main():
     # ------------------------------------------------------------------
     print(f"\n[4/8] Casting date and amount columns")
     for tbl in sorted(built):
-        try:
+        if tbl not in {t[0] for t in BULK_TABLES}:
             cast_columns(con, tbl)
-            print(f"  Cast: {tbl}")
-        except Exception as e:
-            print(f"  WARNING: casting {tbl}: {e}")
+        print(f"  Typed: {tbl}")
 
     # ------------------------------------------------------------------
     # Step 5: Views
@@ -1113,6 +1122,8 @@ def main():
     if failures:
         print(f"\nBUILD FAILED: {failures} audit check(s) failed -- do not publish this file")
         sys.exit(1)
+    manifest.update(status='validated',finished_utc=datetime.now(timezone.utc).isoformat())
+    manifest_path.write_text(json.dumps(manifest,indent=2))
 
 
 if __name__ == "__main__":

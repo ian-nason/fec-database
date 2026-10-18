@@ -176,7 +176,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "duckdb", specifier = ">=1.0" },
+    { name = "duckdb", specifier = ">=1.4.4" },
     { name = "huggingface-hub" },
     { name = "requests" },
     { name = "tqdm" },
