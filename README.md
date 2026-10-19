@@ -14,7 +14,7 @@ Strict parsing preserves literal quotes that the former automatic CSV dialect co
 
 Each completed bulk source writes a `.load.json` receipt with its SHA256, CRC, row/line accounting, conversion counts and repairs. A failed source leaves its archive, partial candidate and diagnostic batch intact. The overall `.manifest.json` stays `incomplete` on failure. Inspect those files before any manual recovery; do not publish an incomplete candidate or retry a partial cycle in place. Publication additionally requires a separate full data audit and review of historical differences. A successful builder run alone does not authorize publication.
 
-These are loader safeguards. The currently published dataset version is unchanged until a separately audited refresh is released.
+The separately audited [18 October 2026 data release](https://huggingface.co/datasets/Nason/fec-database/tree/aee3ae8b28685104765fb1b1e3ebc2588cb907a3) is published: 356,327,912 rows in ten data tables, four views and 237 dictionary entries. Its [provenance](https://huggingface.co/datasets/Nason/fec-database/blob/aee3ae8b28685104765fb1b1e3ebc2588cb907a3/sources-2026-10-18.json) and [release dictionary](https://huggingface.co/datasets/Nason/fec-database/blob/aee3ae8b28685104765fb1b1e3ebc2588cb907a3/DICTIONARY.md) describe that frozen artifact. Merging loader changes does not rebuild or replace it.
 
 
 A clean, queryable DuckDB database built from [FEC bulk data](https://www.fec.gov/data/browse-data/?tab=bulk-data) covering federal campaign finance filings across multiple election cycles.
@@ -116,7 +116,7 @@ netting, memo exclusion).
 **Table caveats:** `independent_expenditures` retains only the latest
 amendment of each filing (superseded versions are dropped at build time) but
 still contains upstream prank filings — sanity-check big numbers against
-fec.gov. `electioneering_communications` (1,577 rows) and
+fec.gov. `electioneering_communications` (1,711 rows in the October 2026 release) and
 `communication_costs` are thin, and all three standalone tables exist from
 2010 onward only (FEC does not publish per-cycle CSVs before 2010).
 
