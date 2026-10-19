@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Build a queryable DuckDB database from FEC campaign finance bulk data"
 requires-python = ">=3.11"
 dependencies = [
-    "duckdb>=1.0",
+    "duckdb>=1.4.4",
     "requests",
     "tqdm",
     "huggingface_hub",
