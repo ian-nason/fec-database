@@ -1,0 +1,6321 @@
+{
+  "baseline": {
+    "commit": "aee3ae8b28685104765fb1b1e3ebc2588cb907a3",
+    "database_sha256": "6227fb7c162c3d48a10bb677d2bfd74b21c1acba3aff68eafac2afc49d57a2d4"
+  },
+  "corrections": {
+    "individual_contributions_2022": {
+      "complete_rows": 63885802,
+      "date_shard_count": 34,
+      "literal_quote_recovery_fields": {
+        "EMPLOYER": 1,
+        "OCCUPATION": 12
+      },
+      "members": [
+        {
+          "bytes": 372160182,
+          "crc32": "eb52fbf8",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20000725_20210220.txt",
+          "rows": 1990195,
+          "sha256": "1553cb190ec5f2b106d452eb2a4b32b38c6ddb030b390a66a7a76dde7eefe2e0"
+        },
+        {
+          "bytes": 383415909,
+          "crc32": "bfb08009",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210221_20210408.txt",
+          "rows": 1987484,
+          "sha256": "e563fc4db14e66e7cabdfa139a43a915ce800edd9466e576d99988b88818f9fc"
+        },
+        {
+          "bytes": 375121100,
+          "crc32": "c78d33b0",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210409_20210520.txt",
+          "rows": 1959834,
+          "sha256": "b9f9ecc70fc496a446dc81150948aab808211cc496eb180b3b2822a33463831f"
+        },
+        {
+          "bytes": 370381721,
+          "crc32": "a937b606",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210521_20210625.txt",
+          "rows": 1957207,
+          "sha256": "4a29be08e1580342008e178573760c741e92c94cb9acc71ffeaec3e5a187df1d"
+        },
+        {
+          "bytes": 379315580,
+          "crc32": "ff8ce3c1",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210626_20210722.txt",
+          "rows": 1990690,
+          "sha256": "f2065acb2467fc897ffce514eecb6b0930ce052bab69274e90b61f7f46e75aef"
+        },
+        {
+          "bytes": 379809675,
+          "crc32": "3c1c7aa5",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210723_20210815.txt",
+          "rows": 1995459,
+          "sha256": "d792b1195e5a49ec706a8d9c395251364822a5b8d822125530790ab7ac095e93"
+        },
+        {
+          "bytes": 370191824,
+          "crc32": "c0a85941",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210816_20210906.txt",
+          "rows": 1951209,
+          "sha256": "277cf1965fd8c0dddafe336cca1d7fe864156cdd5094e1955c84c19824963fb6"
+        },
+        {
+          "bytes": 372042376,
+          "crc32": "633fb2e4",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210907_20210928.txt",
+          "rows": 1970966,
+          "sha256": "83e997d5c989366ce7b675c918e835fad41325a6d5e8ac47a23ae982122df54b"
+        },
+        {
+          "bytes": 362442433,
+          "crc32": "42ddce3f",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20210929_20211017.txt",
+          "rows": 1919515,
+          "sha256": "7109b725d58fe76507a45133a835d1523437ed1107135dd00decdc5fa5a5ab11"
+        },
+        {
+          "bytes": 374613589,
+          "crc32": "f871482c",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20211018_20211104.txt",
+          "rows": 1986200,
+          "sha256": "9080da3f0faa3a5daa703102ca5b7e7ab72552ed65aeab44747d43b056a4edca"
+        },
+        {
+          "bytes": 363873019,
+          "crc32": "f5037083",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20211105_20211124.txt",
+          "rows": 1939865,
+          "sha256": "c7c28d04429efdd3e6dcd0a99f11f07dcbc979eea9c7d9946a4d1c346dbca653"
+        },
+        {
+          "bytes": 360251419,
+          "crc32": "a494eead",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20211125_20211213.txt",
+          "rows": 1909055,
+          "sha256": "b82e0fab8b2304b6bcd1549dbb3413991b0befe3f4ab0e0dd58a38b05f8d61c9"
+        },
+        {
+          "bytes": 373097342,
+          "crc32": "405f31c2",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20211214_20220103.txt",
+          "rows": 1980052,
+          "sha256": "e1c67a0ec9e0e27558e111cf029a8465825e61147093e455939c640aba0cce58"
+        },
+        {
+          "bytes": 356568087,
+          "crc32": "9d2e1c22",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220103_20220216.txt",
+          "rows": 1947901,
+          "sha256": "31ce73bef10a2efdfb4f3064a01d2333506eb70727d12b1ec4fbaf40aae3ae16"
+        },
+        {
+          "bytes": 360584798,
+          "crc32": "f78cc747",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220217_20220319.txt",
+          "rows": 1966419,
+          "sha256": "c6a90685350c3021b5ed2666cf009ffb1c66cef03a1be4356bb682a2032dd32b"
+        },
+        {
+          "bytes": 367264167,
+          "crc32": "988d8e52",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220320_20220418.txt",
+          "rows": 1977440,
+          "sha256": "7956dc858882a0c76762e7a8124f2a86c62371df305a882bfb1401e717a2f6ac"
+        },
+        {
+          "bytes": 359547330,
+          "crc32": "a1d3881e",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220419_20220512.txt",
+          "rows": 1930527,
+          "sha256": "dfd08b090e564e6312caecf289e29c9913da9b0b4c88423f9b3fe8971fb83e7b"
+        },
+        {
+          "bytes": 365884956,
+          "crc32": "d8eefb54",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220513_20220604.txt",
+          "rows": 1958183,
+          "sha256": "b91510097307614786774c7c12b9ca6aed1a36af1ddf7ff1388e2faf61351b39"
+        },
+        {
+          "bytes": 361273673,
+          "crc32": "a2cc74b4",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220605_20220626.txt",
+          "rows": 1930876,
+          "sha256": "01d3bbe4e5e0f37f38f058cfd5c03b985bd49eec4945f0425428b5059a253aaf"
+        },
+        {
+          "bytes": 363923829,
+          "crc32": "32cd28af",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220627_20220715.txt",
+          "rows": 1930828,
+          "sha256": "19c29da6f4ddd08493287acfe4bd7c50920af451d7ded730efa05008945d6dba"
+        },
+        {
+          "bytes": 376792198,
+          "crc32": "f5e2484b",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220716_20220803.txt",
+          "rows": 1996921,
+          "sha256": "0c76fc605dc2f505c355770185dc71733c6e1fad70311bff2d7d167f635614a2"
+        },
+        {
+          "bytes": 360196359,
+          "crc32": "f71744d6",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220804_20220819.txt",
+          "rows": 1920362,
+          "sha256": "a0dd6f506e3e7e89bcff21c2ca73ebc151226825e89a3c4a6d82866cde87d2c1"
+        },
+        {
+          "bytes": 376194142,
+          "crc32": "07430218",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220820_20220902.txt",
+          "rows": 1996224,
+          "sha256": "5f641f9e0e613765dc316c109a94b5cb16c0f45cbc9172d1bc416d1ed8cdc790"
+        },
+        {
+          "bytes": 351690670,
+          "crc32": "ca61760f",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220903_20220915.txt",
+          "rows": 1866608,
+          "sha256": "f58bbe0f24280966a33d536421737b10e2c48322dbbc355d73bd87e399638bbf"
+        },
+        {
+          "bytes": 346612265,
+          "crc32": "452f0412",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220916_20220927.txt",
+          "rows": 1837709,
+          "sha256": "7bcf4e14a61ee06e4e0e6bf70bfbbd9348bcb897045fcaf62be86bbcc974d175"
+        },
+        {
+          "bytes": 348984589,
+          "crc32": "3fc45f96",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20220928_20221006.txt",
+          "rows": 1826837,
+          "sha256": "210b52c75303a5c1b742c751b5c77ac5721c22a3c1c1ae23903837e4f3f5bbcf"
+        },
+        {
+          "bytes": 373571011,
+          "crc32": "9b249e2a",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221007_20221016.txt",
+          "rows": 1952352,
+          "sha256": "2e322002da643d8e8d0b67f695ddc19614ff6cfd8f03bec24aa68ec2ab6b2296"
+        },
+        {
+          "bytes": 362564551,
+          "crc32": "c0d866f8",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221017_20221024.txt",
+          "rows": 1878783,
+          "sha256": "27b9cd6bf2d2055df13119a679f43d801c3f9dbcc95e059261b175f58ba8f3a1"
+        },
+        {
+          "bytes": 385994385,
+          "crc32": "073a65e9",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221025_20221031.txt",
+          "rows": 1992676,
+          "sha256": "618fa25fb215b89db59b22d37a1178666a83f9a99b570eea330856dc4cc1f4b0"
+        },
+        {
+          "bytes": 382547404,
+          "crc32": "21838c45",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221101_20221107.txt",
+          "rows": 1986569,
+          "sha256": "61faeeaf9ab21e5cea61aba25860858b39382e2b29d6627b331c2c668eb5cc04"
+        },
+        {
+          "bytes": 376890052,
+          "crc32": "dd6dd9be",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221108_20221120.txt",
+          "rows": 1963461,
+          "sha256": "1cd6b577c02e87ff4feab1e93e09d3be7678bc569a04734c3679c26c7fdbe9c9"
+        },
+        {
+          "bytes": 370726539,
+          "crc32": "611f9f23",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221121_20221208.txt",
+          "rows": 1943481,
+          "sha256": "c1fe41013938a4ab1992279f0b580f591975f737d61f46819b0588a279164932"
+        },
+        {
+          "bytes": 292077425,
+          "crc32": "98345a3c",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_20221209_20311222.txt",
+          "rows": 1543906,
+          "sha256": "86fb9c022cdd869784f3f3254e2eb893a759cca4af4c91e535be7e6c9543fd6c"
+        },
+        {
+          "bytes": 979,
+          "crc32": "0de5f607",
+          "crc_verified": true,
+          "member": "by_date/itcont_2022_invalid_dates.txt",
+          "rows": 8,
+          "sha256": "4c715e601132b11e52d157907b1d554b6e7ac980dde49c75157092a9bbabad6a"
+        }
+      ],
+      "method": "Immutable baseline cycle restored after complete independent current date-shard typed-multiset equivalence",
+      "proof_sha256": "6d3a928968d4ad88abd4d335df4432e80932712082fea535e4f42859c9f8fb10",
+      "root_is_not_complete": true,
+      "root_last_record_partial": true,
+      "root_member": "itcont.txt",
+      "root_physical_records": 23747535,
+      "source_archive": {
+        "available": true,
+        "bytes": 3595301849,
+        "sha256": "475baa15b91f8cf9555b4b888786f1b24c431d2429027ddc1c52750d575064eb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/indiv22.zip",
+        "utc": "2026-11-09T17:57:57Z"
+      },
+      "typed_fingerprint": {
+        "rows": 63885802,
+        "sha256_limb_sums": [
+          "589273424516219425420149388",
+          "589232983718818266295288285",
+          "589235940108938565211333409",
+          "589252511912972490427422628"
+        ]
+      }
+    },
+    "operating_expenditures_terminal_empty_field": {
+      "base_validator_sha256": "cd99b880053a99ea29c0d3961c6b85e17c84b3765d598291efffa068d9b399b2",
+      "cycles": [
+        2022,
+        2024,
+        2026
+      ],
+      "normalization": "Exactly one empty terminal field; no nonempty extra field discarded",
+      "validator_sha256": "943075a0c923d8329c091d0cf27fb352a619c7a4a8995106622fcd71fbd9ab19"
+    },
+    "standalone_csv": {
+      "baseline_equivalent_partitions": 23,
+      "changed_from_baseline_partitions": 4,
+      "corrected_partitions": 16,
+      "method": "Strict CSV framing, typed conversion, complete current-source fingerprints, and existing independent-expenditure amendment filtering",
+      "original_loader_net_rows_lost": 1199,
+      "proof_sha256": "3261f016536f0da390fe5c856f23e8eeab6b3520c99ef15d321bedeb9c51fc94",
+      "strict_source_partitions": 27
+    }
+  },
+  "database": {
+    "bytes": 22717673472,
+    "filename": "fec.duckdb",
+    "sha256": "5bde1896d2d243283c87de295642cf2f6bd3ded749ba9beb9e220a89d07f0e54"
+  },
+  "dictionary_entries": 237,
+  "dictionary_schema": [
+    [
+      "candidate_committee_links",
+      "CAND_ID",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "CAND_ELECTION_YR",
+      "INTEGER"
+    ],
+    [
+      "candidate_committee_links",
+      "FEC_ELECTION_YR",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "CMTE_TP",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "CMTE_DSGN",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "LINKAGE_ID",
+      "VARCHAR"
+    ],
+    [
+      "candidate_committee_links",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "candidates",
+      "CAND_ID",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_NAME",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_PTY_AFFILIATION",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ELECTION_YR",
+      "INTEGER"
+    ],
+    [
+      "candidates",
+      "CAND_OFFICE_ST",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_OFFICE",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_OFFICE_DISTRICT",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ICI",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_STATUS",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_PCC",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ST1",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ST2",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_CITY",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ST",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "CAND_ZIP",
+      "VARCHAR"
+    ],
+    [
+      "candidates",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "committee_contributions",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "AMNDT_IND",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "RPT_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "TRANSACTION_PGI",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "TRANSACTION_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "ENTITY_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "NAME",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "CITY",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "STATE",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "ZIP_CODE",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "EMPLOYER",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "OCCUPATION",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "TRANSACTION_DT",
+      "DATE"
+    ],
+    [
+      "committee_contributions",
+      "TRANSACTION_AMT",
+      "DOUBLE"
+    ],
+    [
+      "committee_contributions",
+      "OTHER_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "CAND_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "FILE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "MEMO_CD",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "MEMO_TEXT",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "SUB_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_contributions",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "committee_to_committee",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "AMNDT_IND",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "RPT_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "TRANSACTION_PGI",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "TRANSACTION_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "ENTITY_TP",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "NAME",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "CITY",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "STATE",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "ZIP_CODE",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "EMPLOYER",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "OCCUPATION",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "TRANSACTION_DT",
+      "DATE"
+    ],
+    [
+      "committee_to_committee",
+      "TRANSACTION_AMT",
+      "DOUBLE"
+    ],
+    [
+      "committee_to_committee",
+      "OTHER_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "FILE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "MEMO_CD",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "MEMO_TEXT",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "SUB_ID",
+      "VARCHAR"
+    ],
+    [
+      "committee_to_committee",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "committees",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_NM",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "TRES_NM",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_ST1",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_ST2",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_CITY",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_ST",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_ZIP",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_DSGN",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_TP",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_PTY_AFFILIATION",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CMTE_FILING_FREQ",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "ORG_TP",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CONNECTED_ORG_NM",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "CAND_ID",
+      "VARCHAR"
+    ],
+    [
+      "committees",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "communication_costs",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CMTE_NM",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_ID",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_NAME",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_OFFICE",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_STATE",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_OFFICE_DISTRICT",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_PTY_AFFILIATION",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "TRANSACTION_DT",
+      "DATE"
+    ],
+    [
+      "communication_costs",
+      "TRANSACTION_AMT",
+      "DOUBLE"
+    ],
+    [
+      "communication_costs",
+      "TRANSACTION_TP",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "COMMUNICATION_TP",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "COMMUNICATION_CLASS",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "SUPPORT_OPPOSE_IND",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "LINE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "FORM_TP_CD",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "SCHED_TP_CD",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "SUB_ID",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "FILE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "RPT_YR",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_STATE_DESCRIPTION",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "CAND_PTY_AFFILIATION_DESCRIPTION",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "PURPOSE",
+      "VARCHAR"
+    ],
+    [
+      "communication_costs",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "electioneering_communications",
+      "CANDIDATE_ID",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "CANDIDATE_NAME",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "CANDIDATE_OFFICE",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "CANDIDATE_STATE",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "CANDIDATE_DISTRICT",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "COMMITTEE_ID",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "COMMITTEE_NAME",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "SB_IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "PAYEE_NAME",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "PAYEE_STREET",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "PAYEE_CITY",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "PAYEE_STATE",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "DISBURSEMENT_DESCRIPTION",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "DISBURSEMENT_DATE",
+      "DATE"
+    ],
+    [
+      "electioneering_communications",
+      "COMMUNICATION_DATE",
+      "DATE"
+    ],
+    [
+      "electioneering_communications",
+      "PUBLIC_DISBURSEMENT_DATE",
+      "DATE"
+    ],
+    [
+      "electioneering_communications",
+      "REPORTED_DISBURSEMENT_AMOUNT",
+      "DOUBLE"
+    ],
+    [
+      "electioneering_communications",
+      "NUMBER_OF_CANDIDATES",
+      "VARCHAR"
+    ],
+    [
+      "electioneering_communications",
+      "CALCULATED_CANDIDATE_SHARE",
+      "DOUBLE"
+    ],
+    [
+      "electioneering_communications",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "independent_expenditures",
+      "cand_id",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "cand_name",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "spe_id",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "spe_nam",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "ele_type",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "can_office_state",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "can_office_dis",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "can_office",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "cand_pty_aff",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "exp_amo",
+      "DOUBLE"
+    ],
+    [
+      "independent_expenditures",
+      "exp_date",
+      "DATE"
+    ],
+    [
+      "independent_expenditures",
+      "agg_amo",
+      "DOUBLE"
+    ],
+    [
+      "independent_expenditures",
+      "sup_opp",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "pur",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "pay",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "file_num",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "amndt_ind",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "tran_id",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "image_num",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "receipt_dat",
+      "DATE"
+    ],
+    [
+      "independent_expenditures",
+      "fec_election_yr",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "prev_file_num",
+      "VARCHAR"
+    ],
+    [
+      "independent_expenditures",
+      "dissem_dt",
+      "DATE"
+    ],
+    [
+      "independent_expenditures",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "individual_contributions",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "AMNDT_IND",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "RPT_TP",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "TRANSACTION_PGI",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "TRANSACTION_TP",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "ENTITY_TP",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "NAME",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "CITY",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "STATE",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "ZIP_CODE",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "EMPLOYER",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "OCCUPATION",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "TRANSACTION_DT",
+      "DATE"
+    ],
+    [
+      "individual_contributions",
+      "TRANSACTION_AMT",
+      "DOUBLE"
+    ],
+    [
+      "individual_contributions",
+      "OTHER_ID",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "FILE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "MEMO_CD",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "MEMO_TEXT",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "SUB_ID",
+      "VARCHAR"
+    ],
+    [
+      "individual_contributions",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "operating_expenditures",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "AMNDT_IND",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "RPT_YR",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "RPT_TP",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "IMAGE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "LINE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "FORM_TP_CD",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "SCHED_TP_CD",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "NAME",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "CITY",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "STATE",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "ZIP_CODE",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "TRANSACTION_DT",
+      "DATE"
+    ],
+    [
+      "operating_expenditures",
+      "TRANSACTION_AMT",
+      "DOUBLE"
+    ],
+    [
+      "operating_expenditures",
+      "TRANSACTION_PGI",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "PURPOSE",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "CATEGORY",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "CATEGORY_DESC",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "MEMO_CD",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "MEMO_TEXT",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "ENTITY_TP",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "SUB_ID",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "FILE_NUM",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "BACK_REF_TRAN_ID",
+      "VARCHAR"
+    ],
+    [
+      "operating_expenditures",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "v_candidate_totals",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "v_candidate_totals",
+      "CMTE_ID",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "cand_ids",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "candidate_names",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "party",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "office",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "state",
+      "VARCHAR"
+    ],
+    [
+      "v_candidate_totals",
+      "num_contributions",
+      "BIGINT"
+    ],
+    [
+      "v_candidate_totals",
+      "net_individual",
+      "DOUBLE"
+    ],
+    [
+      "v_daily_donations",
+      "date",
+      "DATE"
+    ],
+    [
+      "v_daily_donations",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "v_daily_donations",
+      "num_donations",
+      "BIGINT"
+    ],
+    [
+      "v_daily_donations",
+      "total_amount",
+      "DOUBLE"
+    ],
+    [
+      "v_daily_donations",
+      "avg_amount",
+      "DOUBLE"
+    ],
+    [
+      "v_daily_donations",
+      "median_amount",
+      "DOUBLE"
+    ],
+    [
+      "v_pac_to_candidate",
+      "pac_name",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "connected_org",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "candidate_name",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "candidate_party",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "office",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "state",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "transaction_type",
+      "VARCHAR"
+    ],
+    [
+      "v_pac_to_candidate",
+      "amount",
+      "DOUBLE"
+    ],
+    [
+      "v_pac_to_candidate",
+      "date",
+      "DATE"
+    ],
+    [
+      "v_pac_to_candidate",
+      "cycle",
+      "INTEGER"
+    ],
+    [
+      "v_top_donors",
+      "NAME",
+      "VARCHAR"
+    ],
+    [
+      "v_top_donors",
+      "EMPLOYER",
+      "VARCHAR"
+    ],
+    [
+      "v_top_donors",
+      "OCCUPATION",
+      "VARCHAR"
+    ],
+    [
+      "v_top_donors",
+      "STATE",
+      "VARCHAR"
+    ],
+    [
+      "v_top_donors",
+      "num_contributions",
+      "BIGINT"
+    ],
+    [
+      "v_top_donors",
+      "net_donated",
+      "DOUBLE"
+    ],
+    [
+      "v_top_donors",
+      "first_cycle",
+      "INTEGER"
+    ],
+    [
+      "v_top_donors",
+      "last_cycle",
+      "INTEGER"
+    ],
+    [
+      "v_top_donors",
+      "num_committees",
+      "BIGINT"
+    ]
+  ],
+  "duckdb_version": "1.5.5",
+  "fingerprint_algorithm": "DuckDB 1.5.5 sha256(to_json(full typed row in stored column order)); per-cycle count and four exact sums of consecutive unsigned 64-bit digest limbs, represented as decimal strings",
+  "format_version": 1,
+  "headers": [
+    {
+      "available": true,
+      "bytes": 79,
+      "sha256": "9de902716f8c5086fc91cc7b26b675c49916e43c742693df939278cb7d91c633",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/ccl_header_file.csv",
+      "utc": "2026-11-09T16:55:42Z"
+    },
+    {
+      "available": true,
+      "bytes": 158,
+      "sha256": "9b5bfd7764a5e07871d4b0bf31d05f9589eda262d02956718b5d2c272e76ab83",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/cm_header_file.csv",
+      "utc": "2026-11-09T16:55:36Z"
+    },
+    {
+      "available": true,
+      "bytes": 180,
+      "sha256": "86fe00a87b53fb442608ff695a82f321f49e70718bc815a08a070a120412da0c",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/cn_header_file.csv",
+      "utc": "2026-11-09T16:55:29Z"
+    },
+    {
+      "available": true,
+      "bytes": 204,
+      "sha256": "944a1f765c8b549f32b6d45aa6b1932f4fd182855cb07c88dabcf7bde8a2ca45",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/indiv_header_file.csv",
+      "utc": "2026-11-09T16:55:52Z"
+    },
+    {
+      "available": true,
+      "bytes": 247,
+      "sha256": "7480956254f3034fda83dacd1099111df3586ded3f7acbf6253040867c318582",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/oppexp_header_file.csv",
+      "utc": "2026-11-09T16:56:20Z"
+    },
+    {
+      "available": true,
+      "bytes": 204,
+      "sha256": "944a1f765c8b549f32b6d45aa6b1932f4fd182855cb07c88dabcf7bde8a2ca45",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/oth_header_file.csv",
+      "utc": "2026-11-09T16:56:08Z"
+    },
+    {
+      "available": true,
+      "bytes": 212,
+      "sha256": "9ce58b0576635ddb7ab849b306c133358612e08cefc4cc37483a5ef22205390a",
+      "url": "https://www.fec.gov/files/bulk-downloads/data_dictionaries/pas2_header_file.csv",
+      "utc": "2026-11-09T16:55:59Z"
+    }
+  ],
+  "interpretation": {
+    "2022_balanced_wrapper_quote_removals": 14,
+    "2022_separate_literal_quote_recoveries": 13,
+    "bulk_conversion_and_framing_summary_excluding_replaced_root": {
+      "candidates/2024": {
+        "invalid_utf8_records_excluded": 0,
+        "literal_quote_recovery_records": 1,
+        "unparsed_nonblank_by_column": {}
+      },
+      "individual_contributions/2010": {
+        "invalid_utf8_records_excluded": 6,
+        "literal_quote_recovery_records": 0,
+        "unparsed_nonblank_by_column": {}
+      },
+      "individual_contributions/2016": {
+        "invalid_utf8_records_excluded": 0,
+        "literal_quote_recovery_records": 0,
+        "unparsed_nonblank_by_column": {
+          "TRANSACTION_DT": 7
+        }
+      },
+      "individual_contributions/2018": {
+        "invalid_utf8_records_excluded": 0,
+        "literal_quote_recovery_records": 0,
+        "unparsed_nonblank_by_column": {
+          "TRANSACTION_DT": 1
+        }
+      },
+      "individual_contributions/2020": {
+        "invalid_utf8_records_excluded": 0,
+        "literal_quote_recovery_records": 106,
+        "unparsed_nonblank_by_column": {}
+      }
+    },
+    "date_policy": "No guessed date repair. Validly parsed but anomalous source values are retained.",
+    "historical_baseline_provenance_url": "https://huggingface.co/datasets/Nason/fec-database/blob/aee3ae8b28685104765fb1b1e3ebc2588cb907a3/sources-2026-10-18.json",
+    "historical_date_cycles": {
+      "2016": 7,
+      "2018": 1
+    },
+    "historical_nonblank_invalid_dates_retained_as_null": 8,
+    "quote_policy": "FEC does not specify quote escaping. Balanced wrappers are parsed as CSV quotes; separately identified malformed literal quotes are preserved. This is an interpretation choice, not an official FEC rule."
+  },
+  "original_source_commit": "fea7c1400cd3de1842fd25ea29a115ac3214909d",
+  "snapshot_date": "2026-11-09",
+  "sources": [
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 39720,
+        "sha256": "ffdb1e565c48d0b3536858edfd2935e9d4e620bf7d85feb653c1b6cbaa9219a8",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/ccl04.zip",
+        "utc": "2026-11-09T17:00:04Z"
+      },
+      "final_rows": 3754,
+      "original_loader_rows": 3754,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 40354,
+        "sha256": "4d926f93e072bf2c2d91a67bcad507c1e08c6f2b3ba67327663e53d59ebf23c6",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/ccl06.zip",
+        "utc": "2026-11-09T17:00:14Z"
+      },
+      "final_rows": 3876,
+      "original_loader_rows": 3876,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 44940,
+        "sha256": "790dfe93e3f1b24d51e85ca65d75687be0b7d793e8565699cde9a24f5ed7a349",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/ccl08.zip",
+        "utc": "2026-11-09T17:00:53Z"
+      },
+      "final_rows": 4271,
+      "original_loader_rows": 4271,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 53998,
+        "sha256": "21125a4a9afd3fd61cca2022a62c437988d68216d92431ae9e864f6fa40b4021",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/ccl10.zip",
+        "utc": "2026-11-09T17:00:58Z"
+      },
+      "final_rows": 5175,
+      "original_loader_rows": 5175,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 61318,
+        "sha256": "bc316993055dc395231c0bb49f0844a74a056b067c54b5fa73027fee2b628322",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/ccl12.zip",
+        "utc": "2026-11-09T17:01:05Z"
+      },
+      "final_rows": 6131,
+      "original_loader_rows": 6131,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 62708,
+        "sha256": "e63f6e9464df4c9388e7bf922f22bd3bb5b5d6fa074484eb95bfc815b0b438e2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/ccl14.zip",
+        "utc": "2026-11-09T17:01:12Z"
+      },
+      "final_rows": 6245,
+      "original_loader_rows": 6245,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 66791,
+        "sha256": "c021139395be2ffacc93ade7d0846207637819aafc9fdeb413f27d8efe87537a",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/ccl16.zip",
+        "utc": "2026-11-09T17:01:17Z"
+      },
+      "final_rows": 6407,
+      "original_loader_rows": 6407,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 75250,
+        "sha256": "6704d162d288a003fd2264a20dd5e65f120c74093e5ccfbb27b078c5c3b010ec",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/ccl18.zip",
+        "utc": "2026-11-09T17:01:24Z"
+      },
+      "final_rows": 7180,
+      "original_loader_rows": 7180,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 76498,
+        "sha256": "24368dbc335b551d3b836c401b8765825209d8f5c7c2ff047f9f8f3585433039",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/ccl20.zip",
+        "utc": "2026-11-09T17:01:30Z"
+      },
+      "final_rows": 7055,
+      "original_loader_rows": 7055,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 84083,
+        "sha256": "4e5374c5393fee3591ebf7a537c3edc04c523b3925c7066ff03b988a22aef085",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/ccl22.zip",
+        "utc": "2026-11-09T17:01:36Z"
+      },
+      "final_rows": 7683,
+      "original_loader_rows": 7683,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 94262,
+        "sha256": "72742a311d73f9cc95cb0506afe0b7ac4c0a83e23a4605672f75755b4ce57760",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/ccl24.zip",
+        "utc": "2026-11-09T17:01:48Z"
+      },
+      "final_rows": 8619,
+      "original_loader_rows": 8619,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 90872,
+        "sha256": "8624ddda3b19d71640a940a2992aafbbd30212a8186aaf89367c13b008a552fb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/ccl26.zip",
+        "utc": "2026-11-09T17:01:55Z"
+      },
+      "final_rows": 8410,
+      "original_loader_rows": 8410,
+      "outcome": "available",
+      "table": "candidate_committee_links"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 142800,
+        "sha256": "be73bea8405b7d60897e602dc7f3cfba4b1698215df2d600c8f4b0aaa78eae65",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/cn04.zip",
+        "utc": "2026-11-09T16:56:30Z"
+      },
+      "final_rows": 3814,
+      "original_loader_rows": 3814,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 139291,
+        "sha256": "85d9dcb04b0fd1fec3de88c2216a9c40b5b6aeed00eeed910354845a7e4d9db5",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/cn06.zip",
+        "utc": "2026-11-09T16:56:36Z"
+      },
+      "final_rows": 3704,
+      "original_loader_rows": 3704,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 153850,
+        "sha256": "ae93d4f986b28ca3fad420f0cd302d959c1f6dbed47b7db7bf5c0445a93fc63b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/cn08.zip",
+        "utc": "2026-11-09T16:56:44Z"
+      },
+      "final_rows": 4072,
+      "original_loader_rows": 4072,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 190211,
+        "sha256": "01b05f26fc40b4564e1a9c083a144a5bc1a8fe67489ee93d78e8ee00b691cbd0",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/cn10.zip",
+        "utc": "2026-11-09T16:56:52Z"
+      },
+      "final_rows": 5126,
+      "original_loader_rows": 5126,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 207053,
+        "sha256": "53a07683cbc0bf9c47c825502ed8212626313c54c63a27bc40048dc3e38ddf21",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/cn12.zip",
+        "utc": "2026-11-09T16:56:59Z"
+      },
+      "final_rows": 5628,
+      "original_loader_rows": 5628,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 206265,
+        "sha256": "a4f3e83e77035557e705e3e8cfe40d10f16655d38bc73c227fe02c328bcbe3cc",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/cn14.zip",
+        "utc": "2026-11-09T16:57:06Z"
+      },
+      "final_rows": 5536,
+      "original_loader_rows": 5536,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 271705,
+        "sha256": "7dd5b2df23b83ca408d9abd11f02486209c3bf638b3cf601ac13b0e5d19f51da",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/cn16.zip",
+        "utc": "2026-11-09T16:57:14Z"
+      },
+      "final_rows": 7396,
+      "original_loader_rows": 7396,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 271951,
+        "sha256": "fba6302a5c6649b8f3297a6aa8691cebf124a8788bdb12697107bc5ba55a0cd6",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/cn18.zip",
+        "utc": "2026-11-09T16:57:22Z"
+      },
+      "final_rows": 7371,
+      "original_loader_rows": 7371,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 283545,
+        "sha256": "f0229bb4e6b8030b074972ffb27fa163b195729b31f1276005ecca31a0728a39",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/cn20.zip",
+        "utc": "2026-11-09T16:57:31Z"
+      },
+      "final_rows": 7758,
+      "original_loader_rows": 7758,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 313237,
+        "sha256": "2b4fb9a7d73f3e76637fb04289ad5cd4bc247b903fc1fd6cdea276f8c052760a",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/cn22.zip",
+        "utc": "2026-11-09T16:57:44Z"
+      },
+      "final_rows": 8578,
+      "original_loader_rows": 8578,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 356337,
+        "sha256": "d9ff96fc83f2d500fb75cc56024e6129a8e08aaecb4912b5c9ed5ce672c9302d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/cn24.zip",
+        "utc": "2026-11-09T16:57:51Z"
+      },
+      "final_rows": 9796,
+      "original_loader_rows": 9796,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 313495,
+        "sha256": "3f8eff7dbee40773751515269df69b8a3f8c0042277d5a5d1cd2be10d73e3f92",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/cn26.zip",
+        "utc": "2026-11-09T16:57:57Z"
+      },
+      "final_rows": 8909,
+      "original_loader_rows": 8909,
+      "outcome": "available",
+      "table": "candidates"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 8093031,
+        "sha256": "15286ca5252dba75d30308e1de36bf3cb9756c3e7d8a40adc55516cb2c68e0dd",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/pas204.zip",
+        "utc": "2026-11-09T18:47:47Z"
+      },
+      "final_rows": 245668,
+      "original_loader_rows": 245668,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 9107274,
+        "sha256": "ecbcac161fba65e80e34630651e0626e7ef2298fef226ca4f3bd0677fed81738",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/pas206.zip",
+        "utc": "2026-11-09T18:47:58Z"
+      },
+      "final_rows": 266703,
+      "original_loader_rows": 266703,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 10318415,
+        "sha256": "1c965903e6e187af79ca16465aa4d8c0aab51240f18a5079049b3e92821ccfeb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/pas208.zip",
+        "utc": "2026-11-09T18:48:12Z"
+      },
+      "final_rows": 305735,
+      "original_loader_rows": 305735,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 10947926,
+        "sha256": "bdec4648a2e2374522cb654edd15f0f138c1117cb53571391e5197a87472defe",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/pas210.zip",
+        "utc": "2026-11-09T18:48:30Z"
+      },
+      "final_rows": 325095,
+      "original_loader_rows": 325095,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 12328281,
+        "sha256": "ea40a575100747d7bf79a4fcca4c553a006cf3f7fd12f31fafd888e4c9df448b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/pas212.zip",
+        "utc": "2026-11-09T18:48:47Z"
+      },
+      "final_rows": 395069,
+      "original_loader_rows": 395069,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 11947422,
+        "sha256": "4867c9d870eabba555f32dd4b2ac3848826a08827ec8f41707c6c6692e79cd7f",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/pas214.zip",
+        "utc": "2026-11-09T18:49:02Z"
+      },
+      "final_rows": 350272,
+      "original_loader_rows": 350272,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 15450184,
+        "sha256": "014b99fcf5a7eb851fdb11fab50a20198164954e7f210da2ccece3bb582532af",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/pas216.zip",
+        "utc": "2026-11-09T18:49:14Z"
+      },
+      "final_rows": 516385,
+      "original_loader_rows": 516385,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 12556308,
+        "sha256": "5fee204a918b4546ba04d9f05e608a8fc734d2d6b42c9625215a1b1c2932fdd0",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/pas218.zip",
+        "utc": "2026-11-09T18:49:31Z"
+      },
+      "final_rows": 349820,
+      "original_loader_rows": 349820,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 28978598,
+        "sha256": "7a8355e2cdae6c4bf0e79fcbd8fe6276d559f886bfe6f8d4e45d64aa393aa1a2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/pas220.zip",
+        "utc": "2026-11-09T18:49:46Z"
+      },
+      "final_rows": 887829,
+      "original_loader_rows": 887829,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 25588555,
+        "sha256": "69518d49c8ef0847bf8307a9ba4b41d932c1582a06f155bbcfce19d8f44fb0fc",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/pas222.zip",
+        "utc": "2026-11-09T18:50:13Z"
+      },
+      "final_rows": 749163,
+      "original_loader_rows": 749163,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 24678487,
+        "sha256": "a04e4958a613e0800e9c3c7ea9c55ade5713acaf3ed433495fd9c04b89606114",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/pas224.zip",
+        "utc": "2026-11-09T18:50:35Z"
+      },
+      "final_rows": 703163,
+      "original_loader_rows": 703163,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 9165919,
+        "sha256": "d72503cffb0ec17ff4c53acb0a7d16e39f4b5c43c91af232c6cb8d9cb9d811d5",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/pas226.zip",
+        "utc": "2026-11-09T18:50:57Z"
+      },
+      "final_rows": 239201,
+      "original_loader_rows": 239201,
+      "outcome": "available",
+      "table": "committee_contributions"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 13099896,
+        "sha256": "0e118824fece6b87bb2c6dd5a224c40339d0d84f67e318e88e942dde3e462f03",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/oth04.zip",
+        "utc": "2026-11-09T18:51:10Z"
+      },
+      "final_rows": 411455,
+      "original_loader_rows": 411455,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 13739529,
+        "sha256": "2eee04be3caf423916a6fc4f4574eceaefe3894dec6b96a449b3f72b93672245",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/oth06.zip",
+        "utc": "2026-11-09T18:52:21Z"
+      },
+      "final_rows": 423705,
+      "original_loader_rows": 423705,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 23945156,
+        "sha256": "0aeabd85fce4d625029578c1ec0b609f9e1a6d6d5fff1c30ead805cde9f200f5",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/oth08.zip",
+        "utc": "2026-11-09T18:52:37Z"
+      },
+      "final_rows": 693387,
+      "original_loader_rows": 693387,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 16504435,
+        "sha256": "37e4a3c6a16910339b2edc4167d338063648cde2014fec73b818fb7fabf26a29",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/oth10.zip",
+        "utc": "2026-11-09T18:53:48Z"
+      },
+      "final_rows": 508928,
+      "original_loader_rows": 508928,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 35551675,
+        "sha256": "b7080f5926372e0ec9a2ae5ddf92e6376a2447777cf19031897c6525bd22e14b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/oth12.zip",
+        "utc": "2026-11-09T18:54:05Z"
+      },
+      "final_rows": 1013799,
+      "original_loader_rows": 1013799,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 19568523,
+        "sha256": "f32e5abdd1e12a43424a29da401568fa86babdd75bcbc3c1871c8b86e30ba1a2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/oth14.zip",
+        "utc": "2026-11-09T18:54:35Z"
+      },
+      "final_rows": 570489,
+      "original_loader_rows": 570489,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 79578850,
+        "sha256": "a2419dc2fa1ea297f8e60dd935cb45e5346591482a77e1f22405144a5aa14543",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/oth16.zip",
+        "utc": "2026-11-09T18:54:59Z"
+      },
+      "final_rows": 2147128,
+      "original_loader_rows": 2147128,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 35253493,
+        "sha256": "7ea49a35ed8a8db96b096026010c6af6e2c3c0405c4b6cf66ea74fb2089f0cf3",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/oth18.zip",
+        "utc": "2026-11-09T18:55:53Z"
+      },
+      "final_rows": 1015198,
+      "original_loader_rows": 1015198,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 232936142,
+        "sha256": "039ca33db6450d4ab585cc1ec2111fb1d5d6f93581c4e849df5a8e8e08973ff2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/oth20.zip",
+        "utc": "2026-11-09T18:56:28Z"
+      },
+      "final_rows": 7401653,
+      "original_loader_rows": 7401653,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 146758172,
+        "sha256": "ad7ab534fe5722acf82e5c8dca750e440da2c08e55918475712febbab502ce05",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/oth22.zip",
+        "utc": "2026-11-09T18:59:10Z"
+      },
+      "final_rows": 5364412,
+      "original_loader_rows": 5364412,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 505098892,
+        "sha256": "bed8ec01c8966000df8e7f004a1e7462c258feac857b933dd06f7deffbf992e1",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/oth24.zip",
+        "utc": "2026-11-09T19:03:50Z"
+      },
+      "final_rows": 18666858,
+      "original_loader_rows": 18666858,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 218122437,
+        "sha256": "b60791e199ada9caccdba54112df1419eb4a4a2c1e71140be4c52806e6834490",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/oth26.zip",
+        "utc": "2026-11-09T19:10:38Z"
+      },
+      "final_rows": 10075883,
+      "original_loader_rows": 10075883,
+      "outcome": "available",
+      "table": "committee_to_committee"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 465679,
+        "sha256": "fa9a949a38f4120170708e1166c594e28a67a234ed65128a82d701cafb3b7833",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/cm04.zip",
+        "utc": "2026-11-09T16:58:04Z"
+      },
+      "final_rows": 9322,
+      "original_loader_rows": 9322,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 469614,
+        "sha256": "a9a69ee5ec9b2d318b7d14836f24d30f90db1bdcff362b87346d2aa5537d5aca",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/cm06.zip",
+        "utc": "2026-11-09T16:58:24Z"
+      },
+      "final_rows": 9282,
+      "original_loader_rows": 9282,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 504959,
+        "sha256": "2e7086520562ce1610f7e027a6516d7a352b3d152836f686e8f7ed64348fe575",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/cm08.zip",
+        "utc": "2026-11-09T16:58:32Z"
+      },
+      "final_rows": 10017,
+      "original_loader_rows": 10017,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 512207,
+        "sha256": "43934ec9a6032224cb266ec642a43eb8391aee41e4d90e30792553137233943b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/cm10.zip",
+        "utc": "2026-11-09T16:58:39Z"
+      },
+      "final_rows": 11138,
+      "original_loader_rows": 11138,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 608802,
+        "sha256": "c794d114c2d8010a9bc94b71b9b6e774df9bf2b7f2bc35b76ec0dcec008d29b6",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/cm12.zip",
+        "utc": "2026-11-09T16:58:47Z"
+      },
+      "final_rows": 14455,
+      "original_loader_rows": 14455,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 624425,
+        "sha256": "1d48ebb75c530d3aa34a35a3652d2bf824068987164b402152a1a8420921ff24",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/cm14.zip",
+        "utc": "2026-11-09T16:58:54Z"
+      },
+      "final_rows": 14905,
+      "original_loader_rows": 14905,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 732154,
+        "sha256": "484c9c1f90557dfbb81d837b3c05ccf0f6e94905686c2f14f7f23a27d8833063",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/cm16.zip",
+        "utc": "2026-11-09T16:59:03Z"
+      },
+      "final_rows": 17651,
+      "original_loader_rows": 17651,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 809262,
+        "sha256": "66a7aada4013c7e3d4229b865ad506609298e45a31dd8c4f676184003bb878d0",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/cm18.zip",
+        "utc": "2026-11-09T16:59:14Z"
+      },
+      "final_rows": 19022,
+      "original_loader_rows": 19022,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 782585,
+        "sha256": "70a1849958e1b75d6b194c782b7e6b5713070340bd2424df69f02356562e8d10",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/cm20.zip",
+        "utc": "2026-11-09T16:59:22Z"
+      },
+      "final_rows": 18286,
+      "original_loader_rows": 18286,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 838217,
+        "sha256": "bc41e81028b678e150da20bb1593ef131ed3552324b194e428afec8b76052ad9",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/cm22.zip",
+        "utc": "2026-11-09T16:59:39Z"
+      },
+      "final_rows": 19792,
+      "original_loader_rows": 19792,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 883375,
+        "sha256": "044970886da3eb0a3e423329625baf03293e5ebd0f3c4cd744c7db164c09ad81",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/cm24.zip",
+        "utc": "2026-11-09T16:59:46Z"
+      },
+      "final_rows": 20937,
+      "original_loader_rows": 20937,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 879745,
+        "sha256": "86e45d03cff79623f6a6f21bd3af9968726116dfdead70a9b43b1e7409052785",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/cm26.zip",
+        "utc": "2026-11-09T16:59:57Z"
+      },
+      "final_rows": 21031,
+      "original_loader_rows": 21031,
+      "outcome": "available",
+      "table": "committees"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/CommunicationCosts_2004.csv",
+        "utc": "2026-11-09T19:29:04Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "communication_costs"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/CommunicationCosts_2006.csv",
+        "utc": "2026-11-09T19:29:16Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "communication_costs"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/CommunicationCosts_2008.csv",
+        "utc": "2026-11-09T19:29:22Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 1819157,
+        "sha256": "877e270408dde9d90fdc6e9dd4d2a93206d76d3ecb3203faa2d5f5d569dcad9c",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/CommunicationCosts_2010.csv",
+        "utc": "2026-11-09T19:29:31Z"
+      },
+      "final_rows": 5947,
+      "original_loader_rows": 5881,
+      "outcome": "available",
+      "strict_proof_sha256": "446d734ff320aaf24e17dac4aecdbc0cec0a6daf4cf8ebd17251768a9a7971b8",
+      "strict_source_rows": 5947,
+      "strict_typed_fingerprint": {
+        "rows": 5947,
+        "sha256_limb_sums": [
+          "54849055359730903319444",
+          "55256095669200923460175",
+          "54924261742268552785591",
+          "54308887335073222031293"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 1718667,
+        "sha256": "a2270bf756927701c06ec30d4d759e62b5ffc49e81564712e376ed36d3d4cee2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/CommunicationCosts_2012.csv",
+        "utc": "2026-11-09T19:29:40Z"
+      },
+      "final_rows": 5791,
+      "original_loader_rows": 5791,
+      "outcome": "available",
+      "strict_proof_sha256": "7c900135c3a3213a867fa3685bfd8a239129534bc3ef076d1e2a82538bcccabb",
+      "strict_source_rows": 5791,
+      "strict_typed_fingerprint": {
+        "rows": 5791,
+        "sha256_limb_sums": [
+          "53276527826505205976327",
+          "53495104590060788260768",
+          "53650869210829007024558",
+          "54192397813798146640454"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 1136509,
+        "sha256": "69ffaaac9da5d48e14415498f12cf15b7f3732b4489f6586bc657b57b2d4ba2b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/CommunicationCosts_2014.csv",
+        "utc": "2026-11-09T19:29:56Z"
+      },
+      "final_rows": 3961,
+      "original_loader_rows": 3961,
+      "outcome": "available",
+      "strict_proof_sha256": "ef12b624d19658f5356d71fb7d01f5354aa464710e62c895c63d86f4094e5a25",
+      "strict_source_rows": 3961,
+      "strict_typed_fingerprint": {
+        "rows": 3961,
+        "sha256_limb_sums": [
+          "35818463610360126967139",
+          "35985745025209174540237",
+          "36439458772784326254815",
+          "36157304003491441419876"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 761139,
+        "sha256": "4137c11555eeb80ed85c58adfe62e2bac205445241cbbb026a11d6ee6b6541f6",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/CommunicationCosts_2016.csv",
+        "utc": "2026-11-09T19:30:13Z"
+      },
+      "final_rows": 2382,
+      "original_loader_rows": 2371,
+      "outcome": "available",
+      "strict_proof_sha256": "1b33d1d2027f59e1c92de710c67a94d7d1b97fb71eb51ec1929ed2e1601adb1d",
+      "strict_source_rows": 2382,
+      "strict_typed_fingerprint": {
+        "rows": 2382,
+        "sha256_limb_sums": [
+          "21938916465020820066870",
+          "21823191788114377666272",
+          "22093827005435833730904",
+          "21592983938464343149828"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 411037,
+        "sha256": "c44e4bd25145e4da61e9f5ba264c7f8ccb2247c044067a61b28653fee7a28fab",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/CommunicationCosts_2018.csv",
+        "utc": "2026-11-09T19:30:19Z"
+      },
+      "final_rows": 1344,
+      "original_loader_rows": 1342,
+      "outcome": "available",
+      "strict_proof_sha256": "aba0f0bfd87de3282e1731ff4f801252e628a5ae3adf1f733bd91072574087f6",
+      "strict_source_rows": 1344,
+      "strict_typed_fingerprint": {
+        "rows": 1344,
+        "sha256_limb_sums": [
+          "12306902279789113952405",
+          "12113701450116844985837",
+          "12428863815486726069991",
+          "12267256896387755645722"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 308464,
+        "sha256": "1ece6eb8580b9376c14b5fec9594fe98422ee045e33aeb7a255ee535db4b693b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/CommunicationCosts_2020.csv",
+        "utc": "2026-11-09T19:30:30Z"
+      },
+      "final_rows": 1018,
+      "original_loader_rows": 1018,
+      "outcome": "available",
+      "strict_proof_sha256": "992e98eae3f9e314bae09034c4790d0c0748ff21cfe8b28b7525dedf536dd2a2",
+      "strict_source_rows": 1018,
+      "strict_typed_fingerprint": {
+        "rows": 1018,
+        "sha256_limb_sums": [
+          "9278649592445178061901",
+          "9416004529602338572059",
+          "9130400350223140313908",
+          "9440986078714226534118"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 1280869,
+        "sha256": "89e9644dd6805d7ceda02a409f2dc44c1b246f170a5f0652cca69407db955966",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/CommunicationCosts_2022.csv",
+        "utc": "2026-11-09T19:30:40Z"
+      },
+      "final_rows": 4416,
+      "original_loader_rows": 4412,
+      "outcome": "available",
+      "strict_proof_sha256": "ae4561fbddebd2b8cbc14ee17a1c4c4686b07d2f73d01c0371db0e3b18de92af",
+      "strict_source_rows": 4416,
+      "strict_typed_fingerprint": {
+        "rows": 4416,
+        "sha256_limb_sums": [
+          "40810650943321917711566",
+          "40680192203021729108624",
+          "40329769728101642184277",
+          "40298625362183292291349"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 237322,
+        "sha256": "10930e58668f7b5c776db134b7479e3dbd2b9391504efa753b5fbe939dd24e8a",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/CommunicationCosts_2024.csv",
+        "utc": "2026-11-09T19:30:48Z"
+      },
+      "final_rows": 779,
+      "original_loader_rows": 778,
+      "outcome": "available",
+      "strict_proof_sha256": "aa47dbf6f7153be22cf239d35efe1380d4442d43f931fda0019b066fc3f374b5",
+      "strict_source_rows": 779,
+      "strict_typed_fingerprint": {
+        "rows": 779,
+        "sha256_limb_sums": [
+          "6993198449164808509153",
+          "7211659784980523749596",
+          "7061135080213836561364",
+          "7395875343998319509557"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 38922,
+        "sha256": "4f09b07096fd99bf3e52c7504e543263776dc1dcb83d8859bef0a6edadf11581",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/CommunicationCosts_2026.csv",
+        "utc": "2026-11-09T19:31:02Z"
+      },
+      "final_rows": 130,
+      "original_loader_rows": 130,
+      "outcome": "available",
+      "strict_proof_sha256": "94ba15e46883024a113a48e366f909be5287daca0c27750021f3cece3ca36bae",
+      "strict_source_rows": 130,
+      "strict_typed_fingerprint": {
+        "rows": 130,
+        "sha256_limb_sums": [
+          "1251574819676673071108",
+          "1317102514597217798411",
+          "1193060411485701096268",
+          "1211790528145858699601"
+        ]
+      },
+      "table": "communication_costs"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/ElectioneeringComm_2004.csv",
+        "utc": "2026-11-09T19:27:36Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "electioneering_communications"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/ElectioneeringComm_2006.csv",
+        "utc": "2026-11-09T19:27:54Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "electioneering_communications"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/ElectioneeringComm_2008.csv",
+        "utc": "2026-11-09T19:28:02Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 160783,
+        "sha256": "4361744e4bab3f38aec3059627c32cc49d461970ba0ce163a40ab540bb68200b",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/ElectioneeringComm_2010.csv",
+        "utc": "2026-11-09T19:28:09Z"
+      },
+      "final_rows": 654,
+      "original_loader_rows": 617,
+      "outcome": "available",
+      "strict_proof_sha256": "3519f554acb431f256f22f7c79cee3ce7def42551673b2f2cb51d74b5c74200b",
+      "strict_source_rows": 654,
+      "strict_typed_fingerprint": {
+        "rows": 654,
+        "sha256_limb_sums": [
+          "5883814742193645945453",
+          "5776911620590985225137",
+          "5915218428882912580687",
+          "6048575644325464910379"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 75779,
+        "sha256": "d505d20d4abf62de6b721e37b329c419b6278b533b9957c82abed78496c13862",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/ElectioneeringComm_2012.csv",
+        "utc": "2026-11-09T19:28:14Z"
+      },
+      "final_rows": 288,
+      "original_loader_rows": 288,
+      "outcome": "available",
+      "strict_proof_sha256": "96594fc53ebce2729ac498af7002930e03504116bf2cfc43fa59faef73f74e3d",
+      "strict_source_rows": 288,
+      "strict_typed_fingerprint": {
+        "rows": 288,
+        "sha256_limb_sums": [
+          "2610003113088607052868",
+          "2710932725084524588267",
+          "2828063956586822114881",
+          "2528875917887962900290"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 10506,
+        "sha256": "06ea713c5d9c1ab97d5db38c7e814196428bcd9236a6a2b3ccaac5a00e6d80b3",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/ElectioneeringComm_2014.csv",
+        "utc": "2026-11-09T19:28:21Z"
+      },
+      "final_rows": 40,
+      "original_loader_rows": 40,
+      "outcome": "available",
+      "strict_proof_sha256": "aaa345e5a16cf662d60051b8087d71f7b41cf660c7845b63ecf68bef234eda9f",
+      "strict_source_rows": 40,
+      "strict_typed_fingerprint": {
+        "rows": 40,
+        "sha256_limb_sums": [
+          "363142415505278632036",
+          "361747821509616119181",
+          "454194096856742836208",
+          "383180107812885076153"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 27703,
+        "sha256": "e7c0cd3647235044af7676fbc58da94cb5a1eeac338c7f5e98d91c510b51bdcb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/ElectioneeringComm_2016.csv",
+        "utc": "2026-11-09T19:28:26Z"
+      },
+      "final_rows": 97,
+      "original_loader_rows": 97,
+      "outcome": "available",
+      "strict_proof_sha256": "a11adf5eea6cb8f5e542cf44376f72d5614bb4ccdfd05e1ff1bb880e1606a9e2",
+      "strict_source_rows": 97,
+      "strict_typed_fingerprint": {
+        "rows": 97,
+        "sha256_limb_sums": [
+          "865708216031237124433",
+          "936078042217351561477",
+          "951872955642406892701",
+          "997852737803191936783"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 51662,
+        "sha256": "de148326a5c6973b3be3e065278fa4b8db647a54c752693e4afc9de5941d24fb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/ElectioneeringComm_2018.csv",
+        "utc": "2026-11-09T19:28:32Z"
+      },
+      "final_rows": 212,
+      "original_loader_rows": 212,
+      "outcome": "available",
+      "strict_proof_sha256": "3e03820d523d77968663b0caeab13668e64549cd678c2412c17bce3647e776d7",
+      "strict_source_rows": 212,
+      "strict_typed_fingerprint": {
+        "rows": 212,
+        "sha256_limb_sums": [
+          "2011238361694744882736",
+          "1879551512590125293432",
+          "1991142712665982244413",
+          "2031458573618515863531"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 71074,
+        "sha256": "4c4e82b371312d7d1cc36baef0426000a96ff67d3766e142de522016cf7ee74a",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/ElectioneeringComm_2020.csv",
+        "utc": "2026-11-09T19:28:38Z"
+      },
+      "final_rows": 273,
+      "original_loader_rows": 206,
+      "outcome": "available",
+      "strict_proof_sha256": "82ff9f58ff8b3ef8cde403e4f11db3f8a4e1e7d9f5d850e6036a6e32d547664b",
+      "strict_source_rows": 273,
+      "strict_typed_fingerprint": {
+        "rows": 273,
+        "sha256_limb_sums": [
+          "2501854676481968341508",
+          "2419219396544004399084",
+          "2469376988149220265814",
+          "2659422047700833497170"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 11977,
+        "sha256": "8f127d8758b2bfb4054f3b098c6330b1c02c6363a4711631c9906df7bb25451d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/ElectioneeringComm_2022.csv",
+        "utc": "2026-11-09T19:28:46Z"
+      },
+      "final_rows": 45,
+      "original_loader_rows": 45,
+      "outcome": "available",
+      "strict_proof_sha256": "38977fd024277354b79aee30b925ab814aebc109836f26e4efc7f62f86aa706d",
+      "strict_source_rows": 45,
+      "strict_typed_fingerprint": {
+        "rows": 45,
+        "sha256_limb_sums": [
+          "343855489417160665019",
+          "447164439418399709681",
+          "429769451995428964293",
+          "422715439545008613016"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 18370,
+        "sha256": "8a9f85b10ac87ddfe31c2a0641a34f76b87f6387fb5a245d393699ce2a6101dd",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/ElectioneeringComm_2024.csv",
+        "utc": "2026-11-09T19:28:51Z"
+      },
+      "final_rows": 69,
+      "original_loader_rows": 65,
+      "outcome": "available",
+      "strict_proof_sha256": "0148ad62a9bf11de7743812d1dc128b706f920c8397a538d7173598d56935aa6",
+      "strict_source_rows": 69,
+      "strict_typed_fingerprint": {
+        "rows": 69,
+        "sha256_limb_sums": [
+          "601291345243416851406",
+          "603683496455544900078",
+          "642155310223193477318",
+          "627312899277942588336"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "amendments_removed": 0,
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 12808,
+        "sha256": "aa88e86dc492e5d0f854de7d6c18d448f07e2d9bf743821a5586e3a359849bae",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/ElectioneeringComm_2026.csv",
+        "utc": "2026-11-09T19:28:58Z"
+      },
+      "final_rows": 47,
+      "original_loader_rows": 47,
+      "outcome": "available",
+      "strict_proof_sha256": "868733d3ba2b3c95a165aa7ee0a4405f94b6e8061a2fb2d6d01c83387068a1dd",
+      "strict_source_rows": 47,
+      "strict_typed_fingerprint": {
+        "rows": 47,
+        "sha256_limb_sums": [
+          "431217120358001404048",
+          "370572019852405440006",
+          "449158975246081891000",
+          "454673363977354042712"
+        ]
+      },
+      "table": "electioneering_communications"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/independent_expenditure_2004.csv",
+        "utc": "2026-11-09T19:25:07Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "independent_expenditures"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/independent_expenditure_2006.csv",
+        "utc": "2026-11-09T19:25:14Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "independent_expenditures"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": false,
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/independent_expenditure_2008.csv",
+        "utc": "2026-11-09T19:25:34Z"
+      },
+      "outcome": "expected_absent_before_2010",
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 11673,
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 11437199,
+        "sha256": "0650ee0e243f22a2da7953386e534decd8f29c29ad39d33b04563f8901f3ec26",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/independent_expenditure_2010.csv",
+        "utc": "2026-11-09T19:25:40Z"
+      },
+      "final_rows": 36655,
+      "original_loader_rows": 48259,
+      "outcome": "available",
+      "strict_proof_sha256": "5254043e7375da74d601f403fb7bb060b77675b7747ee1de299f99ee02aa30e8",
+      "strict_source_rows": 48328,
+      "strict_typed_fingerprint": {
+        "rows": 36655,
+        "sha256_limb_sums": [
+          "337489621756402787080540",
+          "339733582512974836131013",
+          "337460172657370893117502",
+          "337524871401073789194547"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 13475,
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 26951945,
+        "sha256": "7b749d12de5b1cc5a19a98b87929338f3e0038610a14903d889b507a3a9dfaf0",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/independent_expenditure_2012.csv",
+        "utc": "2026-11-09T19:25:49Z"
+      },
+      "final_rows": 99911,
+      "original_loader_rows": 113172,
+      "outcome": "available",
+      "strict_proof_sha256": "a59a6d1f78205b5f562f2d66436c9396e2988f99b91eb6d1bf92a46bdf67b633",
+      "strict_source_rows": 113386,
+      "strict_typed_fingerprint": {
+        "rows": 99911,
+        "sha256_limb_sums": [
+          "924290310649671914223760",
+          "920560514691467967324407",
+          "926019526443135781422791",
+          "921196680116392914138131"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 3117,
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 16656127,
+        "sha256": "467023e3ef207a06361ec327fedb30eae07e132695a97e09af36ae52e7c7d34e",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/independent_expenditure_2014.csv",
+        "utc": "2026-11-09T19:26:00Z"
+      },
+      "final_rows": 65117,
+      "original_loader_rows": 68100,
+      "outcome": "available",
+      "strict_proof_sha256": "484fbfef4b5b667d2c80249fe0b32ac055bbd5ce4bcac60e14aa6426e6819cf0",
+      "strict_source_rows": 68234,
+      "strict_typed_fingerprint": {
+        "rows": 65117,
+        "sha256_limb_sums": [
+          "601157088627481814270341",
+          "600135001422684590927325",
+          "599153864584226928919213",
+          "599998774403216630598764"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 11998,
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 42350280,
+        "sha256": "a5e6b51e0873562928a441e95880f340b367f4320920d843cd64f774d93a3976",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/independent_expenditure_2016.csv",
+        "utc": "2026-11-09T19:26:25Z"
+      },
+      "final_rows": 159407,
+      "original_loader_rows": 170968,
+      "outcome": "available",
+      "strict_proof_sha256": "8ff0e40771b30fb894608fd9bb3527c4d8367fe472a23fd3631b71f250e13aaa",
+      "strict_source_rows": 171405,
+      "strict_typed_fingerprint": {
+        "rows": 159407,
+        "sha256_limb_sums": [
+          "1467214833404107935450871",
+          "1468899185451430627946248",
+          "1469338953154413035408926",
+          "1470652765812351686969287"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 6394,
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 11772520,
+        "sha256": "abae4dec8bbaa260b92b9460907fe9ea7d327849fe9a59bcfcf134b55e834c4d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/independent_expenditure_2018.csv",
+        "utc": "2026-11-09T19:26:35Z"
+      },
+      "final_rows": 38645,
+      "original_loader_rows": 45006,
+      "outcome": "available",
+      "strict_proof_sha256": "9b347205ccd50bbf85061a3b68f68f859be6a8dd87028c85b899814fb3aa81b3",
+      "strict_source_rows": 45039,
+      "strict_typed_fingerprint": {
+        "rows": 38645,
+        "sha256_limb_sums": [
+          "355297499244719075245898",
+          "357171833772002878806993",
+          "359381834955768355188271",
+          "356888570830994454922307"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 9326,
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 21357680,
+        "sha256": "8b43843be009bc76a5583992abbbc91b747ad3045761f35417467c00bb5f18fb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/independent_expenditure_2020.csv",
+        "utc": "2026-11-09T19:26:44Z"
+      },
+      "final_rows": 71440,
+      "original_loader_rows": 80766,
+      "outcome": "available",
+      "strict_proof_sha256": "4dc49a1cfd3d965446c2c8c76fa722497b2035fc4cdee3939c599427f2621617",
+      "strict_source_rows": 80766,
+      "strict_typed_fingerprint": {
+        "rows": 71440,
+        "sha256_limb_sums": [
+          "658168295300967702066747",
+          "660026170024811975460822",
+          "655316062924375769830094",
+          "659365011089149976299380"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 5926,
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 16646736,
+        "sha256": "5f26bb900aa70b65bc49aa9eb97bf2b78726711e9469bf865f33e7ebadb9cd5e",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/independent_expenditure_2022.csv",
+        "utc": "2026-11-09T19:26:57Z"
+      },
+      "final_rows": 55853,
+      "original_loader_rows": 61644,
+      "outcome": "available",
+      "strict_proof_sha256": "bf4636a2bd8b73e324fe23f0c8f97234feff432b72599c5473a8003415965540",
+      "strict_source_rows": 61779,
+      "strict_typed_fingerprint": {
+        "rows": 55853,
+        "sha256_limb_sums": [
+          "515388333102948761663286",
+          "515548877899685661552192",
+          "515011160286901335583975",
+          "513742690603177504643937"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 12023,
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 19534174,
+        "sha256": "182e0ae060e54975170da24976dcffc1b736aaf5b8ed99dbe5731815d2103044",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/independent_expenditure_2024.csv",
+        "utc": "2026-11-09T19:27:13Z"
+      },
+      "final_rows": 61426,
+      "original_loader_rows": 72923,
+      "outcome": "available",
+      "strict_proof_sha256": "cecaee588b0a1ff3056e84de1ec2c3c5a2d7809870236715037d577e336b80db",
+      "strict_source_rows": 73449,
+      "strict_typed_fingerprint": {
+        "rows": 61426,
+        "sha256_limb_sums": [
+          "566156431414501256998706",
+          "567977456434575992284757",
+          "568594244252476008939302",
+          "565490507850413585293415"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "amendments_removed": 4213,
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 13673737,
+        "sha256": "1ebc03c77dd8482b03f59aa9f715c4e4097c07b47a2cdaf78d6687ec40999fba",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/independent_expenditure_2026.csv",
+        "utc": "2026-11-09T19:27:26Z"
+      },
+      "final_rows": 46973,
+      "original_loader_rows": 51044,
+      "outcome": "available",
+      "strict_proof_sha256": "9ffc4961b89ee9ac3df23ec31112b464702fb12b9ebe4a56c7a08ba47246d5e5",
+      "strict_source_rows": 51186,
+      "strict_typed_fingerprint": {
+        "rows": 46973,
+        "sha256_limb_sums": [
+          "431755270213756215751049",
+          "432600241596756016987306",
+          "432889779831888336481463",
+          "433462752427653984227667"
+        ]
+      },
+      "table": "independent_expenditures"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 86323795,
+        "sha256": "4d9aa6bc09da206506c7eec21d03381cbcf45fbf87aacedeab93fd6a2d1a669d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/indiv04.zip",
+        "utc": "2026-11-09T17:02:24Z"
+      },
+      "final_rows": 2460297,
+      "original_loader_rows": 2460297,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 64365143,
+        "sha256": "b35a25dd0ce6115b9513040e64bb27f4b45dbb06c1626f43377fd8f2b7a9c122",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/indiv06.zip",
+        "utc": "2026-11-09T17:03:21Z"
+      },
+      "final_rows": 1830339,
+      "original_loader_rows": 1830339,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 122568978,
+        "sha256": "0836eaef61064b5463dda61ae3f7d6140de7485ef1f3e847e32c276680bdaf69",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/indiv08.zip",
+        "utc": "2026-11-09T17:04:05Z"
+      },
+      "final_rows": 3356758,
+      "original_loader_rows": 3356758,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 75717456,
+        "sha256": "d40417f9ef77bc875653df4c9c40ce86aacd480d36db15bcbd0e5e841ed8e6b7",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/indiv10.zip",
+        "utc": "2026-11-09T17:05:31Z"
+      },
+      "final_rows": 2111814,
+      "original_loader_rows": 2111814,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 266010829,
+        "sha256": "44fc62bbddbbd74a24e68c505dc4b52853a52610d977fa1a5148b127c3b440ac",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/indiv12.zip",
+        "utc": "2026-11-09T17:06:26Z"
+      },
+      "final_rows": 3372139,
+      "original_loader_rows": 3372139,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 168977253,
+        "sha256": "49ead6348a74e150005eca952038608f246283224baccb22e3f9093a3c50a1a8",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/indiv14.zip",
+        "utc": "2026-11-09T17:07:42Z"
+      },
+      "final_rows": 2192151,
+      "original_loader_rows": 2192151,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 1491695257,
+        "sha256": "c409dad5ce7667d58cb62a2d39ed616929188dc5aae078a6c74fb0247b4c29c9",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/indiv16.zip",
+        "utc": "2026-11-09T17:09:09Z"
+      },
+      "final_rows": 20454642,
+      "original_loader_rows": 20454642,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 1599886501,
+        "sha256": "9de143ee9ef2ee0af9306e97b7b900de170cbfd4f1cef444b75ae1b26623ae6c",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/indiv18.zip",
+        "utc": "2026-11-09T17:18:35Z"
+      },
+      "final_rows": 21730731,
+      "original_loader_rows": 21730731,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 5865170563,
+        "sha256": "df8af5cb14f32ccfb24897091512780b8c9609f0f95bfabcbe157410284c67ff",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/indiv20.zip",
+        "utc": "2026-11-09T17:29:06Z"
+      },
+      "final_rows": 69377425,
+      "original_loader_rows": 69377425,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 3595301849,
+        "sha256": "475baa15b91f8cf9555b4b888786f1b24c431d2429027ddc1c52750d575064eb",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/indiv22.zip",
+        "utc": "2026-11-09T17:57:57Z"
+      },
+      "final_rows": 63885802,
+      "interpretation": "Complete current date-shard typed multiset reproduced immutable baseline; truncated root member is not the final source of rows.",
+      "original_loader_rows": 23747535,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 4244364507,
+        "sha256": "f7603beecf5ef39d6bd6eb63a0916d07c2a80e4cfbf35c1ad5435a422345a119",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/indiv24.zip",
+        "utc": "2026-11-09T18:09:29Z"
+      },
+      "final_rows": 58210203,
+      "original_loader_rows": 58210203,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 2498258422,
+        "sha256": "436528f8563dbafaa6dd2e21f885d923fe67097e6adf0d2b517cafb92b83ab7c",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/indiv26.zip",
+        "utc": "2026-11-09T18:33:12Z"
+      },
+      "final_rows": 36691128,
+      "original_loader_rows": 36691128,
+      "outcome": "available",
+      "table": "individual_contributions"
+    },
+    {
+      "cycle": 2004,
+      "download": {
+        "available": true,
+        "bytes": 25734364,
+        "sha256": "1e5d06b6710dd4de658e9a6287155c3e8463fac335d09095ce20da61e40d1c3d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2004/oppexp04.zip",
+        "utc": "2026-11-09T19:14:56Z"
+      },
+      "final_rows": 954706,
+      "original_loader_rows": 954706,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2006,
+      "download": {
+        "available": true,
+        "bytes": 30217068,
+        "sha256": "94f61f3cbaef4f7b1827311b00db101b778fb45cab6223b5d5e8722a22858835",
+        "url": "https://www.fec.gov/files/bulk-downloads/2006/oppexp06.zip",
+        "utc": "2026-11-09T19:15:52Z"
+      },
+      "final_rows": 1104753,
+      "original_loader_rows": 1104753,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2008,
+      "download": {
+        "available": true,
+        "bytes": 43785331,
+        "sha256": "1ecd508e63ea8bf97f9d6bfc25ed5e4a18f10addbbe7c4bf5b0050445e24eb5e",
+        "url": "https://www.fec.gov/files/bulk-downloads/2008/oppexp08.zip",
+        "utc": "2026-11-09T19:16:25Z"
+      },
+      "final_rows": 1639878,
+      "original_loader_rows": 1639878,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2010,
+      "download": {
+        "available": true,
+        "bytes": 37478492,
+        "sha256": "db6bd465c71cfb85cf0da2ed980f4ebc6c4fd07fcfe269281d3e539eb90fd898",
+        "url": "https://www.fec.gov/files/bulk-downloads/2010/oppexp10.zip",
+        "utc": "2026-11-09T19:17:10Z"
+      },
+      "final_rows": 1339329,
+      "original_loader_rows": 1339329,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2012,
+      "download": {
+        "available": true,
+        "bytes": 45382905,
+        "sha256": "18dddb509c481d81de4f7d7982d9fc1b5dffaf499832b08db283a39d249d9522",
+        "url": "https://www.fec.gov/files/bulk-downloads/2012/oppexp12.zip",
+        "utc": "2026-11-09T19:17:50Z"
+      },
+      "final_rows": 1656089,
+      "original_loader_rows": 1656089,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2014,
+      "download": {
+        "available": true,
+        "bytes": 38894605,
+        "sha256": "2d90160dd9f844a681e928c335ccc1add2a8783c81d6903cf6a6629e495c4711",
+        "url": "https://www.fec.gov/files/bulk-downloads/2014/oppexp14.zip",
+        "utc": "2026-11-09T19:18:44Z"
+      },
+      "final_rows": 1351071,
+      "original_loader_rows": 1351071,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2016,
+      "download": {
+        "available": true,
+        "bytes": 51856704,
+        "sha256": "4edc11f7c911aa9c0dd992e9f5181997e033577a6a7580382e8c16db5d68fa16",
+        "url": "https://www.fec.gov/files/bulk-downloads/2016/oppexp16.zip",
+        "utc": "2026-11-09T19:19:29Z"
+      },
+      "final_rows": 1744187,
+      "original_loader_rows": 1744187,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2018,
+      "download": {
+        "available": true,
+        "bytes": 52731735,
+        "sha256": "7e8c9d284ade680d89ac930454c010035c6a8a29e79e176aa8b670c35e6faf53",
+        "url": "https://www.fec.gov/files/bulk-downloads/2018/oppexp18.zip",
+        "utc": "2026-11-09T19:20:17Z"
+      },
+      "final_rows": 1800080,
+      "original_loader_rows": 1800080,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2020,
+      "download": {
+        "available": true,
+        "bytes": 64556004,
+        "sha256": "ffe4c16fd288b90c89580f5479efcd26f4cdcc6974738fbf322b97e0794ef7e2",
+        "url": "https://www.fec.gov/files/bulk-downloads/2020/oppexp20.zip",
+        "utc": "2026-11-09T19:21:08Z"
+      },
+      "final_rows": 2310524,
+      "original_loader_rows": 2310524,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2022,
+      "download": {
+        "available": true,
+        "bytes": 61909594,
+        "sha256": "81086c930ba7c12f1a3c14f0ce4ab79ccfc0febed752406e21696046a7f779b6",
+        "url": "https://www.fec.gov/files/bulk-downloads/2022/oppexp22.zip",
+        "utc": "2026-11-09T19:22:13Z"
+      },
+      "final_rows": 1962279,
+      "original_loader_rows": 1962279,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2024,
+      "download": {
+        "available": true,
+        "bytes": 67913840,
+        "sha256": "3911dc80c6e54ae02c737fbf01c6c2efdbf89472d9704199906c603811ec0e6d",
+        "url": "https://www.fec.gov/files/bulk-downloads/2024/oppexp24.zip",
+        "utc": "2026-11-09T19:23:11Z"
+      },
+      "final_rows": 2249912,
+      "original_loader_rows": 2249912,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    },
+    {
+      "cycle": 2026,
+      "download": {
+        "available": true,
+        "bytes": 52644982,
+        "sha256": "8bd18eeee3ec682fb4525121dc88c0f671cb93fa6c8c8078eaf6acda39d699ed",
+        "url": "https://www.fec.gov/files/bulk-downloads/2026/oppexp26.zip",
+        "utc": "2026-11-09T19:24:15Z"
+      },
+      "final_rows": 1745974,
+      "original_loader_rows": 1745974,
+      "outcome": "available",
+      "table": "operating_expenditures"
+    }
+  ],
+  "tables": {
+    "candidate_committee_links": {
+      "columns": [
+        [
+          "CAND_ID",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ELECTION_YR",
+          "INTEGER"
+        ],
+        [
+          "FEC_ELECTION_YR",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_TP",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_DSGN",
+          "VARCHAR"
+        ],
+        [
+          "LINKAGE_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "CAND_ELECTION_YR": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_DSGN": {
+          "null_count": 14,
+          "null_pct": 0.0
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "FEC_ELECTION_YR": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "LINKAGE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 3754,
+          "sha256_limb_sums": [
+            "34596978368040968605004",
+            "35150502745098682627531",
+            "34537022121694801702663",
+            "34663786268269502375809"
+          ]
+        },
+        "2006": {
+          "rows": 3876,
+          "sha256_limb_sums": [
+            "35722987505780339765793",
+            "35590501428879332424900",
+            "35921646789767699833801",
+            "35332840278197452493521"
+          ]
+        },
+        "2008": {
+          "rows": 4271,
+          "sha256_limb_sums": [
+            "39238610076450414770861",
+            "39990234025495423149415",
+            "39969611858078658447075",
+            "39742394931068865721537"
+          ]
+        },
+        "2010": {
+          "rows": 5175,
+          "sha256_limb_sums": [
+            "47937332504722980735954",
+            "47510425910486700197773",
+            "47236007238552036648615",
+            "47402457595819112020366"
+          ]
+        },
+        "2012": {
+          "rows": 6131,
+          "sha256_limb_sums": [
+            "55916194067794876526847",
+            "56289552963420824677970",
+            "56306124696576462565770",
+            "57149893459990220847530"
+          ]
+        },
+        "2014": {
+          "rows": 6245,
+          "sha256_limb_sums": [
+            "57666697209456609070698",
+            "58138396968870693504226",
+            "57985808070240381888288",
+            "58575645431840703075184"
+          ]
+        },
+        "2016": {
+          "rows": 6407,
+          "sha256_limb_sums": [
+            "59507645771248166473624",
+            "59234789244353328367181",
+            "59005212098035552826226",
+            "59434324766320365169533"
+          ]
+        },
+        "2018": {
+          "rows": 7180,
+          "sha256_limb_sums": [
+            "65553803458439974654688",
+            "66590624700597941418843",
+            "66310355513284594030679",
+            "66278137666148902787326"
+          ]
+        },
+        "2020": {
+          "rows": 7055,
+          "sha256_limb_sums": [
+            "65652561257831771342120",
+            "65061641470314919873144",
+            "65114593542056830765989",
+            "65283973693396824175262"
+          ]
+        },
+        "2022": {
+          "rows": 7683,
+          "sha256_limb_sums": [
+            "71116998774454353060307",
+            "71628048500350393470567",
+            "70907315171055508219271",
+            "71309819441640364129908"
+          ]
+        },
+        "2024": {
+          "rows": 8619,
+          "sha256_limb_sums": [
+            "79277477513492374546476",
+            "79233024562621465254464",
+            "79296137003303424738625",
+            "79578434736809585992122"
+          ]
+        },
+        "2026": {
+          "rows": 8410,
+          "sha256_limb_sums": [
+            "78431229471831582331223",
+            "78924006838326037756888",
+            "77784556065348468006789",
+            "77601210020476003577803"
+          ]
+        }
+      },
+      "rows": 74806
+    },
+    "candidates": {
+      "columns": [
+        [
+          "CAND_ID",
+          "VARCHAR"
+        ],
+        [
+          "CAND_NAME",
+          "VARCHAR"
+        ],
+        [
+          "CAND_PTY_AFFILIATION",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ELECTION_YR",
+          "INTEGER"
+        ],
+        [
+          "CAND_OFFICE_ST",
+          "VARCHAR"
+        ],
+        [
+          "CAND_OFFICE",
+          "VARCHAR"
+        ],
+        [
+          "CAND_OFFICE_DISTRICT",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ICI",
+          "VARCHAR"
+        ],
+        [
+          "CAND_STATUS",
+          "VARCHAR"
+        ],
+        [
+          "CAND_PCC",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ST1",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ST2",
+          "VARCHAR"
+        ],
+        [
+          "CAND_CITY",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ST",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ZIP",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "CAND_CITY": {
+          "null_count": 61,
+          "null_pct": 0.1
+        },
+        "CAND_ELECTION_YR": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_ICI": {
+          "null_count": 3778,
+          "null_pct": 4.9
+        },
+        "CAND_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_NAME": {
+          "null_count": 1,
+          "null_pct": 0.0
+        },
+        "CAND_OFFICE": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_OFFICE_DISTRICT": {
+          "null_count": 645,
+          "null_pct": 0.8
+        },
+        "CAND_OFFICE_ST": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_PCC": {
+          "null_count": 13866,
+          "null_pct": 17.8
+        },
+        "CAND_PTY_AFFILIATION": {
+          "null_count": 93,
+          "null_pct": 0.1
+        },
+        "CAND_ST": {
+          "null_count": 741,
+          "null_pct": 1.0
+        },
+        "CAND_ST1": {
+          "null_count": 989,
+          "null_pct": 1.3
+        },
+        "CAND_ST2": {
+          "null_count": 70499,
+          "null_pct": 90.7
+        },
+        "CAND_STATUS": {
+          "null_count": 12,
+          "null_pct": 0.0
+        },
+        "CAND_ZIP": {
+          "null_count": 1077,
+          "null_pct": 1.4
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 3814,
+          "sha256_limb_sums": [
+            "35265641489546058904669",
+            "34656767958834320163198",
+            "34666451464677250520610",
+            "35073573377128395867202"
+          ]
+        },
+        "2006": {
+          "rows": 3704,
+          "sha256_limb_sums": [
+            "34611479949406527370981",
+            "34119750947961367815558",
+            "34239310197555219342855",
+            "34224359288540153428949"
+          ]
+        },
+        "2008": {
+          "rows": 4072,
+          "sha256_limb_sums": [
+            "37374013000648950380399",
+            "37419991193206854470396",
+            "37193404355775796630487",
+            "37792470894155593557429"
+          ]
+        },
+        "2010": {
+          "rows": 5126,
+          "sha256_limb_sums": [
+            "47824744789759263635315",
+            "46913676313602622336907",
+            "47447264070022283998113",
+            "47720213441678624019884"
+          ]
+        },
+        "2012": {
+          "rows": 5628,
+          "sha256_limb_sums": [
+            "51576357412053108493448",
+            "52021273478838642889033",
+            "52365407853630647018961",
+            "51467697789817873347892"
+          ]
+        },
+        "2014": {
+          "rows": 5536,
+          "sha256_limb_sums": [
+            "51539126785863825029964",
+            "51091376722359659836715",
+            "50550117670462399077500",
+            "50591122593425176673765"
+          ]
+        },
+        "2016": {
+          "rows": 7396,
+          "sha256_limb_sums": [
+            "68395911366237958283927",
+            "68370064711644404447680",
+            "67865621100436452915578",
+            "68181280846063200516170"
+          ]
+        },
+        "2018": {
+          "rows": 7371,
+          "sha256_limb_sums": [
+            "68374850460402862526682",
+            "67410642656163589150728",
+            "67241522937394514371971",
+            "68415354791881500005249"
+          ]
+        },
+        "2020": {
+          "rows": 7758,
+          "sha256_limb_sums": [
+            "70948286467389806884260",
+            "72065951200221147836940",
+            "70345423387352427280446",
+            "71407420874237905359297"
+          ]
+        },
+        "2022": {
+          "rows": 8578,
+          "sha256_limb_sums": [
+            "78152293699257746445429",
+            "79129760390680933778197",
+            "79502392331488821551754",
+            "78230130744623588400078"
+          ]
+        },
+        "2024": {
+          "rows": 9796,
+          "sha256_limb_sums": [
+            "91475453311541740163098",
+            "90013859121274266749129",
+            "89474158313635509347277",
+            "90889636065437924471028"
+          ]
+        },
+        "2026": {
+          "rows": 8909,
+          "sha256_limb_sums": [
+            "81684709189044483592330",
+            "81897924080477703296867",
+            "81818898826793384362955",
+            "82274288963997257227899"
+          ]
+        }
+      },
+      "rows": 77688
+    },
+    "committee_contributions": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "AMNDT_IND",
+          "VARCHAR"
+        ],
+        [
+          "RPT_TP",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_PGI",
+          "VARCHAR"
+        ],
+        [
+          "IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_TP",
+          "VARCHAR"
+        ],
+        [
+          "ENTITY_TP",
+          "VARCHAR"
+        ],
+        [
+          "NAME",
+          "VARCHAR"
+        ],
+        [
+          "CITY",
+          "VARCHAR"
+        ],
+        [
+          "STATE",
+          "VARCHAR"
+        ],
+        [
+          "ZIP_CODE",
+          "VARCHAR"
+        ],
+        [
+          "EMPLOYER",
+          "VARCHAR"
+        ],
+        [
+          "OCCUPATION",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_DT",
+          "DATE"
+        ],
+        [
+          "TRANSACTION_AMT",
+          "DOUBLE"
+        ],
+        [
+          "OTHER_ID",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ID",
+          "VARCHAR"
+        ],
+        [
+          "TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "FILE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_CD",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_TEXT",
+          "VARCHAR"
+        ],
+        [
+          "SUB_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "AMNDT_IND": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_ID": {
+          "null_count": 13752,
+          "null_pct": 0.3
+        },
+        "CITY": {
+          "null_count": 72432,
+          "null_pct": 1.4
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "EMPLOYER": {
+          "null_count": 5333785,
+          "null_pct": 100.0
+        },
+        "ENTITY_TP": {
+          "null_count": 128940,
+          "null_pct": 2.4
+        },
+        "FILE_NUM": {
+          "null_count": 29359,
+          "null_pct": 0.6
+        },
+        "IMAGE_NUM": {
+          "null_count": 2,
+          "null_pct": 0.0
+        },
+        "MEMO_CD": {
+          "null_count": 5241538,
+          "null_pct": 98.3
+        },
+        "MEMO_TEXT": {
+          "null_count": 4769025,
+          "null_pct": 89.4
+        },
+        "NAME": {
+          "null_count": 70998,
+          "null_pct": 1.3
+        },
+        "OCCUPATION": {
+          "null_count": 5333796,
+          "null_pct": 100.0
+        },
+        "OTHER_ID": {
+          "null_count": 329,
+          "null_pct": 0.0
+        },
+        "RPT_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "STATE": {
+          "null_count": 74153,
+          "null_pct": 1.4
+        },
+        "SUB_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_AMT": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_DT": {
+          "null_count": 26184,
+          "null_pct": 0.5
+        },
+        "TRANSACTION_PGI": {
+          "null_count": 104499,
+          "null_pct": 2.0
+        },
+        "TRANSACTION_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRAN_ID": {
+          "null_count": 34988,
+          "null_pct": 0.7
+        },
+        "ZIP_CODE": {
+          "null_count": 74738,
+          "null_pct": 1.4
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 245668,
+          "sha256_limb_sums": [
+            "2264525292906808266485201",
+            "2268641916701055558527797",
+            "2267433631592274913238090",
+            "2267610083255297407698414"
+          ]
+        },
+        "2006": {
+          "rows": 266703,
+          "sha256_limb_sums": [
+            "2463906087096833157107706",
+            "2463513471292651442070046",
+            "2463378068208923851600768",
+            "2457114286315892067233681"
+          ]
+        },
+        "2008": {
+          "rows": 305735,
+          "sha256_limb_sums": [
+            "2823969430660810673258663",
+            "2816537702219517841289329",
+            "2813656075718457044813844",
+            "2823078209594160942479124"
+          ]
+        },
+        "2010": {
+          "rows": 325095,
+          "sha256_limb_sums": [
+            "2997917615013362888612755",
+            "2997557998368977707719995",
+            "2995108567239201200282465",
+            "2997951699225700768609486"
+          ]
+        },
+        "2012": {
+          "rows": 395069,
+          "sha256_limb_sums": [
+            "3643736956971002509959886",
+            "3646794878759739153388497",
+            "3644051686140428827448879",
+            "3638600476683948825784607"
+          ]
+        },
+        "2014": {
+          "rows": 350272,
+          "sha256_limb_sums": [
+            "3228227278790300621823060",
+            "3234638841618907834433543",
+            "3229344255543030492909860",
+            "3232860981538032353227850"
+          ]
+        },
+        "2016": {
+          "rows": 516385,
+          "sha256_limb_sums": [
+            "4765622135703585563488619",
+            "4757033557614965260258301",
+            "4763700106901920431934982",
+            "4770813067825703721393145"
+          ]
+        },
+        "2018": {
+          "rows": 349820,
+          "sha256_limb_sums": [
+            "3227084478476941503178391",
+            "3219287795268333455283157",
+            "3220558512076000215955721",
+            "3229749941805792741705992"
+          ]
+        },
+        "2020": {
+          "rows": 887829,
+          "sha256_limb_sums": [
+            "8181326622452237839609732",
+            "8183959734844107511011139",
+            "8183019134781943787369713",
+            "8187819804269129651679687"
+          ]
+        },
+        "2022": {
+          "rows": 749163,
+          "sha256_limb_sums": [
+            "6914534529171773476357551",
+            "6909331776592178347886604",
+            "6911328747568828949792510",
+            "6905171953292797972717302"
+          ]
+        },
+        "2024": {
+          "rows": 703163,
+          "sha256_limb_sums": [
+            "6482954730583159345214697",
+            "6491551644962123026533949",
+            "6474764103254147859283022",
+            "6494041503460520116273550"
+          ]
+        },
+        "2026": {
+          "rows": 239201,
+          "sha256_limb_sums": [
+            "2203890271591443712772924",
+            "2205673987002689587958057",
+            "2203328230947130356887903",
+            "2208013831608006500563320"
+          ]
+        }
+      },
+      "rows": 5334103
+    },
+    "committee_to_committee": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "AMNDT_IND",
+          "VARCHAR"
+        ],
+        [
+          "RPT_TP",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_PGI",
+          "VARCHAR"
+        ],
+        [
+          "IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_TP",
+          "VARCHAR"
+        ],
+        [
+          "ENTITY_TP",
+          "VARCHAR"
+        ],
+        [
+          "NAME",
+          "VARCHAR"
+        ],
+        [
+          "CITY",
+          "VARCHAR"
+        ],
+        [
+          "STATE",
+          "VARCHAR"
+        ],
+        [
+          "ZIP_CODE",
+          "VARCHAR"
+        ],
+        [
+          "EMPLOYER",
+          "VARCHAR"
+        ],
+        [
+          "OCCUPATION",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_DT",
+          "DATE"
+        ],
+        [
+          "TRANSACTION_AMT",
+          "DOUBLE"
+        ],
+        [
+          "OTHER_ID",
+          "VARCHAR"
+        ],
+        [
+          "TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "FILE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_CD",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_TEXT",
+          "VARCHAR"
+        ],
+        [
+          "SUB_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "AMNDT_IND": {
+          "null_count": 100,
+          "null_pct": 0.0
+        },
+        "CITY": {
+          "null_count": 94592,
+          "null_pct": 0.2
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "EMPLOYER": {
+          "null_count": 9441816,
+          "null_pct": 19.6
+        },
+        "ENTITY_TP": {
+          "null_count": 254337,
+          "null_pct": 0.5
+        },
+        "FILE_NUM": {
+          "null_count": 80934,
+          "null_pct": 0.2
+        },
+        "IMAGE_NUM": {
+          "null_count": 3,
+          "null_pct": 0.0
+        },
+        "MEMO_CD": {
+          "null_count": 9245679,
+          "null_pct": 19.1
+        },
+        "MEMO_TEXT": {
+          "null_count": 24462833,
+          "null_pct": 50.7
+        },
+        "NAME": {
+          "null_count": 88556,
+          "null_pct": 0.2
+        },
+        "OCCUPATION": {
+          "null_count": 9424884,
+          "null_pct": 19.5
+        },
+        "OTHER_ID": {
+          "null_count": 38956171,
+          "null_pct": 80.7
+        },
+        "RPT_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "STATE": {
+          "null_count": 101415,
+          "null_pct": 0.2
+        },
+        "SUB_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_AMT": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_DT": {
+          "null_count": 26345,
+          "null_pct": 0.1
+        },
+        "TRANSACTION_PGI": {
+          "null_count": 836800,
+          "null_pct": 1.7
+        },
+        "TRANSACTION_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRAN_ID": {
+          "null_count": 87599,
+          "null_pct": 0.2
+        },
+        "ZIP_CODE": {
+          "null_count": 105111,
+          "null_pct": 0.2
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 411455,
+          "sha256_limb_sums": [
+            "3788424021845901185595891",
+            "3795238302609331882182140",
+            "3797241136010687747418819",
+            "3794958704796574850142734"
+          ]
+        },
+        "2006": {
+          "rows": 423705,
+          "sha256_limb_sums": [
+            "3913305177965656390848412",
+            "3911025907845187368355730",
+            "3904759684343579750937760",
+            "3907848237066465536866796"
+          ]
+        },
+        "2008": {
+          "rows": 693387,
+          "sha256_limb_sums": [
+            "6394382789938070668706991",
+            "6389841936073767443072324",
+            "6405722347875721083983170",
+            "6408378430710578066477228"
+          ]
+        },
+        "2010": {
+          "rows": 508928,
+          "sha256_limb_sums": [
+            "4698920073477413800609324",
+            "4687987896501726605906866",
+            "4693240930575943056388078",
+            "4697665524672879352723704"
+          ]
+        },
+        "2012": {
+          "rows": 1013799,
+          "sha256_limb_sums": [
+            "9356661051448783855446145",
+            "9355394092337172603787649",
+            "9345502500423016069640308",
+            "9341187634985473615015496"
+          ]
+        },
+        "2014": {
+          "rows": 570489,
+          "sha256_limb_sums": [
+            "5265974766394426202262629",
+            "5262710360513342308020270",
+            "5262903760871409572121221",
+            "5259430368353536338442314"
+          ]
+        },
+        "2016": {
+          "rows": 2147128,
+          "sha256_limb_sums": [
+            "19806239297241652613437626",
+            "19802773141350196744623388",
+            "19809521806893201937182242",
+            "19812946061055332016054227"
+          ]
+        },
+        "2018": {
+          "rows": 1015198,
+          "sha256_limb_sums": [
+            "9366525294010877910189894",
+            "9367896137345305970644527",
+            "9354093526514586292454693",
+            "9368378661995978438917209"
+          ]
+        },
+        "2020": {
+          "rows": 7401653,
+          "sha256_limb_sums": [
+            "68261843983431544258133577",
+            "68267876972343665714979620",
+            "68265706343177379464548341",
+            "68280014511318145327720813"
+          ]
+        },
+        "2022": {
+          "rows": 5364412,
+          "sha256_limb_sums": [
+            "49480143894838287534970358",
+            "49483763494968079395611849",
+            "49473286809167296904056664",
+            "49475771836791473052878549"
+          ]
+        },
+        "2024": {
+          "rows": 18666858,
+          "sha256_limb_sums": [
+            "172235645384191881595159974",
+            "172150786951902730626852143",
+            "172151586871969053747189597",
+            "172164966290803041471490363"
+          ]
+        },
+        "2026": {
+          "rows": 10075883,
+          "sha256_limb_sums": [
+            "92938559909915154638604224",
+            "92888161569978239035274053",
+            "92927227839596000696767295",
+            "92937989838259853679265112"
+          ]
+        }
+      },
+      "rows": 48292895
+    },
+    "committees": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_NM",
+          "VARCHAR"
+        ],
+        [
+          "TRES_NM",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_ST1",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_ST2",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_CITY",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_ST",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_ZIP",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_DSGN",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_TP",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_PTY_AFFILIATION",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_FILING_FREQ",
+          "VARCHAR"
+        ],
+        [
+          "ORG_TP",
+          "VARCHAR"
+        ],
+        [
+          "CONNECTED_ORG_NM",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "CAND_ID": {
+          "null_count": 117202,
+          "null_pct": 63.1
+        },
+        "CMTE_CITY": {
+          "null_count": 134,
+          "null_pct": 0.1
+        },
+        "CMTE_DSGN": {
+          "null_count": 79,
+          "null_pct": 0.0
+        },
+        "CMTE_FILING_FREQ": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_NM": {
+          "null_count": 12,
+          "null_pct": 0.0
+        },
+        "CMTE_PTY_AFFILIATION": {
+          "null_count": 110391,
+          "null_pct": 59.4
+        },
+        "CMTE_ST": {
+          "null_count": 129,
+          "null_pct": 0.1
+        },
+        "CMTE_ST1": {
+          "null_count": 149,
+          "null_pct": 0.1
+        },
+        "CMTE_ST2": {
+          "null_count": 144371,
+          "null_pct": 77.7
+        },
+        "CMTE_TP": {
+          "null_count": 42,
+          "null_pct": 0.0
+        },
+        "CMTE_ZIP": {
+          "null_count": 243,
+          "null_pct": 0.1
+        },
+        "CONNECTED_ORG_NM": {
+          "null_count": 95702,
+          "null_pct": 51.5
+        },
+        "ORG_TP": {
+          "null_count": 144520,
+          "null_pct": 77.8
+        },
+        "TRES_NM": {
+          "null_count": 9243,
+          "null_pct": 5.0
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 9322,
+          "sha256_limb_sums": [
+            "86196415021864471377410",
+            "85975430581618959434699",
+            "85788721000474593087104",
+            "86111802680236997974939"
+          ]
+        },
+        "2006": {
+          "rows": 9282,
+          "sha256_limb_sums": [
+            "85677640869565015874955",
+            "84957900078080941472912",
+            "84591915790873814251269",
+            "85739974076241819676636"
+          ]
+        },
+        "2008": {
+          "rows": 10017,
+          "sha256_limb_sums": [
+            "92303334153269505296029",
+            "92260198291400435422340",
+            "92639685577117055374349",
+            "93228664786431409921212"
+          ]
+        },
+        "2010": {
+          "rows": 11138,
+          "sha256_limb_sums": [
+            "102513761197154649093933",
+            "102582033756571435791855",
+            "101908163357012932584133",
+            "102068019546526855658483"
+          ]
+        },
+        "2012": {
+          "rows": 14455,
+          "sha256_limb_sums": [
+            "131861193145601120364404",
+            "132543182042326481076835",
+            "133588133884173805103212",
+            "132597111472558429492874"
+          ]
+        },
+        "2014": {
+          "rows": 14905,
+          "sha256_limb_sums": [
+            "136893660033730934323871",
+            "137581402742713465742365",
+            "137506544422356684287657",
+            "137001267972396705878327"
+          ]
+        },
+        "2016": {
+          "rows": 17651,
+          "sha256_limb_sums": [
+            "161745775621705241185547",
+            "162565345073926344864911",
+            "162947428872761930703745",
+            "163211908310103187014693"
+          ]
+        },
+        "2018": {
+          "rows": 19022,
+          "sha256_limb_sums": [
+            "175090339843112590837762",
+            "174915204914107124027523",
+            "174658895828559469684804",
+            "175750472405874250482127"
+          ]
+        },
+        "2020": {
+          "rows": 18286,
+          "sha256_limb_sums": [
+            "169683099682020380768383",
+            "169144946369169655693577",
+            "168705441496831331642944",
+            "168290033243411924908601"
+          ]
+        },
+        "2022": {
+          "rows": 19792,
+          "sha256_limb_sums": [
+            "182856648239784871706164",
+            "182523848970076886719763",
+            "182707188640435378506956",
+            "182581558542812401161042"
+          ]
+        },
+        "2024": {
+          "rows": 20937,
+          "sha256_limb_sums": [
+            "193006890851056971010226",
+            "194320884804759682402782",
+            "193750730244991580187131",
+            "193274749645637841018968"
+          ]
+        },
+        "2026": {
+          "rows": 21031,
+          "sha256_limb_sums": [
+            "194642540438183575307492",
+            "192414323873140107710128",
+            "192957894948644180125691",
+            "193716982543889134649396"
+          ]
+        }
+      },
+      "rows": 185838
+    },
+    "communication_costs": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "CMTE_NM",
+          "VARCHAR"
+        ],
+        [
+          "CAND_ID",
+          "VARCHAR"
+        ],
+        [
+          "CAND_NAME",
+          "VARCHAR"
+        ],
+        [
+          "CAND_OFFICE",
+          "VARCHAR"
+        ],
+        [
+          "CAND_STATE",
+          "VARCHAR"
+        ],
+        [
+          "CAND_OFFICE_DISTRICT",
+          "VARCHAR"
+        ],
+        [
+          "CAND_PTY_AFFILIATION",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_DT",
+          "DATE"
+        ],
+        [
+          "TRANSACTION_AMT",
+          "DOUBLE"
+        ],
+        [
+          "TRANSACTION_TP",
+          "VARCHAR"
+        ],
+        [
+          "COMMUNICATION_TP",
+          "VARCHAR"
+        ],
+        [
+          "COMMUNICATION_CLASS",
+          "VARCHAR"
+        ],
+        [
+          "SUPPORT_OPPOSE_IND",
+          "VARCHAR"
+        ],
+        [
+          "IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "LINE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "FORM_TP_CD",
+          "VARCHAR"
+        ],
+        [
+          "SCHED_TP_CD",
+          "VARCHAR"
+        ],
+        [
+          "TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "SUB_ID",
+          "VARCHAR"
+        ],
+        [
+          "FILE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "RPT_YR",
+          "VARCHAR"
+        ],
+        [
+          "CAND_STATE_DESCRIPTION",
+          "VARCHAR"
+        ],
+        [
+          "CAND_PTY_AFFILIATION_DESCRIPTION",
+          "VARCHAR"
+        ],
+        [
+          "PURPOSE",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "CAND_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_NAME": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_OFFICE": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_OFFICE_DISTRICT": {
+          "null_count": 2,
+          "null_pct": 0.0
+        },
+        "CAND_PTY_AFFILIATION": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_PTY_AFFILIATION_DESCRIPTION": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_STATE": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CAND_STATE_DESCRIPTION": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CMTE_NM": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "COMMUNICATION_CLASS": {
+          "null_count": 565,
+          "null_pct": 2.2
+        },
+        "COMMUNICATION_TP": {
+          "null_count": 412,
+          "null_pct": 1.6
+        },
+        "FILE_NUM": {
+          "null_count": 313,
+          "null_pct": 1.2
+        },
+        "FORM_TP_CD": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "IMAGE_NUM": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "LINE_NUM": {
+          "null_count": 25765,
+          "null_pct": 100.0
+        },
+        "PURPOSE": {
+          "null_count": 25765,
+          "null_pct": 100.0
+        },
+        "RPT_YR": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "SCHED_TP_CD": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "SUB_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "SUPPORT_OPPOSE_IND": {
+          "null_count": 318,
+          "null_pct": 1.2
+        },
+        "TRANSACTION_AMT": {
+          "null_count": 1,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_DT": {
+          "null_count": 31,
+          "null_pct": 0.1
+        },
+        "TRANSACTION_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRAN_ID": {
+          "null_count": 3907,
+          "null_pct": 15.2
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2010": {
+          "rows": 5947,
+          "sha256_limb_sums": [
+            "54849055359730903319444",
+            "55256095669200923460175",
+            "54924261742268552785591",
+            "54308887335073222031293"
+          ]
+        },
+        "2012": {
+          "rows": 5791,
+          "sha256_limb_sums": [
+            "53276527826505205976327",
+            "53495104590060788260768",
+            "53650869210829007024558",
+            "54192397813798146640454"
+          ]
+        },
+        "2014": {
+          "rows": 3961,
+          "sha256_limb_sums": [
+            "35818463610360126967139",
+            "35985745025209174540237",
+            "36439458772784326254815",
+            "36157304003491441419876"
+          ]
+        },
+        "2016": {
+          "rows": 2382,
+          "sha256_limb_sums": [
+            "21938916465020820066870",
+            "21823191788114377666272",
+            "22093827005435833730904",
+            "21592983938464343149828"
+          ]
+        },
+        "2018": {
+          "rows": 1344,
+          "sha256_limb_sums": [
+            "12306902279789113952405",
+            "12113701450116844985837",
+            "12428863815486726069991",
+            "12267256896387755645722"
+          ]
+        },
+        "2020": {
+          "rows": 1018,
+          "sha256_limb_sums": [
+            "9278649592445178061901",
+            "9416004529602338572059",
+            "9130400350223140313908",
+            "9440986078714226534118"
+          ]
+        },
+        "2022": {
+          "rows": 4416,
+          "sha256_limb_sums": [
+            "40810650943321917711566",
+            "40680192203021729108624",
+            "40329769728101642184277",
+            "40298625362183292291349"
+          ]
+        },
+        "2024": {
+          "rows": 779,
+          "sha256_limb_sums": [
+            "6993198449164808509153",
+            "7211659784980523749596",
+            "7061135080213836561364",
+            "7395875343998319509557"
+          ]
+        },
+        "2026": {
+          "rows": 130,
+          "sha256_limb_sums": [
+            "1251574819676673071108",
+            "1317102514597217798411",
+            "1193060411485701096268",
+            "1211790528145858699601"
+          ]
+        }
+      },
+      "rows": 25768
+    },
+    "electioneering_communications": {
+      "columns": [
+        [
+          "CANDIDATE_ID",
+          "VARCHAR"
+        ],
+        [
+          "CANDIDATE_NAME",
+          "VARCHAR"
+        ],
+        [
+          "CANDIDATE_OFFICE",
+          "VARCHAR"
+        ],
+        [
+          "CANDIDATE_STATE",
+          "VARCHAR"
+        ],
+        [
+          "CANDIDATE_DISTRICT",
+          "VARCHAR"
+        ],
+        [
+          "COMMITTEE_ID",
+          "VARCHAR"
+        ],
+        [
+          "COMMITTEE_NAME",
+          "VARCHAR"
+        ],
+        [
+          "SB_IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "PAYEE_NAME",
+          "VARCHAR"
+        ],
+        [
+          "PAYEE_STREET",
+          "VARCHAR"
+        ],
+        [
+          "PAYEE_CITY",
+          "VARCHAR"
+        ],
+        [
+          "PAYEE_STATE",
+          "VARCHAR"
+        ],
+        [
+          "DISBURSEMENT_DESCRIPTION",
+          "VARCHAR"
+        ],
+        [
+          "DISBURSEMENT_DATE",
+          "DATE"
+        ],
+        [
+          "COMMUNICATION_DATE",
+          "DATE"
+        ],
+        [
+          "PUBLIC_DISBURSEMENT_DATE",
+          "DATE"
+        ],
+        [
+          "REPORTED_DISBURSEMENT_AMOUNT",
+          "DOUBLE"
+        ],
+        [
+          "NUMBER_OF_CANDIDATES",
+          "VARCHAR"
+        ],
+        [
+          "CALCULATED_CANDIDATE_SHARE",
+          "DOUBLE"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "CALCULATED_CANDIDATE_SHARE": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "CANDIDATE_DISTRICT": {
+          "null_count": 282,
+          "null_pct": 16.3
+        },
+        "CANDIDATE_ID": {
+          "null_count": 277,
+          "null_pct": 16.1
+        },
+        "CANDIDATE_NAME": {
+          "null_count": 282,
+          "null_pct": 16.3
+        },
+        "CANDIDATE_OFFICE": {
+          "null_count": 282,
+          "null_pct": 16.3
+        },
+        "CANDIDATE_STATE": {
+          "null_count": 282,
+          "null_pct": 16.3
+        },
+        "COMMITTEE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "COMMITTEE_NAME": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "COMMUNICATION_DATE": {
+          "null_count": 22,
+          "null_pct": 1.3
+        },
+        "DISBURSEMENT_DATE": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "DISBURSEMENT_DESCRIPTION": {
+          "null_count": 145,
+          "null_pct": 8.4
+        },
+        "NUMBER_OF_CANDIDATES": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "PAYEE_CITY": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "PAYEE_NAME": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "PAYEE_STATE": {
+          "null_count": 3,
+          "null_pct": 0.2
+        },
+        "PAYEE_STREET": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "PUBLIC_DISBURSEMENT_DATE": {
+          "null_count": 6,
+          "null_pct": 0.3
+        },
+        "REPORTED_DISBURSEMENT_AMOUNT": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "SB_IMAGE_NUM": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2010": {
+          "rows": 654,
+          "sha256_limb_sums": [
+            "5883814742193645945453",
+            "5776911620590985225137",
+            "5915218428882912580687",
+            "6048575644325464910379"
+          ]
+        },
+        "2012": {
+          "rows": 288,
+          "sha256_limb_sums": [
+            "2610003113088607052868",
+            "2710932725084524588267",
+            "2828063956586822114881",
+            "2528875917887962900290"
+          ]
+        },
+        "2014": {
+          "rows": 40,
+          "sha256_limb_sums": [
+            "363142415505278632036",
+            "361747821509616119181",
+            "454194096856742836208",
+            "383180107812885076153"
+          ]
+        },
+        "2016": {
+          "rows": 97,
+          "sha256_limb_sums": [
+            "865708216031237124433",
+            "936078042217351561477",
+            "951872955642406892701",
+            "997852737803191936783"
+          ]
+        },
+        "2018": {
+          "rows": 212,
+          "sha256_limb_sums": [
+            "2011238361694744882736",
+            "1879551512590125293432",
+            "1991142712665982244413",
+            "2031458573618515863531"
+          ]
+        },
+        "2020": {
+          "rows": 273,
+          "sha256_limb_sums": [
+            "2501854676481968341508",
+            "2419219396544004399084",
+            "2469376988149220265814",
+            "2659422047700833497170"
+          ]
+        },
+        "2022": {
+          "rows": 45,
+          "sha256_limb_sums": [
+            "343855489417160665019",
+            "447164439418399709681",
+            "429769451995428964293",
+            "422715439545008613016"
+          ]
+        },
+        "2024": {
+          "rows": 69,
+          "sha256_limb_sums": [
+            "601291345243416851406",
+            "603683496455544900078",
+            "642155310223193477318",
+            "627312899277942588336"
+          ]
+        },
+        "2026": {
+          "rows": 47,
+          "sha256_limb_sums": [
+            "431217120358001404048",
+            "370572019852405440006",
+            "449158975246081891000",
+            "454673363977354042712"
+          ]
+        }
+      },
+      "rows": 1725
+    },
+    "independent_expenditures": {
+      "columns": [
+        [
+          "cand_id",
+          "VARCHAR"
+        ],
+        [
+          "cand_name",
+          "VARCHAR"
+        ],
+        [
+          "spe_id",
+          "VARCHAR"
+        ],
+        [
+          "spe_nam",
+          "VARCHAR"
+        ],
+        [
+          "ele_type",
+          "VARCHAR"
+        ],
+        [
+          "can_office_state",
+          "VARCHAR"
+        ],
+        [
+          "can_office_dis",
+          "VARCHAR"
+        ],
+        [
+          "can_office",
+          "VARCHAR"
+        ],
+        [
+          "cand_pty_aff",
+          "VARCHAR"
+        ],
+        [
+          "exp_amo",
+          "DOUBLE"
+        ],
+        [
+          "exp_date",
+          "DATE"
+        ],
+        [
+          "agg_amo",
+          "DOUBLE"
+        ],
+        [
+          "sup_opp",
+          "VARCHAR"
+        ],
+        [
+          "pur",
+          "VARCHAR"
+        ],
+        [
+          "pay",
+          "VARCHAR"
+        ],
+        [
+          "file_num",
+          "VARCHAR"
+        ],
+        [
+          "amndt_ind",
+          "VARCHAR"
+        ],
+        [
+          "tran_id",
+          "VARCHAR"
+        ],
+        [
+          "image_num",
+          "VARCHAR"
+        ],
+        [
+          "receipt_dat",
+          "DATE"
+        ],
+        [
+          "fec_election_yr",
+          "VARCHAR"
+        ],
+        [
+          "prev_file_num",
+          "VARCHAR"
+        ],
+        [
+          "dissem_dt",
+          "DATE"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "agg_amo": {
+          "null_count": 637,
+          "null_pct": 0.1
+        },
+        "amndt_ind": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "can_office": {
+          "null_count": 470,
+          "null_pct": 0.1
+        },
+        "can_office_dis": {
+          "null_count": 591,
+          "null_pct": 0.1
+        },
+        "can_office_state": {
+          "null_count": 134944,
+          "null_pct": 21.2
+        },
+        "cand_id": {
+          "null_count": 56680,
+          "null_pct": 8.9
+        },
+        "cand_name": {
+          "null_count": 19,
+          "null_pct": 0.0
+        },
+        "cand_pty_aff": {
+          "null_count": 63967,
+          "null_pct": 10.1
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "dissem_dt": {
+          "null_count": 351119,
+          "null_pct": 55.3
+        },
+        "ele_type": {
+          "null_count": 166,
+          "null_pct": 0.0
+        },
+        "exp_amo": {
+          "null_count": 13,
+          "null_pct": 0.0
+        },
+        "exp_date": {
+          "null_count": 80304,
+          "null_pct": 12.6
+        },
+        "fec_election_yr": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "file_num": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "image_num": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "pay": {
+          "null_count": 565,
+          "null_pct": 0.1
+        },
+        "prev_file_num": {
+          "null_count": 561804,
+          "null_pct": 88.4
+        },
+        "pur": {
+          "null_count": 98,
+          "null_pct": 0.0
+        },
+        "receipt_dat": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "spe_id": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "spe_nam": {
+          "null_count": 76,
+          "null_pct": 0.0
+        },
+        "sup_opp": {
+          "null_count": 278,
+          "null_pct": 0.0
+        },
+        "tran_id": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2010": {
+          "rows": 36655,
+          "sha256_limb_sums": [
+            "337489621756402787080540",
+            "339733582512974836131013",
+            "337460172657370893117502",
+            "337524871401073789194547"
+          ]
+        },
+        "2012": {
+          "rows": 99911,
+          "sha256_limb_sums": [
+            "924290310649671914223760",
+            "920560514691467967324407",
+            "926019526443135781422791",
+            "921196680116392914138131"
+          ]
+        },
+        "2014": {
+          "rows": 65117,
+          "sha256_limb_sums": [
+            "601157088627481814270341",
+            "600135001422684590927325",
+            "599153864584226928919213",
+            "599998774403216630598764"
+          ]
+        },
+        "2016": {
+          "rows": 159407,
+          "sha256_limb_sums": [
+            "1467214833404107935450871",
+            "1468899185451430627946248",
+            "1469338953154413035408926",
+            "1470652765812351686969287"
+          ]
+        },
+        "2018": {
+          "rows": 38645,
+          "sha256_limb_sums": [
+            "355297499244719075245898",
+            "357171833772002878806993",
+            "359381834955768355188271",
+            "356888570830994454922307"
+          ]
+        },
+        "2020": {
+          "rows": 71440,
+          "sha256_limb_sums": [
+            "658168295300967702066747",
+            "660026170024811975460822",
+            "655316062924375769830094",
+            "659365011089149976299380"
+          ]
+        },
+        "2022": {
+          "rows": 55853,
+          "sha256_limb_sums": [
+            "515388333102948761663286",
+            "515548877899685661552192",
+            "515011160286901335583975",
+            "513742690603177504643937"
+          ]
+        },
+        "2024": {
+          "rows": 61426,
+          "sha256_limb_sums": [
+            "566156431414501256998706",
+            "567977456434575992284757",
+            "568594244252476008939302",
+            "565490507850413585293415"
+          ]
+        },
+        "2026": {
+          "rows": 46973,
+          "sha256_limb_sums": [
+            "431755270213756215751049",
+            "432600241596756016987306",
+            "432889779831888336481463",
+            "433462752427653984227667"
+          ]
+        }
+      },
+      "rows": 635427
+    },
+    "individual_contributions": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "AMNDT_IND",
+          "VARCHAR"
+        ],
+        [
+          "RPT_TP",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_PGI",
+          "VARCHAR"
+        ],
+        [
+          "IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_TP",
+          "VARCHAR"
+        ],
+        [
+          "ENTITY_TP",
+          "VARCHAR"
+        ],
+        [
+          "NAME",
+          "VARCHAR"
+        ],
+        [
+          "CITY",
+          "VARCHAR"
+        ],
+        [
+          "STATE",
+          "VARCHAR"
+        ],
+        [
+          "ZIP_CODE",
+          "VARCHAR"
+        ],
+        [
+          "EMPLOYER",
+          "VARCHAR"
+        ],
+        [
+          "OCCUPATION",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_DT",
+          "DATE"
+        ],
+        [
+          "TRANSACTION_AMT",
+          "DOUBLE"
+        ],
+        [
+          "OTHER_ID",
+          "VARCHAR"
+        ],
+        [
+          "TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "FILE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_CD",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_TEXT",
+          "VARCHAR"
+        ],
+        [
+          "SUB_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "AMNDT_IND": {
+          "null_count": 10961,
+          "null_pct": 0.0
+        },
+        "CITY": {
+          "null_count": 60434,
+          "null_pct": 0.0
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "EMPLOYER": {
+          "null_count": 12614381,
+          "null_pct": 4.4
+        },
+        "ENTITY_TP": {
+          "null_count": 523197,
+          "null_pct": 0.2
+        },
+        "FILE_NUM": {
+          "null_count": 509256,
+          "null_pct": 0.2
+        },
+        "IMAGE_NUM": {
+          "null_count": 1,
+          "null_pct": 0.0
+        },
+        "MEMO_CD": {
+          "null_count": 284090271,
+          "null_pct": 99.4
+        },
+        "MEMO_TEXT": {
+          "null_count": 120295319,
+          "null_pct": 42.1
+        },
+        "NAME": {
+          "null_count": 7484,
+          "null_pct": 0.0
+        },
+        "OCCUPATION": {
+          "null_count": 11895051,
+          "null_pct": 4.2
+        },
+        "OTHER_ID": {
+          "null_count": 120184951,
+          "null_pct": 42.1
+        },
+        "RPT_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "STATE": {
+          "null_count": 153399,
+          "null_pct": 0.1
+        },
+        "SUB_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_AMT": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_DT": {
+          "null_count": 51625,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_PGI": {
+          "null_count": 45952884,
+          "null_pct": 16.1
+        },
+        "TRANSACTION_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRAN_ID": {
+          "null_count": 502472,
+          "null_pct": 0.2
+        },
+        "ZIP_CODE": {
+          "null_count": 267724,
+          "null_pct": 0.1
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 2460297,
+          "sha256_limb_sums": [
+            "22700048563888875399699358",
+            "22683697413948469193420961",
+            "22697959955290688551916529",
+            "22698798372279418507516917"
+          ]
+        },
+        "2006": {
+          "rows": 1830339,
+          "sha256_limb_sums": [
+            "16880250237815414653663407",
+            "16890530416819906432575852",
+            "16884235145133650336693471",
+            "16898633686420511556574477"
+          ]
+        },
+        "2008": {
+          "rows": 3356758,
+          "sha256_limb_sums": [
+            "30952346719784939921014117",
+            "30971948621655846965326894",
+            "30943945858293433178140205",
+            "30963493503068861194884827"
+          ]
+        },
+        "2010": {
+          "rows": 2111814,
+          "sha256_limb_sums": [
+            "19463230042663091708079301",
+            "19479813142420018246350362",
+            "19480154833228018947645749",
+            "19468726798800534031908014"
+          ]
+        },
+        "2012": {
+          "rows": 3372139,
+          "sha256_limb_sums": [
+            "31113041193185561230098462",
+            "31107682089982631542898085",
+            "31092022973390405986921366",
+            "31088367403531544591829590"
+          ]
+        },
+        "2014": {
+          "rows": 2192151,
+          "sha256_limb_sums": [
+            "20222626973799891671698182",
+            "20232497720913714608837194",
+            "20219746156019732307221897",
+            "20230572236371032273981984"
+          ]
+        },
+        "2016": {
+          "rows": 20454642,
+          "sha256_limb_sums": [
+            "188651664437270331516724462",
+            "188687950000259752252547864",
+            "188641557296497846054210410",
+            "188641545630508983391876642"
+          ]
+        },
+        "2018": {
+          "rows": 21730731,
+          "sha256_limb_sums": [
+            "200431284260366607088346417",
+            "200443415385677211491863462",
+            "200442321506035426201229776",
+            "200380680635424524988974170"
+          ]
+        },
+        "2020": {
+          "rows": 69377425,
+          "sha256_limb_sums": [
+            "639850028175863378953805100",
+            "639878761183356902907335091",
+            "639885948805736455789802642",
+            "639942996285547573743839810"
+          ]
+        },
+        "2022": {
+          "rows": 63885802,
+          "sha256_limb_sums": [
+            "589273424516219425420149388",
+            "589232983718818266295288285",
+            "589235940108938565211333409",
+            "589252511912972490427422628"
+          ]
+        },
+        "2024": {
+          "rows": 58210203,
+          "sha256_limb_sums": [
+            "536902262275915536919193882",
+            "536841003203336038550994137",
+            "536853368497895296692681910",
+            "536910851521105410981465100"
+          ]
+        },
+        "2026": {
+          "rows": 36691128,
+          "sha256_limb_sums": [
+            "338399826829149871411674391",
+            "338437281254507851481686568",
+            "338406854459239888212811733",
+            "338422413694260680512991141"
+          ]
+        }
+      },
+      "rows": 285673429
+    },
+    "operating_expenditures": {
+      "columns": [
+        [
+          "CMTE_ID",
+          "VARCHAR"
+        ],
+        [
+          "AMNDT_IND",
+          "VARCHAR"
+        ],
+        [
+          "RPT_YR",
+          "VARCHAR"
+        ],
+        [
+          "RPT_TP",
+          "VARCHAR"
+        ],
+        [
+          "IMAGE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "LINE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "FORM_TP_CD",
+          "VARCHAR"
+        ],
+        [
+          "SCHED_TP_CD",
+          "VARCHAR"
+        ],
+        [
+          "NAME",
+          "VARCHAR"
+        ],
+        [
+          "CITY",
+          "VARCHAR"
+        ],
+        [
+          "STATE",
+          "VARCHAR"
+        ],
+        [
+          "ZIP_CODE",
+          "VARCHAR"
+        ],
+        [
+          "TRANSACTION_DT",
+          "DATE"
+        ],
+        [
+          "TRANSACTION_AMT",
+          "DOUBLE"
+        ],
+        [
+          "TRANSACTION_PGI",
+          "VARCHAR"
+        ],
+        [
+          "PURPOSE",
+          "VARCHAR"
+        ],
+        [
+          "CATEGORY",
+          "VARCHAR"
+        ],
+        [
+          "CATEGORY_DESC",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_CD",
+          "VARCHAR"
+        ],
+        [
+          "MEMO_TEXT",
+          "VARCHAR"
+        ],
+        [
+          "ENTITY_TP",
+          "VARCHAR"
+        ],
+        [
+          "SUB_ID",
+          "VARCHAR"
+        ],
+        [
+          "FILE_NUM",
+          "VARCHAR"
+        ],
+        [
+          "TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "BACK_REF_TRAN_ID",
+          "VARCHAR"
+        ],
+        [
+          "cycle",
+          "INTEGER"
+        ]
+      ],
+      "dictionary_nulls": {
+        "AMNDT_IND": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "BACK_REF_TRAN_ID": {
+          "null_count": 15731213,
+          "null_pct": 79.2
+        },
+        "CATEGORY": {
+          "null_count": 14450673,
+          "null_pct": 72.8
+        },
+        "CATEGORY_DESC": {
+          "null_count": 14665730,
+          "null_pct": 73.9
+        },
+        "CITY": {
+          "null_count": 55166,
+          "null_pct": 0.3
+        },
+        "CMTE_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "ENTITY_TP": {
+          "null_count": 1485142,
+          "null_pct": 7.5
+        },
+        "FILE_NUM": {
+          "null_count": 462,
+          "null_pct": 0.0
+        },
+        "FORM_TP_CD": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "IMAGE_NUM": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "LINE_NUM": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "MEMO_CD": {
+          "null_count": 14488755,
+          "null_pct": 73.0
+        },
+        "MEMO_TEXT": {
+          "null_count": 15669561,
+          "null_pct": 78.9
+        },
+        "NAME": {
+          "null_count": 21002,
+          "null_pct": 0.1
+        },
+        "PURPOSE": {
+          "null_count": 89710,
+          "null_pct": 0.5
+        },
+        "RPT_TP": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "RPT_YR": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "SCHED_TP_CD": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "STATE": {
+          "null_count": 62959,
+          "null_pct": 0.3
+        },
+        "SUB_ID": {
+          "null_count": 0,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_AMT": {
+          "null_count": 267,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_DT": {
+          "null_count": 2392,
+          "null_pct": 0.0
+        },
+        "TRANSACTION_PGI": {
+          "null_count": 9580357,
+          "null_pct": 48.2
+        },
+        "TRAN_ID": {
+          "null_count": 4,
+          "null_pct": 0.0
+        },
+        "ZIP_CODE": {
+          "null_count": 93606,
+          "null_pct": 0.5
+        },
+        "cycle": {
+          "null_count": 0,
+          "null_pct": 0.0
+        }
+      },
+      "row_fingerprints": {
+        "2004": {
+          "rows": 954706,
+          "sha256_limb_sums": [
+            "8800291341423652408512343",
+            "8812532816558774883417511",
+            "8795909612163082556861668",
+            "8797915525319080547847165"
+          ]
+        },
+        "2006": {
+          "rows": 1104753,
+          "sha256_limb_sums": [
+            "10191498734990327357152827",
+            "10185687012331011534725393",
+            "10179287454757316524617386",
+            "10187462931713730271314123"
+          ]
+        },
+        "2008": {
+          "rows": 1639878,
+          "sha256_limb_sums": [
+            "15123177739373567227305450",
+            "15128030555547730744094183",
+            "15129131863549563889379473",
+            "15132668188611687895071063"
+          ]
+        },
+        "2010": {
+          "rows": 1339329,
+          "sha256_limb_sums": [
+            "12352554984324125417714450",
+            "12353436357827312675960559",
+            "12363982545390966064870052",
+            "12349515835609823283159679"
+          ]
+        },
+        "2012": {
+          "rows": 1656089,
+          "sha256_limb_sums": [
+            "15266594670621611719802019",
+            "15279206541054591557301495",
+            "15287421749711059760677494",
+            "15275600984347621240401066"
+          ]
+        },
+        "2014": {
+          "rows": 1351071,
+          "sha256_limb_sums": [
+            "12464678784976407315002433",
+            "12457418458231924507314505",
+            "12455278317050873651203875",
+            "12465087192017677886994182"
+          ]
+        },
+        "2016": {
+          "rows": 1744187,
+          "sha256_limb_sums": [
+            "16077716129232913993544039",
+            "16085096964963128629461293",
+            "16094887593353190635011271",
+            "16089741712238195738728889"
+          ]
+        },
+        "2018": {
+          "rows": 1800080,
+          "sha256_limb_sums": [
+            "16610104509978985631447225",
+            "16594617554683148374326825",
+            "16604841402396446588605695",
+            "16603601839152706621570642"
+          ]
+        },
+        "2020": {
+          "rows": 2310524,
+          "sha256_limb_sums": [
+            "21301010040484120000929522",
+            "21316578999223240340467136",
+            "21296524375060834979721576",
+            "21309108994128361856492880"
+          ]
+        },
+        "2022": {
+          "rows": 1962279,
+          "sha256_limb_sums": [
+            "18103986517925267165134869",
+            "18104305664156256701820193",
+            "18095264794945784923785592",
+            "18112880671827999868198261"
+          ]
+        },
+        "2024": {
+          "rows": 2249912,
+          "sha256_limb_sums": [
+            "20751308511663754251049715",
+            "20737378068074115576988132",
+            "20753871239847542393067927",
+            "20755171437851505724044098"
+          ]
+        },
+        "2026": {
+          "rows": 1745974,
+          "sha256_limb_sums": [
+            "16112596877975503562566766",
+            "16104627175054362304551979",
+            "16098246874335367363731560",
+            "16106802150959750797002717"
+          ]
+        }
+      },
+      "rows": 19858782
+    }
+  },
+  "unavailable_view_statistics": [
+    "v_candidate_totals",
+    "v_daily_donations",
+    "v_top_donors"
+  ],
+  "use_restriction_url": "https://www.fec.gov/updates/sale-or-use-contributor-information/",
+  "views": {
+    "v_candidate_totals": "CREATE VIEW v_candidate_totals AS WITH per_cmte AS (SELECT \"cycle\", CMTE_ID, count_star() FILTER (WHERE (TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y'))) AS num_contributions, sum(CASE  WHEN ((TRANSACTION_TP IN ('20Y', '21Y', '22Y'))) THEN (-(TRANSACTION_AMT)) ELSE TRANSACTION_AMT END) AS net_individual FROM individual_contributions WHERE ((TRANSACTION_TP != '24T') AND ((MEMO_CD IS NULL) OR (MEMO_CD != 'X')) AND (TRANSACTION_AMT IS NOT NULL)) GROUP BY 1, 2)SELECT p.\"cycle\", p.CMTE_ID, string_agg(DISTINCT c.CAND_ID, '; ') AS cand_ids, string_agg(DISTINCT c.CAND_NAME, '; ') AS candidate_names, any_value(c.CAND_PTY_AFFILIATION) AS party, any_value(c.CAND_OFFICE) AS office, any_value(c.CAND_OFFICE_ST) AS state, p.num_contributions, p.net_individual FROM per_cmte AS p INNER JOIN candidates AS c ON (((c.CAND_PCC = p.CMTE_ID) AND (c.\"cycle\" = p.\"cycle\"))) GROUP BY p.\"cycle\", p.CMTE_ID, p.num_contributions, p.net_individual;",
+    "v_daily_donations": "CREATE VIEW v_daily_donations AS SELECT TRANSACTION_DT AS date, \"cycle\", count_star() AS num_donations, sum(TRANSACTION_AMT) AS total_amount, avg(TRANSACTION_AMT) AS avg_amount, median(TRANSACTION_AMT) AS median_amount FROM individual_contributions WHERE ((TRANSACTION_DT IS NOT NULL) AND (TRANSACTION_AMT > 0) AND (TRANSACTION_TP != '24T') AND ((MEMO_CD IS NULL) OR (MEMO_CD != 'X')) AND (TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y'))) GROUP BY TRANSACTION_DT, \"cycle\";",
+    "v_pac_to_candidate": "CREATE VIEW v_pac_to_candidate AS SELECT cm.CMTE_NM AS pac_name, cm.CONNECTED_ORG_NM AS connected_org, cn.CAND_NAME AS candidate_name, cn.CAND_PTY_AFFILIATION AS candidate_party, cn.CAND_OFFICE AS office, cn.CAND_OFFICE_ST AS state, cc.TRANSACTION_TP AS transaction_type, cc.TRANSACTION_AMT AS amount, cc.TRANSACTION_DT AS date, cc.\"cycle\" FROM committee_contributions AS cc INNER JOIN committees AS cm ON (((cc.CMTE_ID = cm.CMTE_ID) AND (cc.\"cycle\" = cm.\"cycle\"))) INNER JOIN candidates AS cn ON (((cc.CAND_ID = cn.CAND_ID) AND (cc.\"cycle\" = cn.\"cycle\"))) WHERE ((cc.TRANSACTION_TP IN ('24K', '24Z')) AND ((cc.MEMO_CD IS NULL) OR (cc.MEMO_CD != 'X')));",
+    "v_top_donors": "CREATE VIEW v_top_donors AS SELECT \"NAME\", EMPLOYER, OCCUPATION, STATE, count_star() FILTER (WHERE (TRANSACTION_TP NOT IN ('20Y', '21Y', '22Y'))) AS num_contributions, sum(CASE  WHEN ((TRANSACTION_TP IN ('20Y', '21Y', '22Y'))) THEN (-(TRANSACTION_AMT)) ELSE TRANSACTION_AMT END) AS net_donated, min(\"cycle\") AS first_cycle, max(\"cycle\") AS last_cycle, count(DISTINCT CMTE_ID) AS num_committees FROM individual_contributions WHERE ((TRANSACTION_TP != '24T') AND ((MEMO_CD IS NULL) OR (MEMO_CD != 'X')) AND (TRANSACTION_AMT IS NOT NULL)) GROUP BY \"NAME\", EMPLOYER, OCCUPATION, STATE;"
+  }
+}

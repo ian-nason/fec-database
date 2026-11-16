@@ -1,0 +1,26 @@
+{
+  "LICENSE": {
+    "bytes": 1087,
+    "sha256": "b69822e10f4643c996d4c7606f4d584f7a1a8665545f4a3ee804deb5b2068f56"
+  },
+  "README.md": {
+    "bytes": 2865,
+    "sha256": "718413f04e60169b4139ae6614962e60833f1de9c85775429b57c91327090e5d"
+  },
+  "requirements.txt": {
+    "bytes": 14,
+    "sha256": "735f000c8ad8bccf22de8772e5eeb43079f59a1d0570f190906380538cbdb638"
+  },
+  "source-lock.json": {
+    "bytes": 164404,
+    "sha256": "9047599234960a07547f8bd65859d3f698d70dc3f6e4a51484da1aea664706e8"
+  },
+  "test_verify_snapshot.py": {
+    "bytes": 5092,
+    "sha256": "d8300774c7db9b1314336d7c395c62a30955f33f39ad1ee3cd65b998f8dac1b0"
+  },
+  "verify_snapshot.py": {
+    "bytes": 5378,
+    "sha256": "a9e11034296395318df88b15924ba3f0560420437a95f559f6781d696801e44f"
+  }
+}
