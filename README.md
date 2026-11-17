@@ -24,6 +24,28 @@ ATTACH 'https://huggingface.co/datasets/Nason/fec-database/resolve/main/fec.duck
 SELECT CAND_ID,CAND_NAME FROM fec.candidates WHERE cycle=2026 AND CAND_OFFICE='H' ORDER BY CAND_ID LIMIT 5;
 ```
 
+### Python with DuckDB
+
+Install once with `python -m pip install duckdb`.
+
+```python
+import duckdb
+con = duckdb.connect(config={"memory_limit": "128MiB", "threads": 1,
+                             "max_temp_directory_size": "0B"})
+try:
+    con.execute("INSTALL httpfs; LOAD httpfs;")
+    con.execute("ATTACH 'https://huggingface.co/datasets/Nason/fec-database/resolve/main/fec.duckdb' AS fec (READ_ONLY)")
+    print(con.execute("SELECT CAND_ID, CAND_NAME FROM fec.candidates WHERE cycle=2026 AND CAND_OFFICE='H' ORDER BY CAND_ID LIMIT 5").fetchall())
+finally:
+    con.close()
+```
+
+These URLs follow the latest publication. For reproducible results, use the immutable
+`attach_url` in the [Datapond registry](https://github.com/datapond-db/registry/blob/main/registry.json)
+and record the revision. HTTP range queries execute locally and may transfer much of
+the database; `LIMIT` does not guarantee a small scan. The buffer limit is not a total
+process-memory cap; with spill disabled, larger queries may fail.
+
 ### R with DBI and duckdb
 
 Install the dependencies once with `install.packages(c("DBI", "duckdb"))`.
@@ -41,7 +63,7 @@ dbDisconnect(con, shutdown = TRUE)
 DuckDB uses HTTP range requests; queries run on your machine and may need substantial memory or download data. A `LIMIT` does not guarantee a small scan.
 
 
-Install/upgrade Python with `python -m pip install --upgrade datapond` (the examples use 0.1.5), or install released R datapond from [CRAN](https://cran.r-project.org/package=datapond) with `install.packages("datapond")`. R 0.1.1 remains a separate development version. The catalog ID is `fec`.
+Install/upgrade Python with `python -m pip install --upgrade datapond`, or install released R datapond from [CRAN](https://cran.r-project.org/package=datapond) with `install.packages("datapond")`. R 0.1.1 remains a separate development version. The catalog ID is `fec`.
 
 ## Snapshot and verification
 
